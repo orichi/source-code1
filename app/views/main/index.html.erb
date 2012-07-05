@@ -1,0 +1,188 @@
+<div class="main">
+  <div class="main_l">
+    <div id="left-daohang-bottom">
+
+    </div>
+    <div class="clear"></div>
+    <div class=" index_bd" style="height: 205px; margin-top: 10px">
+      <div class="title"><span class="right_r"><a href="#">更多>></a></span>推荐商家</div>
+      <ul class="list">
+        <% Business.lasts(7).each do |bus| %>
+          <li>
+            <span class="right_r2" id="biz_attention_<%= bus.id %>">
+              <% if current_customer && current_customer.attented?(bus) %>
+                已关注
+              <% else %>
+                <%= link_to "【关注】", customer_attentions_path(:business_id => bus), :method => :post, :remote => true%>
+              <% end %>
+            </span>·<%=link_to truncate(bus.name, :length => 9), business_path(bus)%>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class=" index_bd">
+      <div class="title"><span class="right_r"><a href="#">更多>></a></span>最新评论</div>
+      <ul class="list2">
+        <% Comment.newest(3).each do |comm| %>
+          <li>
+            <%=link_to image_tag(comm.business.image ? comm.business.image.data.url(:small) : "blank-small.gif"), business_path(comm.business)%>
+            <span><%=link_to truncate(comm.business.name, :length => 8), business_path(comm.business), :class=>"bold" %></span><br />
+            <%= truncate(comm.content, :length => 50) %> <%= link_to "详细>>",  business_path(comm.business)%>
+            <div class="clear"></div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+  <div class="main_center">
+    <div class="index_banner">
+      <div class="index_banner_l">
+        <div class="title2"><span class="right_r"><%= link_to "更多>>", activities_path, :class => "right more" %></span>新团购</div>
+        <ul class="list3">
+          <% Activity.in_doings.limit(6).each do |act|  %>
+            <li>·<%= link_to truncate(act.name, :length=>9), activity_path(act) %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="index_banner_r"><%= image_tag "pic.jpg" %></div>
+    </div>
+
+    <div class="index_tags">
+      <div class="tags_title">
+        <%= image_tag "title_37.gif", :align => "left" %>
+        <%= image_tag "title_42.gif", :align => "right" %>
+        <span class="right_r"><%=link_to "更多>>", "#{sitemap_path}#biz_area" %></span>热门商圈
+      </div>
+      <div class="tages_bd">
+        <ul>
+          <% Group[:biz_area].collections.limit(20).each do |col|  %>
+            <li><%= link_to col.name, collection_path(col) %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div><%= image_tag "t_47.gif", :align => "right" %></div>
+      <div class="clear"></div>
+    </div>
+
+    <div class="index_tags">
+      <div class="tags_title">
+        <%= image_tag "title_37.gif", :align => "left" %>
+        <%= image_tag "title_42.gif", :align => "right"%>
+        <span class="right_r"><%=link_to "更多>>", "#{sitemap_path}#university_around" %></span>大学周边
+      </div>
+      <div class="tages_bd">
+        <ul>
+          <% Group[:university_around].collections.limit(20).each do |col|  %>
+            <li><%= link_to col.name, collection_path(col) %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div><%= image_tag "t_47.gif", :align => "right" %></div>
+      <div class="clear"></div>
+    </div>
+
+
+    <div class="index_tags">
+      <div class="tags_title">
+        <%= image_tag "title_37.gif", :align => "left" %>
+        <%= image_tag "title_42.gif", :align => "right" %>
+        <span class="right_r"><%=link_to "更多>>", "#{sitemap_path}#360industry" %></span>热门分类
+      </div>
+      <div class="tages_bd">
+        <ul>
+          <% Group["360industry"].collections.limit(20).each do |col|  %>
+            <li><%= link_to col.name, collection_path(col) %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div><%= image_tag "t_47.gif", :align => "right" %></div>
+      <div class="clear"></div>
+    </div>
+
+
+    <div class="index_tags">
+      <div class="tags_title">
+        <%= image_tag "title_37.gif", :align => "left" %>
+        <%= image_tag "title_42.gif", :align => "right" %>
+        <span class="right_r"><%=link_to "更多>>", "#{sitemap_path}#keywords" %></span>关键词
+      </div>
+      <div class="tages_bd" style="height: 50px">
+        <ul>
+          <% Group[:keywords].collections.each do |col|  %>
+            <li><%= link_to col.name, collection_path(col) %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div><%= image_tag "t_47.gif", :align => "right" %></div>
+      <div class="clear"></div>
+    </div>
+  </div>
+
+  <div class="main_r">
+    <% if customer_login? %>
+      <div class="index_bd" style="text-align:center; line-height: 25px;padding-top: 10px;">
+        <%= image_tag (current_customer.image ? current_customer.image.data.url(:medium) : (current_customer.image_path || "portrait.jpg"))%><br/>
+        <%=link_to current_customer.show_name, edit_customer_profile_path, :class => "bold" %><br/>
+        积点：<%= current_customer.score %> | <%= link_to "关注", customer_attentions_path%>：<%= current_customer.businesses.size %><br/>
+         <%= link_to image_tag("zc_29.gif"), new_business_path %>
+      </div>
+    <% else %>
+      <div class="add">
+        <%= link_to image_tag("zc_29.gif"), new_business_path, :align=>"left" , :style => "margin: 0 5px;" %>
+        <%= link_to image_tag("zc_31.gif"), new_customer_path, :align=>"right" , :style => "margin: 0 5px;" %>
+      </div>
+    <% end %>
+
+    <div class="index_bd">
+      <div class="new">
+        <ul>
+          <li class="click" id="three1" onmouseover="setTab3('three',1,2)">最新公告 </li>
+          <li>|</li>
+          <li id="three2" onmouseover="setTab3('three',2,2)">积分规则</li>
+        </ul>
+      </div>
+      <div class="list3" id="con3_three_1"  style="height: 80px;">
+        <ul>
+          <li>·魔发师（安顺路店）</li>
+          <li>·杆动力club撞球会馆</li>
+        </ul>
+      </div>
+
+      <div class="list3" id="con3_three_2" style="display:none;height: 80px;">
+        <ul>
+          <li>·魔发师（安店）</li>
+          <li>·杆动力club撞会馆</li>
+        </ul>
+      </div>
+    </div>
+    <div class=" index_bd" style="height: 274px;">
+      <div class="title"><span class="right_r"><a href="#">更多>></a></span>美食榜</div>
+      <ul class="list">
+        <% Business.candidates(:food).each do |bus| %>
+          <li>·<%=link_to bus.name, business_path(bus)%></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class=" index_bd" style="height: 274px;">
+      <div class="title"><span class="right_r"><a href="#">更多>></a></span>酒店榜</div>
+      <ul class="list">
+        <% Business.candidates(:hotel).each do |bus| %>
+          <li>·<%=link_to bus.name, business_path(bus)%></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
+<script type="text/javascript">
+  function setTab3(name,cursel,n){
+    for(i=1;i<=n;i++){
+      var menu=document.getElementById(name+i);
+      var con3=document.getElementById("con3_"+name+"_"+i);
+      menu.className=i==cursel?"click":"";
+      con3.style.display=i==cursel?"block":"none";
+    }
+  }
+</script>

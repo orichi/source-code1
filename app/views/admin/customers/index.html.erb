@@ -1,0 +1,25 @@
+<%= render :partial =>'/admin/share/menu', :locals => {:active => :customers} %>
+<div class="content">
+  <h1>消费者管理</h1>
+
+  <table class="list">
+    <tr class="head">
+      <th>Email</th>
+      <th>姓名</th>
+      <th>电话</th>
+      <th  class="action">动作</th>
+    </tr>
+
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= link_to customer.email, admin_customer_path(customer) %></td>
+        <td><%= customer.name %>&nbsp;</td>
+        <td><%= customer.phone %>&nbsp;</td>
+        <td>
+          <%= link_to '删除',admin_customer_path(customer), :confirm => '确定删除吗?', :method => :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <%= will_paginate @customers%>
+</div>

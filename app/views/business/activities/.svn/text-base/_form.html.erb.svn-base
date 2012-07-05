@@ -1,0 +1,58 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "jquery.dynDateTime.min.js", "calendar-en.js"%>
+  <%= stylesheet_link_tag "calendar-brown.css" %>
+  <script type="text/javascript">
+    jQuery(document).ready(function() {
+      jQuery(".datetime-input").dynDateTime({
+        showsTime: true,
+        ifFormat: "%Y-%m-%d %H:%M",
+        singleClick: false
+      }); //defaults
+    });
+  </script>
+  <style type="text/css">
+
+  </style>
+<% end %>
+
+<%= form_for([:business,@activity], :html => {:multipart => true}) do |f| %>
+  <% if @activity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@activity.errors.count, "error") %> prohibited this msg from being saved:</h2>
+      <ul>
+        <% @activity.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table>
+    <tr>
+      <td align="right"><%= required %><%= f.label :name , "团购名称"%>:</td>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <td align="right"><%= required %><%= f.label :name , "图片"%>:</td>
+      <td>
+        <%= image_tag (@activity.image ? @activity.image.data.url(:thumb) : "blank-small.gif"), :style =>"vertical-align:middle" %>
+        <input type="file" name="activity[image_file]"/>
+      </td>
+    </tr>
+    <tr>
+      <td align="right"><%= required %><%= f.label :begin_at , "开始时间"%></td>
+      <td><%= f.text_field :begin_at, :value => ((l @activity.begin_at)if @activity.begin_at), :class => "datetime-input"%></td>
+    </tr>
+    <tr>
+      <td align="right"><%= required %><%= f.label :end_at , "结束时间"%></td>
+      <td><%= f.text_field :end_at, :value => ((l @activity.end_at)if @activity.end_at), :class => "datetime-input"%></td>
+    </tr>
+    <tr>
+      <td align="right"><%= f.label :introduction , "团购介绍"%></td>
+      <td><%= f.cktext_area :introduction, :height=>"200",:width=>"600",:language => "zh-cn"%></td>
+    </tr>
+  </table>
+  <div class="actions" align="center">
+    <%=image_submit_tag "sub_07.gif" %>
+  </div>
+<% end %>

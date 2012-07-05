@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" ></meta>
+    <%= stylesheet_link_tag "master.css", "font.css", "buss.css", "personal.css", "jquery.megamenu.css" %>
+    <%= javascript_include_tag "jquery-1.4.3.min.js", "rails.js","jquery.bgiframe.min.js","jquery.megamenu.js", "application.js"%>
+    <%= csrf_meta_tag %>
+    <%= yield :head %>
+    <title>集客网</title>
+  </head>
+
+  <body>
+    <%= render "/share/header"%>
+    <div class="menu">
+      <%= render "/share/categories"%>
+      <div class="menu2">
+        <ul>
+          <li><%= link_to "首页", root_path %></li>
+          <li><%= image_tag "line_20.gif", :class => "pic" %></li>
+          <li><%= link_to "新团购", activities_path %></li>
+          <li>
+            <form action="">
+              <table>
+                <tr>
+                  <td><input type="text" class="keyword" /></td><td><%= image_submit_tag "search_66.gif"%></td>
+                </tr>
+              </table>
+            </form>
+          </li>
+          <li><%= link_to "美食", category_path(Category[:food])%></li>
+          <li><%= image_tag "line_20.gif", :class => "pic" %></li>
+          <li><%= link_to "酒店", category_path(Category[:hostel])%></li>
+          <li><%= image_tag "line_20.gif", :class => "pic" %></li>
+          <li><a href="#">商城</a></li>
+        </ul>
+      </div>
+      <div class="buy">
+        <ul class="megamenu">
+          <li>
+            <a href="javascript:void(0)">购物车</a>
+            <div id="cart-warper" class="cart-warper">
+              <div id="shopping-cart" class="shopping-cart">
+                您的购物车是空的！
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="main">
+      <%= yield %>
+    </div>
+    <%= render "/share/bottom_search" %>
+    <%= render "/share/foot" %>
+  </body>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      jQuery(".megamenu").megamenu();
+      <% if @home %>
+            panel_nav("#panel_nav .inlist")
+      <% else %>
+            panel_nav("#panel_nav")
+      <% end %>
+      $("#cart-warper").bgiframe();
+      load_shopping_cart();
+  });
+  
+  function load_shopping_cart(){
+    $.get('<%= overview_carts_path %>', {}, function(html){
+      $("#shopping-cart").html(html);
+    });
+  }
+  </script>
+</html>

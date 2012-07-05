@@ -1,0 +1,35 @@
+<%= render :partial =>'/admin/share/menu', :locals => {:active => :businesses} %>
+<div class="content">
+  <h1>商家管理</h1>
+
+  <table class="list">
+    <tr class="head">
+      <th>名称</th>
+      <th>负责人</th>
+      <th>Email</th>
+      <th>电话</th>
+      <th>VIP?</th>
+      <th>推荐</th>
+      <th  class="action">动作</th>
+    </tr>
+
+    <% @businesses.each do |business| %>
+      <tr>
+        <td><%= link_to  business.name, admin_business_path(business) %></td>
+        <td><%= business.manager %>&nbsp;</td>
+        <td><%= business.email %>&nbsp;</td>
+        <td><%= business.phone %>&nbsp;</td>
+        <td><%= business.vip %></td>
+        <td><%= business.recommend %></td>
+        <td>
+          <%= link_to '编辑', edit_admin_business_path(business) %>
+          <%= link_to '删除',admin_business_path( business), :confirm => '确定删除吗?', :method => :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <%= will_paginate @businesses%>
+  <div class="action-bar">
+    <input value="添加商家" type="button" onclick="window.location = '<%=  new_admin_business_path  %>'"/>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<h1><%= @activity.name %></h1>
+价格: <%=number_to_currency @activity.price %>
+<span id="partake-it">
+    <% if current_customer && current_customer.partaked?(@activity) %>
+      我已加入
+    <% else %>
+      <%= link_to "加入团购", customer_partakes_path(:activity_id => @activity.id), :remote => true, :method => :post %><br/>
+    <% end %>
+</span>
+<h3>团购产品</h3>
+<div class="list-subjects">
+  <% @activity.subjects.each do |subject| %>
+    <div>
+      <dl>
+        <dt>
+          <%= image_tag(subject.image ? subject.image.data.url(:thumb) : "blank-thumb.jpg") %>
+        </dt>
+        <dd>
+          <%= subject.name %><br/>
+          价格：<%= number_to_currency subject.price %>
+        </dd>
+      </dl>
+    </div>
+  <% end %>
+  <div class="clear"></div>
+</div>

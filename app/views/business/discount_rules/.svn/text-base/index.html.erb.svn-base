@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th align="center">份数</th>
+    <th align="center">折扣</th>
+    <th align="center">动作</th>
+  </tr>
+  <% @rules.each do |rule| %>
+  <tr>
+    <td><%= rule.count %></td>
+    <td><%= rule.percent %></td>
+    <td>
+      <%= link_to "编辑", "#", :onclick => "load_edit_rule('#{edit_business_activity_discount_rule_path(@activity, rule)}'); return false;"  %>
+      <%= link_to "删除", business_activity_discount_rule_path(@activity, rule), :method => :delete, :remote => true%>
+    </td>
+  </tr>
+  <% end %>
+</table>

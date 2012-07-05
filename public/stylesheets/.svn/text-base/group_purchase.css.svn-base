@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* CSS Document */
+
+.group { width:auto; height:auto; overflow:hidden; background-color:#f2f2f2;}
+.group_nav{  width:942px; height:34px; background: url(../images/tg_nav_03.gif) no-repeat; margin:0 auto 0 auto; font-size:13px; font-weight:bold; color:#FFFFFF; padding:0 10px; }
+
+.group_main{ width:933px; height:auto; margin:0 auto 0 auto; margin-top:15px;}
+
+.group_main_l{ width:663px; height: auto; float:left;}
+.deal-share-links{ width:410px; height:23px;  border-left:#ccc solid 1px;border-right:#ccc solid 1px;border-top:#ccc solid 1px; background-color:#eaf6ff;}
+.deal-share-links ul{ padding-top:3px; padding-left:8px;}
+.deal-share-links li{ display:inline; padding-left:3px; }
+
+
+.deal-share{ width:661px; height:auto; border:#ccc solid 1px; background-color:#FFFFFF;  }
+
+.deal-share H1 {
+	PADDING-RIGHT: 20px; PADDING-LEFT: 20px; FONT-SIZE: 24px; PADDING-BOTTOM: 20px; LINE-HEIGHT: 1.2; PADDING-TOP: 0px; FONT-FAMILY: '黑体',arial,sans-serif; padding-top:10px;}
+
+
+.deal-share H1 a{ color:#000}
+.deal-share H1 a:visited{ color:#000;}
+.deal-share H1 a:hover{color:#000000;text-decoration: underline;}
+
+
+.deal-share_l{ width:243px; height:auto; padding-left:13px; float:left;}
+
+.deal-share_r{ width:381px; height: auto; padding-right:11px; float:right; margin-bottom:10px;}
+
+
+.group_main_r_img { width: 375px; height:257px; padding:2px; border:#cacaca solid 1px; margin-bottom:8px;	}
+.group_main_r_img img{ width:375px; height:257px; display:block;}
+.text375{ width: auto; padding:0 5px; line-height:22px;}
+.deal-buy {
+	POSITION: relative;
+	Z-INDEX: 1;
+	visibility: visible;
+}
+.deal-price-tag {
+		PADDING-LEFT: 50px; Z-INDEX: 2; LEFT: -54px; WIDTH: 247px; background:url(../images/guor.png) no-repeat ;POSITION: absolute; HEIGHT: 104px; 
+}
+.deal-price {
+	PADDING-LEFT: 70px; Z-INDEX: 3; LEFT: -72px; WIDTH: 227px; LINE-HEIGHT: 82px; POSITION: absolute; HEIGHT: 97px; font-size:34px; color:#fff;
+}
+.deal-price SPAN {
+	Z-INDEX: 3; LEFT: 151px; COLOR: #fff; POSITION: absolute; TOP: 0px
+}
+.deal-price-expire {
+	 WIDTH: 160px; HEIGHT: 84px; padding:19px 0 0 23px;}
+
+.bk_gour{ width:243px; height:58px; border:#a1d5fc solid 1px; background-color:#eaf6ff; font-size:13px; font-weight:700; color:#333; padding:5px 0 ; margin-bottom:8px; margin-top:83px;}
+
+.gour_bd{ width: auto; height:auto;  border:#a1d5fc solid 1px; background-color:#eaf6ff; font-size:14px; color:#000; padding:5px; line-height:24px; margin-bottom:10px;}
+
+
+.a_about{ width:651px; height:467px; padding-left:5px; clear:both; }
+.a_about dl{ width:651px; height:467px;  }
+.a_about dd{ width:645px; height:356px; padding:2px; border:#ccc solid 1px; }
+.a_about dt{ width:641px; height:105px; line-height:24px; padding:0 5px;}
+
+.title_g{ width:auto; height:32px; background-color:#eaf6ff; line-height:32px; font-weight:bold; padding-left:20px; font-size:14px; color:#333; border:#fff solid 1px; margin-bottom:5px;}
+
+.a_about2{height:auto;}
+.a_about2 dl{width:150px; padding-left:25px; padding-top:5px; float:left}
+.a_about2 dd{ padding:2px; height: 150px; border:#ccc solid 1px;}
+.a_about2 dd img{display:block;}
+.a_about2 dt{height:44px; line-height:22px; text-align: center}
+
+.list_g li{ width:460px; height:auto; line-height:24px; padding-left:25px; margin-bottom:15px;}
+
+.group_main_r{ width:260px; height:auto; float:right;}
+
+.group_main_r_bd{ width:auto; height:auto; border:#d7d7d7 solid 1px; margin-bottom:10px; background-color:#fff; }
+.title_r{ width:auto; height:29px; background-color:#eaf6ff; line-height:29px; font-weight:bold; padding-left:6px; font-size:14px; color:#333; border:#fff solid 1px; margin-bottom:5px;}
+.title_r_text{ width:auto; height:auto; line-height:20px; padding:0 15px; padding-bottom:5px; }
+
+.map img{ width:258px; height: 210px; display:block; }
+.map_title{ background: url(../images/map_bg_02.gif) repeat-x; text-align:center; height:22px; padding-top:7px;  }

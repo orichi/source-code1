@@ -1,0 +1,25 @@
+<h1 style="font-size: 16px"><%= @comment.created_by_id%> 的评论：</h1>
+<div style="padding: 5px; line-height: 25px;"><%= raw @comment.content %></div>
+<h2 style="font-size:16px; background: #efefef">相关回复</h2>
+<% @comment.children.each do |child| %>
+  <div style ="padding: 5px; line-height: 20px; border-bottom: 1px solid #eee">
+    <h3>回复人：<%= @comment.created_by_id %>&nbsp;&nbsp;&nbsp;
+      <%=link_to "删除", business_discuss_path(child, :base => @comment.id), :method => "delete", :confirm => "确定删除？"%></h3>
+    <div>
+      <%= raw child.content %>
+    </div>
+  </div>
+<% end %>
+<div align="center">
+  <input type="button"  value="回复" onclick="$('#reply').show()"></input>
+  <input type="button"  value="返回" onclick="window.history.back()"></input>
+</div>
+<%= form_for(@replay_comment, :url => business_discusses_path) do |f| %>
+  <fieldset id="reply" style="display: none; text-align: center">
+    <legend>回复评论</legend>
+    <%=f.hidden_field :parent_id %><br/>
+    <%=f.label :content, "内容" %>
+    <%=f.text_area :content, :name => "comment[source_content]", :style => "height: 100px; width: 600px;vertical-align:middle" %><br/>
+    <%=f.submit "提交" %>
+  </fieldset>
+<% end %>

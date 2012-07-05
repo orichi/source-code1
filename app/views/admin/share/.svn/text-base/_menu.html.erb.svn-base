@@ -1,0 +1,15 @@
+<div id="menu-bar">
+  <ul id="menu">
+    <li <%= "class='active'" if(active == :home) %>><%=link_to image_tag("home.gif"), console_path, :style => "margin-top: 10px;"%></li>
+    <li <%= "class='active'" if(active == :businesses) %>><%=link_to "商家管理", admin_businesses_path%></li>
+    <li <%= "class='active'" if(active == :customers) %>><%=link_to "会员管理", admin_customers_path%></li>
+    <li <%= "class='active'" if(active == :scores) %>><%=link_to "积分管理", admin_score_busscores_path%></li>
+    <li <%= "class='active'" if(active == :comments) %>><%=link_to "评论管理", admin_comments_path%></li>
+    <li <%= "class='active'" if(active == :msgs) %>><%=link_to "公告管理", admin_msgs_path%></li>
+    <li <%= "class='active'" if(active == :categories) %>><%=link_to "分类管理", admin_categories_path%></li>
+    <li <%= "class='active'" if(active == :collections) %>><%=link_to "集合管理", admin_collections_path%></li>
+    <li <%= "class='active'" if(active == :emails) %>><%=link_to "邮件管理", admin_emails_path%></li>
+    <li <%= "class='active'" if(active == :opeartions) %>><%=link_to "客户收支记录", admin_opeartions_path%></li>
+    <li <%= "class='active'" if(active == :takemoneies) %>><%=link_to "提款记录", admin_takemoneies_path%></li>
+  </ul>
+</div>

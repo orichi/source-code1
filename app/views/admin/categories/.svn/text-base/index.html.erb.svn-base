@@ -1,0 +1,30 @@
+<%= render :partial =>'/admin/share/menu', :locals => {:active => :categories} %>
+<div class="content">
+  <h1>分类管理</h1>
+
+  <table class="list" cellspacing="0" cellpadding="0">
+    <tr class="head">
+      <th>一级分类</th>
+      <th>二级分类</th>
+      <th  class="action">动作</th>
+    </tr>
+    <% for category in Category.roots -%>
+      <tr>
+        <td style="font-weight: bold"><%= link_to category.name,edit_admin_category_path(category) %></td>
+        <td>&nbsp;</td>
+        <td align="center"><%= link_to '编辑', edit_admin_category_path(category) %><%= link_to '删除',admin_category_path(category), :confirm => '确定删除吗?', :method => :delete %></td>
+      </tr>
+      <% for sub in category.children -%>
+        <tr>
+          <td>&nbsp;</td>
+          <td><%= link_to sub.name, edit_admin_category_path(sub) %></td>
+          <td align="center"><%= link_to '编辑', edit_admin_category_path(sub) %><%= link_to '删除',admin_category_path( sub), :confirm => '确定删除吗?', :method => :delete %></td>
+        </tr>
+      <% end -%>
+    <% end -%>
+  </table>
+  <div class="action-bar">
+    <%= link_button("添加分类", new_admin_category_path) %>
+  </div>
+</div>
+

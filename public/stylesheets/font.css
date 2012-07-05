@@ -1,0 +1,23 @@
+@charset "utf-8";
+/* CSS Document */
+
+.food_l{ width:162px; height: auto; float:left; padding-top:10px; }
+.food_r{ width:763px; height:auto; float:right; padding-top:10px;}
+
+.post_f{ width:auto; height:23px; line-height:23px; color:#b54500; background:url(../images/tit_03.gif) no-repeat left ; border-bottom:#e3e3e3 solid 1px; padding-left:10px; margin-bottom:5px;}
+.post_f a{ color:#b54500;}
+.post_f a:visited{ color:#b54500;}
+.post_f a:hover{ color:#b54500;}
+
+.food_list{ width:auto; height:auto}
+
+.title_food{ width:auto; height:30px; line-height:30px; border:#ededed solid 1px; background:url(../images/food_bg_07.gif) repeat-x; padding:0 10px; color:#333; font-weight:bold; margin:3px 0 0 0;}
+
+.food_img{ width:450px; height:100px;}
+.food_img dl{ width:450px; height:100px;}
+.food_img dd{ width:100px; height:100px; float:left;}
+.food_img dd img{ width:100px ; height:100px;}
+.food_img dt{ width:324px; float:left; line-height:25px; padding-left:7px;}
+
+.mar_x{ padding:15px 0; border-bottom:#ccc dashed 1px; line-height:20px;  }
+

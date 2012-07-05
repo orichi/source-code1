@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/svn/jikeel/!svn/ver/1/test/fixtures
+END
+discount_rules.yml
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/jikeel/!svn/ver/1/test/fixtures/discount_rules.yml
+END
+orderforms.yml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/jikeel/!svn/ver/1/test/fixtures/orderforms.yml
+END
+orderlines.yml
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/jikeel/!svn/ver/1/test/fixtures/orderlines.yml
+END
+enums.yml
+K 25
+svn:wc:ra_dav:version-url
+V 46
+/svn/jikeel/!svn/ver/1/test/fixtures/enums.yml
+END
+options.yml
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/jikeel/!svn/ver/1/test/fixtures/options.yml
+END
+varieties.yml
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/jikeel/!svn/ver/1/test/fixtures/varieties.yml
+END

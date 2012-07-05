@@ -1,0 +1,36 @@
+<%= render "admin/activities/menu" %>
+<table class="list">
+
+  <tr class="head">
+    <td>团购名称</td>
+    <td>团购收费</td>
+    <td>团购起至时间</td>
+    <td>团购图片</td>
+    <td>动作</td>
+  </tr>
+  <%@activities.each do |activity|%>
+    <tr>
+      <td>
+        <%= activity.name %>
+      </td>
+      <td>
+        <%= activity.price %>
+      </td>
+      <td>
+        <%= activity.begin_at %><br/>
+        <%= activity.end_at %>
+      </td>
+      <td>
+        <%=image_tag(activity.image ? activity.image.data.url(:thumb) : "home.gif")%>
+      </td>
+      <td>
+        <%= link_to "编辑",edit_admin_business_activity_path(:business_id=>@business,:id=>activity.id) %>
+        <%= link_to "删除",admin_business_activity_path(:business_id=>@business,:id=>activity.id),:method=>:delete,:confirm=>"确认删除？" %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<div class="action-bar">
+  <input type="button" value="添加活动" onclick="window.location='<%= new_admin_business_activity_path %>'"/>
+</div>
+</div>

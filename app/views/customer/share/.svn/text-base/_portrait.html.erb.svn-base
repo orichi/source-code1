@@ -1,0 +1,10 @@
+<div class="per_bd">
+  <dl class="per_img">
+    <dd><%= image_tag (current_customer.image ? current_customer.image.data.url(:medium) : (current_customer.image_path || "portrait.jpg"))%></dd>
+    <dt><span class="bold"><%=link_to current_customer.show_name, edit_customer_profile_path %></span><br />
+      积分：<span class="bold"><%= current_customer.score %></span> 分
+      <br />
+      关注：<%=link_to current_customer.businesses.size, customer_attentions_path, :class=>"bold" %> 个<br />
+      粉丝：22人</dt>
+  </dl>
+</div>

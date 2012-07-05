@@ -1,0 +1,35 @@
+<%= form_for([:business,@subject], :html => {:multipart => true}) do |f| %>
+  <% if @subject.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@subject.errors.count, "error") %> prohibited this msg from being saved:</h2>
+
+      <ul>
+        <% @subject.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <table border="0" cellpadding="0" cellspacing="3">
+    <tr>
+      <td align="right"><%= required %><%= f.label :name , "名称"%>:</td>
+      <td><%= f.text_field :name, :class => "input2", :style => "width: 200px;" %><%= f.hidden_field :variety_id, :value =>(@subject.variety_id || params[:var_id]) %></td>
+    </tr>
+    <tr>
+      <td align="right"><%= required %><%= f.label :price , "价格"%>:</td>
+      <td><%= f.text_field :price, :class => "input2", :style => "width: 100px;" %></td>
+    </tr>
+    <tr>
+      <td><%= required %><%= f.label :image_id , "图片"%></td>
+      <td>
+        <%= image_tag (@subject.image ? @subject.image.data.url(:thumb) : "blank-small.gif"), :style => "vertical-align:middle" %>
+        <input type="file" name="subject[image_file]"/>
+      </td>
+    </tr>
+  </table>
+
+  <div class="action-bar">
+    <%= image_submit_tag("save.jpg") %>
+    <%= image_tag "return.jpg", :onclick => "window.history.back()" %>
+  </div>
+<% end %>

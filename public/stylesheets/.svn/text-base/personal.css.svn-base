@@ -1,0 +1,90 @@
+@charset "utf-8";
+/* CSS Document */
+
+.per_main{ width:960px; height:auto; margin:0 auto 10px auto; overflow:hidden;}
+
+.per_main_l{ width:160px; height:auto; float:left; margin:0 0px 0 0; padding:10px 0 0 0;}
+.per_main_cen{ width:555px; height:auto; float:left;padding:10px 10px 0 10px;}
+.per_main_r{padding:10px 0 0 0; width:220px; height:auto; float:right; }
+
+.per_bd{height:auto; border:#cecece solid 1px; padding:0 5px 5px 5px;  margin-bottom:10px; overflow:hidden; }
+
+.per_img{ width:150px; height: auto; padding-top:5px; }
+.per_img dl { width:150px; height:220px;}
+.per_img dd{ text-align: center; }
+.per_img dt{ width:150px; height: 95px; line-height:24px; text-align:center; }
+
+.title_per{ width:auto; height:28px; line-height:28px; border-bottom:#a5a5a5 dashed 1px; font-size:14px; font-weight:bold; color:#333; margin-bottom:5px;}
+
+.friends{ width: 140px; height: auto;   }
+.friends dl{ width:50px; height:75px; float:left;padding:0 5px; }
+.friends dd{ width:50px; height:50px; padding:1px; text-align: center}
+.friends dd img{ width:50px; height:50px; display:block;}
+.friends dt{ width:50px; height:20px; line-height:20px; text-align:center; }
+
+.fre2{ width: 200px; height:auto; }
+.fre2 dl{ width:50px; height:80px; float:left; padding:0 5px 0 5px;}
+.fre2 dd{ width:50px; height:50px; border: 1px solid #eee}
+.fre2 dd img{ height:50px; width: 50px; display:block;}
+.fre2 dt{ height:20px; line-height:20px; text-align:center;}
+
+
+.post_pre{ width:auto; height: 24px; line-height:24px; border:#eeeeee solid 1px; background: url(/images/pre_bg_03.gif) repeat-x; font-weight:bold; color:#333; padding-left:8px; margin-bottom:8px; padding-right:8px;}
+.post_pre2{ width:auto; height: 24px; line-height:24px; border:#eeeeee solid 1px; background: url(/images/pre_bg_03.gif) repeat-x; font-weight:bold; color:#333; padding-left:8px; padding-right:8px;}
+.post_pre2 li{ overflow:hidden; border-right:#cecece solid 1px; height:24px; width:auto; padding:0 8px 0 8px; float:left; font-weight:normal; }
+.post_pre2 li.click{ font-weight:bold; background:url(/images/dian_03.gif) no-repeat right; }
+.mar_x2{ padding:10px 0; border-bottom:#ccc dashed 1px; line-height:20px;  }
+
+
+.list_tg{ width:auto; height:auto; margin-bottom:10px;}
+
+.tg_img{ width:490px; height:81px;}
+.tg_img dl{ width:490px; height:81px;}
+.tg_img dd{ float:left;}
+.tg_img dt{ width:360px; height:81px; float:left; line-height:20px; padding-left:7px;}
+
+
+.pre{ width:auto; height:auto;overflow:hidden;margin-bottom:10px;}
+.pre dl{ width:auto; height:auto; border: 1px solid red;}
+.pre dd{ width:88px; height:70px; float:left; background-color:#eee;}
+.pre dd img{ width:88px; height:70px; display:block;}
+.pre dt{ width: 420px; height:auto; float:left; line-height:23px; padding-left:10px; font-size: 16px;}
+
+
+
+.hot_pre{ height:105px; border:#ffb17d solid 1px; background-color:#fffaf6 ; padding:10px 0 0 8px; margin:5px 0 10px 0;}
+.hot_pre dl{ width:50px; height:70px; float:left; padding:10px 8px 0 0;}
+.hot_pre dd{ width:50px; height:50px; background-color:#eee;}
+.hot_pre dd img{ width:50px; height:50px; display:block; }
+.hot_pre dt{ width:50px; line-height:20px; text-align:center; overflow: hidden; white-space:nowrap}
+.hot_pre .bold14{font-weight: bold}
+
+.orders_r{ width:765px; height:auto; float:right; margin-top:10px;}
+.list7{ padding-left:13px; margin-top:10px;}
+.list7 li{ width:220px; height:110px; background:#eee; float:left; margin-right:23px; display:block; }
+
+
+.product_l{ width:167px; height: auto; float:left; border:#e5e5e5 solid 1px; padding:0 9px 50px 9px; margin-top:10px; }
+.product_l li{ width:167px; height:25px;  margin-top:1px;line-height:25px; text-indent:10px;  display:block;}
+.product_l li a{ width:167px; height:25px; background-color:#f9f9f9; display:block; }
+.product_l li a:hover, .product_l li a.dad{ width:167px; height:25px;background:url(/images/p_d_03.gif) no-repeat right; background-color:#d7d0cb; color:#333;  display:block;}
+
+.product_r{ width:735px; height:auto; float:right; margin-top:10px;}
+.product_list{ width:733px; height:auto; border:#e5e5e5 solid 1px; overflow:hidden; padding-bottom:10px;}
+.product_list dl{ width:150px; height:190px; float:left; padding:15px 0 0 17px;}
+.product_list dd{ }
+.product_list dt{ height:40px; line-height: 20px; text-align:center;}
+.product_list dt span{font-weight: bold}
+
+.title4{ width:auto; height:25px; line-height:25px; font-size:14px; font-weight:bold; border-bottom:#e6e6e6 solid 1px; color:#333;}
+
+.about_l{ width:171px; height:auto; border:#ccc solid 1px; background-color:#faf7f5; float:left; margin-top:10px; padding-bottom:30px; }
+.about_l ul{ padding:0 15px;}
+.about_l li{ width: auto; height:25px; border-bottom:#c3c3c3 solid 1px; background:url(/images/ico_11.gif) no-repeat left; padding-left:12px; line-height:25px; }
+.title6{ width:auto; height:auto;} 
+
+.about_title{ width:auto; height:26px; line-height:21px; background:url(/images/ico_10.gif) repeat-x bottom; font-size:14px; font-weight:bold; color:#333; margin-bottom:8px; padding-right:5px;   }
+
+.an{ width:auto; height:auto; background:url(/images/about_10.gif) no-repeat left; padding-left:13px;}
+.about_r{ width:745px; height:auto; float:right; margin-top:10px;}
+.text_about{ width:auto; height:auto; line-height:22px; padding:0 5px 15px 5px;}

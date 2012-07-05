@@ -1,0 +1,56 @@
+<% content_for :head do%>
+  <%= stylesheet_link_tag  "font.css" %>
+<% end %>
+<div class="per_main">
+  <div class=" per_main_l">
+    <%= render "/customer/share/portrait" %>
+    <div class="per_bd">
+      <div class="title_per">推荐商家</div>
+      <ul class="list4">
+        <%Business.recommends.limit(8).each do |biz|  %>
+          <li><%= link_to "·#{biz.name}", business_path(biz) %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="per_bd">
+      <div class="title_per">最新商家</div>
+      <div class="friends">
+        <%= render :partial => "/businesses/small_image_biz", :collection => Business.lasts(6), :as => :biz %>
+      </div>
+    </div>
+  </div>
+  <div class="orders_r">
+    <div class="post_pre">我的订单</div>
+    <table cellspacing="0" cellpadding="0" border="0" width="100%" height="125" class="big_k">
+      <tbody><tr>
+          <td bgcolor="#f4f4f4" align="center" width="13%" class="small_k">订单号</td>
+          <td bgcolor="#f4f4f4" align="center" width="12%" class="small_k">服务项目</td>
+          <td bgcolor="#f4f4f4" align="center" width="10%" class="small_k">下单人</td>
+          <td bgcolor="#f4f4f4" align="center" width="9%" class="small_k">订单金额</td>
+          <td bgcolor="#f4f4f4" align="center" width="24%" class="small_k">下单时间</td>
+          <td bgcolor="#f4f4f4" align="center" width="14%" class="small_k">交易状态</td>
+          <td bgcolor="#f4f4f4" align="center" width="18%" class="small_k">成交时间</td>
+        </tr>
+        <% @payments.each do |payment| %>
+          <tr height="20">
+            <td align="center" class="small_k"><%= payment.serial_no %></td>
+            <td align="center" class="small_k"><%= payment.serial_no %></td>
+            <td align="center" class="small_k"><%= Customer.find(payment.customer_id).name %></td>
+            <td align="center" class="small_k"><%= payment.totalmoney %></td>
+            <td align="center" class="small_k"><%= payment.created_at.strftime("%Y-%m-%d %H:%M") %></td>
+            <td align="center" class="small_k"><%= payment.paid? ? "已成交" : (link_to '去付款',confirm_customer_payment_url(payment),:style=>"color:orange") %></td>
+            <td align="center" class="small_k"><%= payment.paid_at %></td>
+          </tr>
+        <% end %>
+      </tbody></table>
+    <div class="yellow"><span class="disabled"><%= will_paginate @payments %></span></div>
+
+
+    <ul class="list7">
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+</div>

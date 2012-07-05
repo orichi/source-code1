@@ -1,0 +1,17 @@
+<h3 class="bold14">评论管理</h3>
+<table width="100%" border="1" cellpadding="0" cellspacing="0" class="big_k">
+  <tr height="25">
+    <th align="center" bgcolor="#f4f4f4" class="small_k" width="60%">评论内容</th>
+    <th align="center" bgcolor="#f4f4f4" class="small_k">评论者</th>
+    <th align="center" bgcolor="#f4f4f4" class="small_k">评论时间</th>
+    <th align="center" bgcolor="#f4f4f4" class="small_k">操作</th>
+  </tr>
+  <% @comments.each do |comment| %>
+  <tr height="25">
+    <td class="small_k"><%=link_to truncate(comment.content, :length => 35), business_discuss_path(comment) %>&nbsp;</td>
+    <td class="small_k"><%= comment.created_by_id %></td>
+    <td class="small_k"><%= l comment.created_at %>&nbsp;</td>
+    <td class="small_k"><%= link_to "回复" %>&nbsp;</td>
+  </tr>
+  <% end %>
+</table>

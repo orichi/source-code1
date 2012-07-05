@@ -1,0 +1,26 @@
+<%= render :partial =>'/admin/share/menu', :locals => {:active => :msgs} %>
+<div class="content">
+  <h1>公告管理</h1>
+
+  <table class="list">
+    <tr class="head">
+      <th>标题</th>
+      <th  class="action">动作</th>
+    </tr>
+
+    <% @msgs.each do |msg| %>
+      <tr>
+        <td><%= link_to  msg.title, msg_path(msg), :target => "_blank" %></td>
+        <td>
+          <%= link_to '编辑', edit_admin_msg_path(msg) %>
+          <%= link_to '删除',admin_msg_path( msg), :confirm => '确定删除吗?', :method => :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <%= will_paginate @msgs%>
+  <div class="action-bar">
+    <%= link_button("添加公告", new_admin_msg_path) %>
+  </div>
+</div>
+

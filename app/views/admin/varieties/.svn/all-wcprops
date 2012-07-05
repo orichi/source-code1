@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/svn/jikeel/!svn/ver/43/app/views/admin/varieties
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/jikeel/!svn/ver/43/app/views/admin/varieties/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/jikeel/!svn/ver/43/app/views/admin/varieties/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/jikeel/!svn/ver/43/app/views/admin/varieties/new.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/jikeel/!svn/ver/43/app/views/admin/varieties/show.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/jikeel/!svn/ver/43/app/views/admin/varieties/_form.html.erb
+END
+_menu.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/jikeel/!svn/ver/43/app/views/admin/varieties/_menu.html.erb
+END

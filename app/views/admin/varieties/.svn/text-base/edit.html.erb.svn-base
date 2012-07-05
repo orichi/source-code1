@@ -1,0 +1,2 @@
+<%= render "admin/varieties/menu" %>
+<%= render "form" %>

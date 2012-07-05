@@ -1,0 +1,496 @@
+/* CSS Document */
+html,body, form{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    vertical-align: baseline;
+    background: transparent;
+}
+body{
+    width:980px;
+    background:#FFFFFF;
+    margin:0 auto;
+}
+div, span, a, p, td, textarea {
+    font-size: 13px;
+}
+a img{
+    border:0px;
+}
+a{
+    color:#666;
+    text-decoration:none;
+    font-size:13px;
+    color:#000099;
+}
+a:hover{
+    text-decoration:underline;
+    color:#FF0000;
+}
+ul.vertical-list{
+    margin: 0;
+    padding: 0px;
+    list-style: none;
+}
+ul.vertical-list li{
+    margin: 0px 5px;
+    height: 25px;
+    line-height: 25px;
+}
+
+ul.vertical-point-list{
+    margin: 0;
+    padding: 0px;
+    list-style: none;
+}
+ul.vertical-point-list li{
+    margin: 0px 5px;
+    height: 25px;
+    line-height: 25px;
+    padding: 0px 0px 0px 10px;
+    background: url(/images/point.jpg) no-repeat left center;
+}
+
+a.more{
+    color: #999;
+    font-size:12px;
+    font-weight:normal;
+    margin-right: 5px;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.clear{
+    clear: both;
+    margin: 0px;
+    padding: 0px;
+}
+.required{
+    color: red;
+}
+form .field{
+    margin-top: 10px;
+}
+div.actions {
+    margin-top: 10px;
+    width: auto;
+}
+#contain{
+    width:100%;
+    margin:0 auto;
+}
+
+#head{
+    width:980px;
+    height:110px;
+    float:left;
+    font-size:12px;
+}
+#head ul.subnav{
+    padding: 0;
+    float:right;
+    width:450px;
+    margin:10px 10px 0px 0px;
+    list-style: none;
+}
+#head ul.subnav li{
+    margin:0px 10px 0px 0px;
+    padding: 0;
+    float:right;
+}
+#head .logo{
+    float:left; margin:8px 0px 0px 8px;
+}
+#login{
+    width:400px;
+    float:right;
+    margin: 0px;
+    padding: 0px;
+    margin-top:15px;
+}
+.welcome{
+    width:400px;
+    float:right;
+    margin-top:15px;
+    text-align: right;
+    padding-right: 50px;
+    color:#d74300;
+    font-size:13px;
+    font-weight:bold;
+}
+#login .input-area{
+    float:left;
+    color:#d74300;
+    font-size:13px;
+    font-weight:bold;
+}
+#login .input-area input{
+    width:60px; height:14px;
+}
+#login-bg{
+    width:50px;
+    height:21px;
+    margin-left:10px;
+    float:left;
+    text-align:center;
+    background:url(/images/login-bg.jpg) no-repeat;
+}
+
+#login-bg a{
+    color:#d74300;
+    font-size:13px;
+    font-weight:bold;
+    line-height:22px;
+}
+#daohang-bg{
+    width:980px;
+    height:35px;
+    margin-top:10px;
+    background:#f47018;
+    float:left;
+}
+#left-daohang-top{
+    width:144px;
+    height:23px;
+    margin-top:7px;
+    margin-left:20px !important;
+    margin-left:10px;
+    font-size:15px;
+    float:left;
+    color:#FFFFFF;
+    font-weight:bold;
+    padding:5px 0px 0px 20px;
+    background:url(/images/left-daohang-top.jpg) no-repeat;
+}
+#left-daohang-top h2{
+    margin: 0;
+    padding: 0;
+    font-size: 17px;
+}
+#daohang-bg a{
+    color:#FFFFFF;
+    font-size:14px;
+    float:left;
+    line-height:35px;
+    margin:0px 10px;
+}
+#daohang-bg span{
+    font-size:15px;
+    line-height:35px;
+    color:#ffff00;
+    font-weight:bold;
+    margin-left:20px;
+    float:left;
+}
+#daohang-bg .line{
+    width:2px;
+    height:17px;
+    float:left;
+    margin: 9px 0px;
+    background:url(/images/line.jpg) no-repeat center;
+}
+#daohang-bg .keyword{
+    margin-top:7px; margin-left:10px; width:200px; float:left;
+}
+#daohang-bg .search-button{
+    float:left; margin-top:7px;margin-left: 5px;
+}
+#daohang-bg #shoping-cart{
+    background: url(/image/button-bg2.png);
+    width: 120px;
+
+    float: right;
+    background: #fff;
+    margin: 3px 10px;
+    line-height: 20px;
+}
+#daohang-bg #shoping-cart a{
+    line-height: 20px;
+    color: #000;
+    font-size: 12px;
+}
+#daohang-bg #shoping-cart div{
+    _height: 40px;
+    min-height: 40px;
+    width: 300px;
+    border: 1px solid #EB8809;
+    background: #FEF9F6
+}
+#daohang-bg #shoping-cart div h2{
+    font-size: 15px;
+    padding: 5px;
+}
+#font{
+    width:99%;
+    float:left;
+}
+#font span{
+    font-size:14px;
+    color:#444;
+    margin-left:65px !important;
+    margin-left:80px;
+    margin-top:10px;
+    float:left;
+}
+#font span a{
+    color:#444;
+    text-decoration:none;
+}
+
+#font p{
+    font-size:14px;
+    color:#444;
+    margin-left:80px;
+    margin-top:10px;
+    float:left;
+}
+#foot{
+    width:980px;
+    height:143px;
+    float:left;
+    margin-top:10px;
+    background:url(/images/bottom-bg.jpg) no-repeat;
+}
+#foot p{
+    font-size:15px;
+    color:#444;
+    margin-left:20px;
+    font-weight:bold;
+    margin-top:12px;
+}
+#foot ul{
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    font-size:13px;
+    color:#444;
+    margin-top:10px ;
+}
+#foot ul li{
+    margin: 0;
+    padding: 0;
+    float:left;
+    margin:10px 14px 0px 20px;
+}
+#bottom{
+    width:980px;
+    margin-top:10px;
+}
+#bottom-top{
+    width:100%;
+    float:left;
+    height:30px;
+}
+#bottom-top ul{
+    list-style:none;
+    margin-top:10px;
+    margin-left:280px;
+}
+#bottom-top ul li{
+    float:left;
+    margin-left:15px;
+}
+#bottom-top ul li a{
+    color:#444;
+    text-decoration:none;
+}
+#bottom-top ul li a:hover{
+    color:#FF0000;
+    text-decoration:underline;
+}
+#bottom-line{
+    border-bottom:1px solid #CCCCCC;
+    float:left;
+    width:100%;
+    margin-top:5px!important;
+    margin-top:2px;
+}
+#shenming{
+    float:left;
+    padding:0px 0px 10px 0px;
+}
+#shenming p{
+    font-size:12px;
+    color:#666;
+}
+.shengming{
+    margin-top:10px;
+    margin-left:220px !important;
+    margin-left:110px;
+}
+#middle-tips{
+    display: none;
+    border:1px solid #000;
+    background: red;
+    position: fixed;
+    top:0px;
+    left: 0px;
+}
+#daohang {
+    float: left;
+    background: url(/images/left-daohang-top.jpg);
+    width: 164px;
+    margin-top: 7px;
+    margin-left: 20px;
+    height: 28px;
+    display: inline;
+}
+
+#daohang a.handler{
+    height: 28px;
+    font-size:17px;
+    font-weight: bold;
+    line-height:28px;
+    margin:0px;
+    padding-left: 20px;
+    padding-right: 40px;
+    color:#fff;
+    text-decoration: none;
+}
+
+#daohang a {
+    display: block;
+    float: left;
+    margin:0px;
+    color:#b45a01;
+}
+
+#daohang div a.mouseover
+{
+    border:1px solid #EB8809;
+    border-right: none;
+    background: #fff;
+}
+
+#daohang div a.first {
+    float: none;
+    position: relative;
+    font-size: 12px;
+    padding: 8px 30px 7px 50px;
+    line-height: 14px;
+}
+
+#daohang div {
+    margin: 0px;
+    visibility: hidden;
+    position: absolute;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#daohang div.first{
+    width: 164px;
+    height: 164px;
+    background: url(/images/left-daohang-bottom.jpg) left bottom;
+}
+#daohang div.panel{
+    width: 300px;
+    border:1px solid #EB8809;
+    background: #fff;
+}
+#daohang div.panel a{
+    display: block;
+    width: 60px;
+    float: left;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    margin:0px;
+    line-height: 25px;
+}
+#daohang div.panel a.mouseover{
+    border:none;
+    background:none;
+}
+.area{
+    margin-top:10px;
+    border:1px solid #ccc;
+}
+
+.area .area-title{
+    font-size:15px;
+    font-weight:bold;
+    padding:5px 0 5px 10px;
+    
+    border-bottom:1px solid #ccc;
+}
+.area .area-title span, .area .area-title div{
+    font-size:15px;
+}
+.gray-title-bg{
+    background: url(/images/gray-title-bg.jpg) repeat-x;
+}
+.gray-bg{
+    background: #FBFBFA
+}
+.pagination{
+    text-align: center;
+    padding: 5px;
+}
+.pagination a, .pagination span, .pagination em{
+    font-size: 13px;
+}
+.biz-split{
+    border-bottom: 1px dotted #ccc; height: 1px;
+}
+.bizs{
+    padding: 0px 10px;
+}
+.bizs h3{
+    padding: 0px;
+    margin: 10px 0px;
+}
+.bizs h3 a{
+    font-weight: normal;
+    font-size: 15px;
+    text-decoration:underline;
+}
+.bizs div{
+     font-size: 13px;
+     line-height: 20px;
+}
+.bizs-title .order{
+    font-weight: normal;
+    font-size: 12px;
+    margin-right: 10px;
+}
+.content-left-narrow{
+    float: left;
+    width: 150px;
+}
+.content-right-wide{
+    float: right;
+    width: 820px;
+}
+.register h1{
+    font-size: 18px;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    color: #F57520;
+    margin: 10px 0px 0px 0px;
+}
+.register h2{
+    font-size: 19px;
+    padding: 10px;
+    margin: 0px;
+}
+.register .input-area{
+    border: 2px solid #ccc;
+    margin: 20px;
+    padding: 10px;
+    width: 400px;
+}
+.register table td{
+    height: 30px;
+    font-size: 13px;
+}
+.register input{
+    width: 200px;
+}
+.register .action{
+    width: auto;
+    height: auto;
+}

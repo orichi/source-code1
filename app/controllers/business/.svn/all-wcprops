@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/jikeel/!svn/ver/40/app/controllers/business
+END
+varieties_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/jikeel/!svn/ver/1/app/controllers/business/varieties_controller.rb
+END
+discount_rules_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/jikeel/!svn/ver/5/app/controllers/business/discount_rules_controller.rb
+END
+subjects_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/jikeel/!svn/ver/35/app/controllers/business/subjects_controller.rb
+END
+profiles_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/jikeel/!svn/ver/38/app/controllers/business/profiles_controller.rb
+END
+activities_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/jikeel/!svn/ver/40/app/controllers/business/activities_controller.rb
+END
+takemoneies_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/jikeel/!svn/ver/48/app/controllers/business/takemoneies_controller.rb
+END
+comments_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/jikeel/!svn/ver/48/app/controllers/business/comments_controller.rb
+END
+dashboard_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/jikeel/!svn/ver/1/app/controllers/business/dashboard_controller.rb
+END

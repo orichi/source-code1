@@ -1,0 +1,79 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "buss.css", "personal.css" %>
+<% end %>
+<div class="tjsh">
+  <div class=" title_line">添加商户</div>
+  <p>(<span class="red">*</span>为必填选项)</p>
+  <p>• 添加商户可获得贡献值和毛豆。<a href="#"><span class="buled">什么是贡献值和集点?</span></a></p>
+  <p>• 新增商户审核通过后即可在网站上显示和搜索</p><br/>
+  <%= form_for(@business) do |f| %>
+    <% if @business.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@business.errors.count, "error") %> 填写信息有误:</h2>
+        <ul>
+          <% @business.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <table width="600" height="439" border="0" cellpadding="0" cellspacing="3">
+      <tr>
+        <td width="79" align="right">城市：</td>
+        <td width="121">上海市</td>
+        <td width="75" align="right"><span class="red">*</span>地区：</td>
+        <td width="310">
+          <%= f.collection_select :county_id, Enum[:shanghai_counties].options,  :id, :name, :include_blank => '--请选择--' %>
+        </td>
+      </tr>
+      <tr>
+        <td align="right"><span class="red">*</span>大分类：</td>
+        <td><%= f.collection_select :parent_category_id, Category.roots, :id, :name, {:include_blank => '--请选择--'},
+              {:onchange => remote_function(:update => "business_category_area", :url => children_select_categories_path, :with => "'id='+value" )}%></td>
+        <td align="right"><span class="red">*</span>小分类：</td>
+        <td id="business_category_area">
+          <%= render "/categories/children_select" %>
+        </td>
+      </tr>
+      <tr>
+        <td align="right"><span class="red">*</span>商户：</td>
+        <td colspan="3">
+          <%= f.text_field :name, :class => "input1" %>
+        </td>
+      </tr>
+      <tr>
+        <td align="right"><span class="red">*</span>地址：</td>
+        <td colspan="3"><%=  f.text_field :address, :class => "input2" %></td>
+      </tr>
+      <tr>
+        <td align="right">靠近：</td>
+        <td colspan="3"><%=  f.text_field :near_to, :class => "input2" %></td>
+      </tr>
+      <tr>
+        <td align="right"><span class="red">*</span>电话：</td>
+        <td colspan="3"><%=  f.text_field :phone, :class => "input2" %></td>
+      </tr>
+      <tr>
+        <td align="right">营业时间：</td>
+        <td colspan="3">
+          <%= f.text_field :open_at, :style => "width: 100px"%>
+          到
+          <%= f.text_field :close_at, :style => "width: 100px"%>
+        </td>
+      </tr>
+      <tr>
+        <td align="right">简介：</td>
+        <td colspan="3"><%=  f.text_area :introduction, :class => "input3" %></td>
+      </tr>
+      <tr>
+        <td align="right">公交信息：</td>
+        <td colspan="3"><%=  f.text_field :traffic, :class => "input2" %></td>
+      </tr>
+      <tr>
+        <td align="right">&nbsp;</td>
+        <td colspan="3">
+          <input name="button3" type="image" id="button3" value="提交" src="/images/sub_07.gif" />    </td>
+      </tr>
+    </table>
+  <% end %>
+</div>

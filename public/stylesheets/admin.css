@@ -1,0 +1,259 @@
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td, li, form, h1, h2, h3{
+    font-family: arial,verdana,sans-serif;
+    font-size:   13px;
+    line-height: 18px;
+    padding: 0px;
+    margin: 0px;
+}
+
+pre {
+    background-color: #eee;
+    padding: 10px;
+    font-size: 11px;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+a img{
+    border: 0px;
+}
+
+table{
+    margin: 0px;
+    padding: 0px;
+}
+
+.notice {
+    color: green;
+}
+
+.alert {
+    color: red;
+}
+
+
+.field_with_errors {
+    padding: 2px;
+    display: inline;
+    color: red;
+}
+div.field, div.actions {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+div.actions {
+    text-align: center;
+}
+div.actions input{
+    padding: 2px 20px;
+}
+div.field .parallel{
+    float: left;
+    margin-right: 10px;
+}
+#error_explanation {
+    width: 450px;
+    border: 2px solid red;
+    padding: 7px;
+    padding-bottom: 0;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+}
+
+#error_explanation ul li {
+    font-size: 12px;
+    list-style: none;
+}
+
+#wapper{
+    min-width: 1000px;
+}
+#header{
+
+}
+#main{
+    padding: 0px 20px;
+}
+#nav-bar{
+    height: 30px;
+    background: #213031;
+}
+#nav-bar #welcome{
+    float:left;
+    color: #fff;
+    line-height: 30px;
+    padding: 0px 10px;
+}
+#nav-bar a{
+    color: #849A9C;
+}
+#nav-bar a:hover{
+    color: #fff;
+}
+ul#nav{
+    float:right;
+    color: #fff;
+    padding-right: 10px;
+    list-style: none;
+}
+ul#nav li{
+    float:left;
+    padding: 0px 5px;
+    line-height: 30px;
+}
+#menu-bar{
+    height: 35px;
+    background: #ADDB00;
+}
+#menu-bar ul#menu{
+    float: left;
+    padding: 0px 10px 0px 50px;
+    margin-top: 5px;
+    list-style: none;
+
+}
+#menu-bar #menu li{
+    float:left;
+    padding:0px 10px;
+    line-height: 30px;
+}
+#menu-bar #menu li a{
+    display: inline-block;
+}
+#menu-bar #menu li.active{
+    background: #fff;
+    font-weight: bold;
+}
+#menu-bar #menu li.active a{
+    color: #000;
+}
+#menu-bar a:hover{
+    color: #fff;
+}
+
+.clear{
+    clear: both;
+}
+#footer{
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+    background: #EFF3E7;
+}
+
+.required{
+    color: red;
+}
+.pointer{
+    cursor:pointer
+}
+table.list{
+    width: 100%;
+    border-collapse:collapse;
+
+}
+table.list .head{
+    background: #eee;
+    line-height: 25px;
+}
+table.list .head th{
+    border-bottom: 1px solid #ccc;
+}
+
+table.list td{
+    line-height: 25px;
+    border-bottom: 1px solid #eee;
+}
+table.list .head th{
+    text-align:left;
+}
+table.list .head th.action{
+    width: 100px;
+    text-align: center;
+}
+
+.line-through{
+    text-decoration:line-through
+}
+.action-bar{
+    text-align: center;
+    margin: 10px
+}
+.action-bar input{
+    width:  100px;
+}
+.action-bar a{
+    text-decoration: underline;
+    color:blue;
+}
+.content{
+    margin: 0px 30px;
+}
+.content h1{
+    font-size: 24px;
+    margin: 10px;
+}
+.content h2{
+    font-size: 15px;
+    line-height: 25px;
+    border-bottom: 1px dotted #ccc;
+    margin: 10px 0px;
+}
+.content .collection-area div{
+    float:left;
+    margin: 5px;
+    font-size: 14px;
+}
+.content .collection-area div a{
+    color: blue;
+    font-size: 12px;
+}
+table.show-info{
+    margin-top: 10px;
+    width: 100%;
+}
+table.show-info td{
+    height: 30px;
+}
+table.show-info td.field-name{
+    text-align: right;
+    font-weight:  bold;
+    width: 150px;
+}
+table.show-info td.field-value{
+    text-align: left; 
+    padding-left: 5px;
+}
+.red {color: red}
+.pagination{
+    text-align: right;
+    padding: 5px;
+}
+/*add by wangsq*/
+.content .ulli{
+    list-style: none;
+}
+.content .ulli li{
+    margin:5px;
+    margin-left: 15px;
+}

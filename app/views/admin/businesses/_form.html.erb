@@ -1,0 +1,114 @@
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function(){
+      $("#business_parent_category_id").change();
+    })
+  </script>
+<% end %>
+<%= form_for([:admin,@business], :html => {:multipart => true}) do |f| %>
+  <% if @business.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@business.errors.count, "error") %> prohibited this business from being saved:</h2>
+
+      <ul>
+        <% @business.errors.full_messages.each do |business| %>
+          <li><%= business %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table class="show-info">
+    <tr>
+      <td colspan="4" align="center">
+        <%= image_tag (@business.image ? @business.image.data.url(:small) : "blank-small.gif"), :style => "vertical-align: middle" %>
+        <%= f.file_field "image_file"%>
+      </td>
+    </tr>
+    <tr>
+      <td class="field-name"><%= required %><%= f.label :name , "名称"%></td>
+      <td colspan="3" class="field-value"><%= f.text_field :name, :style=>"width: 700px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name"><%= required %><%= f.label :category_id , "所属分类"%></td>
+      <td  class="field-value"><%= f.collection_select :parent_category_id, Category.roots, :id, :name, {:include_blank => '--请选择--'},
+          {:onchange => remote_function(:update => "business_category_area",
+            :url => children_select_categories_path, :with => "'id='+value+'&select_id=#{@business.category_id}'" )}%>
+        <span id="business_category_area">
+          <%= render "/categories/children_select" %>
+        </span>
+      </td>
+      <td class="field-name"><%= required %><%= f.label :country_id , "所属区县"%></td>
+      <td  class="field-value"><%= f.collection_select :county_id, Enum[:shanghai_counties].options,  :id, :name, :include_blank => '--请选择--' %></td>
+    </tr>
+    <tr>
+      <td class="field-name"><%= f.label :phone , "电话"%></td>
+      <td  class="field-value"><%= f.text_field :phone%></td>
+      <td class="field-name"><%= f.label :email , "Email"%></td>
+      <td  class="field-value"><%= f.text_field :email%></td>
+    </tr>
+    <tr>
+      <td class="field-name"><%= f.label :manager , "负责人"%></td>
+      <td  class="field-value"><%= f.text_field :manager%></td>
+      <td class="field-name"><%= f.label :manager_phone , "手机"%></td>
+      <td  class="field-value"><%= f.text_field :manager_phone%></td>
+    </tr>
+    <tr>
+      <td class="field-name"><%= f.label :near_to , "靠近"%></td>
+      <td  class="field-value"><%= f.text_field :near_to%></td>
+      <td class="field-name"><%= f.label :avg_consume , "平均消费"%></td>
+      <td  class="field-value"><%= f.text_field :avg_consume%></td>
+    </tr>
+    <tr>
+      <td class="field-name">付费商家</td>
+      <td  class="field-value"><%= f.label :vip , "VIP?"%><%= f.check_box :vip%>
+        <%= f.label :recommend , "推荐?"%><%= f.check_box :recommend%>
+        <%= f.label :recommend , "激活?"%><%= f.check_box :active%>
+      </td>
+      <td class="field-name"><%= f.label :open_at , "营业时间"%></td>
+      <td  class="field-value">从 <%= f.text_field :open_at, :style=>"width: 100px;" %> 到 <%= f.text_field :close_at, :style=>"width: 100px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name"><%= f.label :promise , "商家承诺"%></td>
+      <td colspan="3" class="field-value"><%= f.text_field :promise, :style=>"width: 700px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name"><%= f.label :address , "地址"%></td>
+      <td colspan="3" class="field-value"><%= f.text_field :address, :style=>"width: 700px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name"><%= f.label :address , "公交信息"%></td>
+      <td colspan="3" class="field-value"><%= f.text_field :traffic, :style=>"width: 700px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name"><%= f.label :address , "停车信息"%></td>
+      <td colspan="3" class="field-value"><%= f.text_field :park_info, :style=>"width: 700px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name"><%= f.label :address , "外送信息"%></td>
+      <td colspan="3" class="field-value"><%= f.text_field :delivery, :style=>"width: 700px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name"><%= f.label :promise , "商家介绍"%></td>
+      <td colspan="3" class="field-value"><%= f.cktext_area :introduction, :height=>"200",:width=>"700",:language => "zh-cn" %></td>
+    </tr>
+    <% Group.all.each do |group| %>
+      <tr>
+        <td class="field-name"><%= group.name %></td>
+        <td colspan="3" class="field-value">
+          <% group.collections.each do |coll| %>
+            <%= check_box_tag "business[collection_ids][]", coll.id, @business.collections.include?(coll) %><%= coll.name %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    <tr>
+      <td class="field-name"><%= f.label :mapcode , "地图代码"%></td>
+      <td colspan="3" class="field-value"><%= f.text_area :mapcode, :style=>"width: 700px; height:100px;" %></td>
+    </tr>
+  </table>
+  <div class="actions">
+    <%= f.submit "保存" %>
+    <%= back_button %>
+  </div>
+<% end %>

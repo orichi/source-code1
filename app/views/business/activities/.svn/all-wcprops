@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/jikeel/!svn/ver/47/app/views/business/activities
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/jikeel/!svn/ver/1/app/views/business/activities/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/jikeel/!svn/ver/47/app/views/business/activities/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/jikeel/!svn/ver/1/app/views/business/activities/new.html.erb
+END
+wdtg.html
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/jikeel/!svn/ver/1/app/views/business/activities/wdtg.html
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/jikeel/!svn/ver/5/app/views/business/activities/show.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/jikeel/!svn/ver/1/app/views/business/activities/_form.html.erb
+END
+subjects.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/jikeel/!svn/ver/5/app/views/business/activities/subjects.html.erb
+END

@@ -1,0 +1,75 @@
+<% content_for :head do  %>
+  <script type="text/javascript">
+    $(function(){
+      $("#order_select").change(function(){
+        window.location = '<%=collection_path(@collection)%>' + "?order=" + $(this).val();
+      }).val('<%= params[:order] %>');
+      $("#avg_select").change(function(){
+        window.location = '<%=collection_path(@collection)%>' + "?avg=" + $(this).val();
+      }).val('<%= params[:avg] %>');
+    });
+  </script>
+<% end %>
+<div class="food_l">
+  <div class=" index_bd">
+    <div class="title"><span class="right_r"><%= link_to "更多>>", sitemap_path + "#university_around" %></span>全部学校</div>
+    <ul class="list3">
+      <% Group[:university_around].collections.each do |col|  %>
+        <li><%= link_to col.name, collection_path(col) %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class=" index_bd">
+    <div class="title"><span class="right_r"><%= link_to "更多>>", sitemap_path + "#biz_area" %></span>全部地区</div>
+    <ul class="list3">
+      <% Group[:biz_area].collections.each do |col|  %>
+        <li><%= link_to col.name, collection_path(col) %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class=" index_bd">
+    <div class="title"><span class="right_r"><%= link_to "更多>>", sitemap_path + "#keywords" %></span>关键字</div>
+    <ul class="list3">
+      <% Group[:keywords].collections.each do |col|  %>
+        <li><%= link_to col.name, collection_path(col) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<div class="food_r">
+  <div class=" post_f">当前位置:<%= link_to "首页", root_path %> >> <%= @collection.name %></div>
+  <ul class="list1">
+    <li>其他分类: </li>
+      <%  @collection.other_collections(10).each do |collec| %>
+        <li><%= link_to collec.name, collection_path(collec) %></li>
+      <% end %>
+  </ul>
+
+  <div class=" title_food">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><%= @collection.name %></td>
+        <td width="25%">人均：
+          <select name="avg_select" id="avg_select">
+            <option value="">价格范围</option>
+            <option value="0to20">0元-20元</option>
+            <option value="20to50">20元-50元</option>
+            <option value="50to100">50元-100元</option>
+            <option value="100above">100元以上</option>
+          </select>
+        </td>
+        <td width="20%" align="right">排序：
+          <label>
+            <select name="order" id="order_select">
+              <option value="default">默认</option>
+              <option value="popular">人气</option>
+              <option value="comment">评论</option>
+              <option value="hot">星级</option>
+            </select>
+          </label></td>
+      </tr>
+    </table>
+  </div>
+  <%= render :partial => "share/business", :collection => @buses %>
+  <%= will_paginate @buses %>
+</div>

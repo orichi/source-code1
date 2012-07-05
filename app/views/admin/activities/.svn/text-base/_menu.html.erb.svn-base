@@ -1,0 +1,9 @@
+<%= render :partial =>'/admin/share/menu', :locals => {:active => :businesses} %>
+<div class="content">
+  <h1>商家: <%= @business.name %></h1>
+  <ul class="ulli">
+    <li style="float:left"><%=link_to "商家信息",admin_business_path(@business) %></li>
+    <li style="float:left"><%=link_to "产品分类",admin_business_varieties_path(:business_id=>@business) %></li>
+    <li style="float:left"><%=link_to "产品管理",admin_business_subjects_path(:business_id=>@business) %></li>
+    <li style="float:left"><%=link_to "团购管理",admin_business_activities_path(:business_id=>@business),:style=>"color:green" %></li></ul>
+  <div class="clear"></div>

@@ -1,0 +1,74 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "buss.css", "personal.css" %>
+<% end %>
+<div class="login_top">
+  <div class="logo"><%=link_to image_tag("logo_06.gif"), root_path %></div>
+  <div class="login">
+    <ul>
+      <li>如果有集客帐号，</li>
+      <li class="buled2"><%= link_to "登录", new_customer_session_path %></li>
+    </ul>
+  </div>
+</div>
+<div class="logo_main">
+  <div class=" title_line2"><span class="right_r">(<span class="red">*</span>为必填项目)</span>快速注册集客帐号</div>
+  <%= form_for(@customer, :html => {:multipart => true}) do |f| %>
+    <% if @customer.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@customer.errors.count, "error") %> 填写信息有误:</h2>
+
+        <ul>
+          <% @customer.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <table width="600" height="250" border="0" cellpadding="0" cellspacing="3">
+      <tr>
+        <td width="96" align="right"><%= required %>注册邮箱:</td>
+        <td width="504"><%= f.text_field :email, :class => "input1" %></td>
+      </tr>
+      <tr>
+        <td align="right">呢称：</td>
+        <td><%= f.text_field :nickname, :class => "input1" %></td>
+      </tr>
+      <tr>
+        <td align="right"><span class="red">*</span>密码：</td>
+        <td><%= f.password_field :password, :class => "input1" %></td>
+      </tr>
+      <tr>
+        <td align="right"><span class="red">*</span>重复密码：</td>
+        <td><%= f.password_field :password_confirmation, :class => "input1"  %></td>
+      </tr>
+      <!-- tr>
+        <td align="right">头像：</td>
+        <td valign="middle">
+          <input name="textfield5" type="file" class="input1" id="textfield5" />
+          <input name="button2" type="image" class="pic" id="button2" value="提交" src="/images/submit_05.gif" />
+        </td>
+      </tr -->
+      <tr>
+        <td height="32" align="right">推荐号</td>
+        <td><input name="textfield6" type="text" id="textfield6" value="可不输入" style="color: #ccc" onclick="$(this).val('')"/>
+          <%= link_to "什么是推荐号？", '#' %>
+        </td>
+      </tr>
+      <!-- tr>
+        <td height="32" align="right">验证码：</td>
+        <td><label>
+            <input name="textfield7" type="text" id="textfield7" size="5" />
+            <span class="font_12">看不清楚换一张？</span></label></td>
+      </tr -->
+      <tr>
+        <td>&nbsp;</td>
+        <td><%= image_submit_tag "tijiao_10.gif", :class=>"action"%></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td align="right" class="font_12">点击免费开通帐号表示您同意并遵守<a href="#"><span class="buled2">集客网服务条款 </span></a></td>
+      </tr>
+    </table>
+  <% end %>
+</div>
+<div class="copyright">版权所有：琦辰文化传播有限公司 集客网址：www.jikeel.com</div>

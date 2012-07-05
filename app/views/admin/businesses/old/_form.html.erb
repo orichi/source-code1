@@ -1,0 +1,84 @@
+<%= form_for([:admin,@business], :html => {:multipart => true}) do |f| %>
+  <% if @business.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@business.errors.count, "error") %> prohibited this business from being saved:</h2>
+
+      <ul>
+        <% @business.errors.full_messages.each do |business| %>
+          <li><%= business %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= required %><%= f.label :name , "名称"%><br />
+    <%= f.text_field :name, :style=>"width: 400px;" %>
+  </div>
+  <div class="field">
+    <%= required %><%= f.label :category_id , "所属分类"%><br />
+    
+  </div>
+  <div class="field">
+    <div class="parallel">
+      <%= f.label :manager , "负责人"%><br/>
+      <span><%= f.text_field :manager, {:style=>"width:100px;float:left"}%></span>
+    </div>
+    <div class="parallel">
+      <%= f.label :manager_phone , "负责人电话"%><br/>
+      <span><%= f.text_field :manager_phone, {:style=>"width:150px;float:left"}%></span>
+    </div>
+    <div class="parallel">
+      <%= f.label :email , "Email"%><br/>
+      <span><%= f.text_field :email, {:style=>"width:150px;float:left"}%></span>
+    </div>
+    <div class="parallel">
+      <%= f.label :vip , "VIP?"%><br/>
+      <%= f.check_box :vip%>
+    </div>
+    <div class="parallel">
+      <%= f.label :recommend , "推荐?"%><br/>
+      <%= f.check_box :recommend%>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <div class="field">
+    <%= required %><%= f.label :open_at , "营业时间"%><br />
+    从 <%= f.text_field :open_at, :style=>"width: 100px;" %> 到 <%= f.text_field :close_at, :style=>"width: 100px;" %>
+  </div>
+  <div class="field">
+    <%= f.label :collection , "所属集合"%><br />
+    <% Group.all.each do |group| %>
+      <h3><%= group.name %></h3>
+      <% group.collections.each do |coll| %>
+        <%= check_box_tag "business[collection_ids][]", coll.id, @business.collections.include?(coll) %><%= coll.name %>
+      <% end %>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= f.label :image_id , "Logo"%><br />
+    <table>
+      <tr>
+        <td><%= image_tag(@business.image ? @business.image.data.url(:thumb) : "blank-small.jpg") %></td>
+        <td><input type="file" name="business[image_file]"/></td>
+      </tr>
+    </table>
+  </div>
+  <div class="field">
+    <%= required %><%= f.label :address , "地址"%><br />
+    <%= f.text_field :address, :style=>"width: 700px;" %>
+  </div>
+  <div class="field">
+    <%= f.label :promise , "商家承诺"%>(不要超过200个字)<br />
+    <%= f.text_area :promise, :style=>"width: 700px; height: 60px" %>
+  </div>
+  <div class="field">
+    <%= f.label :introduction , "商家介绍"%><br />
+    <%= f.cktext_area :introduction, :height=>"200",:width=>"700",:language => "zh-cn" %>
+  </div>
+
+  <div class="action-bar">
+    <%= f.submit("保存") %>
+    <%=raw back_button %>
+  </div>
+<% end %>

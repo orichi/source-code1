@@ -1,0 +1,17 @@
+<div id="foot">
+  <p>友情链接</p>
+  <ul>
+    <li><a href="#">百度</a></li><li><a href="#">搜狐</a></li><li><a href="#">网易</a></li><li><a href="#">雅虎</a></li><li><a href="#">百度</a></li><li><a href="#">搜狐</a></li><li><a href="#">网易</a></li><li><a href="#">雅虎</a></li><li><a href="#">百度</a></li><li><a href="#">搜狐</a></li><li><a href="#">网易</a></li><li><a href="#">雅虎</a></li><li><a href="#">百度</a></li><li><a href="#">搜狐</a></li><li><a href="#">网易</a></li><li><a href="#">雅虎</a></li><li><a href="#">百度</a></li><li><a href="#">搜狐</a></li><li><a href="#">网易</a></li><li><a href="#">雅虎</a></li><li><a href="#">百度</a></li><li><a href="#">搜狐</a></li><li><a href="#">网易</a></li><li><a href="#">雅虎</a></li><li><a href="#">百度</a></li><li><a href="#">搜狐</a></li><li><a href="#">网易</a></li><li><a href="#">雅虎</a></li>
+  </ul>
+</div>
+<div id="bottom">
+  <div id="bottom-top">
+    <ul>
+      <li><a href="#">首页</a></li><li><a href="#">新团购</a></li><li><a href="#">美食</a></li><li><a href="#">酒店</a></li><li><a href="#">商城</a></li><li><a href="#">联系我们</a></li><li><a href="#">关于我们</a></li>
+    </ul>
+  </div>
+  <div id="bottom-line"></div>
+  <div id="shenming" class="shengming">
+    <p>TEL:132468797&nbsp;&nbsp;&nbsp;&nbsp;FAX:021-65465985&nbsp;&nbsp;&nbsp;&nbsp;Copyright 2001-2008 INPLUS Sopping All Rights Reserved.</p>
+  </div>
+</div>

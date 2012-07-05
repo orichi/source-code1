@@ -1,0 +1,33 @@
+<div class="manage">
+  <h1>团购管理</h1>
+  <div align="center">
+    <%= link_to "添加团购", new_business_activity_path %>
+  </div>
+  <table class="pink-table">
+    <tr class="head">
+      <th>名称</th>
+      <th>初始价格</th>
+      <th>最终价格</th>
+      <th>开始时间</th>
+      <th>结束时间</th>
+      <th>参加客户数</th>
+      <th  class="action">动作</th>
+    </tr>
+
+    <% @activities.each do |act| %>
+      <tr>
+        <td><%= link_to act.name, business_activity_path(act) %></td>
+        <td><%= number_to_currency act.price %>&nbsp;</td>
+        <td><%= number_to_currency act.current_price %>&nbsp;</td>
+        <td><%= l act.begin_at %>&nbsp;</td>
+        <td><%= l act.end_at %>&nbsp;</td>
+        <td><%= act.customers.size %>&nbsp;</td>
+        <td>
+          <%= link_to '编辑', edit_business_activity_path(act) %>
+          <%= link_to '删除',business_activity_path(act), :confirm => '确定删除吗?', :method => :delete %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+

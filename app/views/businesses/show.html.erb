@@ -1,0 +1,136 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "buss.css" %>
+<% end %>
+<div class="buss_l">
+  <div class=" Businessman_introduced">
+    <div class="Businessman_introduced_t">
+      <span class="font18"><%= @business.name %></span>
+      <% @business.level.downto(1) do %>
+        <%= image_tag "ico-lo_13.gif", :width=>"15", :height=>"15" %>
+      <%end%>
+      <br />
+      粉丝数：<%= @business.customers.size %> 人
+      <% if current_customer && current_customer.attented?(@business) %>
+        <span style="color:green" id="attention">已关注</span>
+      <% else %>
+        <span id="biz_attention_<%= @business.id %>"><%= link_to "【加关注】", customer_attentions_path(:business_id => @business), :method => :post, :remote => true%></span>
+      <% end %>
+      评论留言：<%= @business.comments_count %> 封 <%= link_to "发表评论", "#comment" %><br />
+      地址：<%= @business.address %><br />
+      电话：<%= @business.phone %><br />
+      营业时间：<%= @business.open_at %> - <%= @business.close_at %> <br />
+      公交信息：<%= @business.traffic %><br />
+      [人均消费]：<%= @business.avg_consume %> <br />
+      [停 车]：<%= @business.park_info %><br />
+      关键字：
+      <% @business.in_collections(:keywords).each do |coll|%>
+        <%= link_to coll.name, collection_path(coll) %>
+      <% end %><br />
+      分享链接：<input value="<%= biz_url(:id => params[:id], :cid => current_customer.id) %>" id="recommend_url" readonly ="true" size="32"/>
+      <a href="javascript:copy_content($('#recommend_url').val());" style="color:blue">复制链接</a>
+    </div>
+    <!-- div class="Businessman_introduced_p"></div -->
+  </div>
+
+  <div class="commitment"><span class="bold">商家承诺：</span><%= @business.promise %></div>
+
+  <% unless @business.delivery.blank? %>
+  <div><span class="bold" style="padding-left: 20px;">外送介绍：</span></div>
+  <div class="big_k">
+    <%= @business.delivery %>
+  </div>
+   <% end %>
+  <div class="recipes">
+    <% @business.varieties.each do |var| %>
+      <div class="recipes_title"><%= var.name %></div>
+      <div class="recipes_pr">
+        <% var.subjects.each do |subject| %>
+          <dl>
+            <dd><%= image_tag(subject.image ? subject.image.data.url(:thumb) : "blank-middle.gif") %></dd>
+            <dt> <span class="bold"><%= subject.name %></span>
+              <br />
+              <%= form_tag carts_path(:subject_id => subject.id), :remote => true do %>
+              <span class="hot_b"><%=number_to_currency subject.price %></span>            <br />
+              <a href="javascript:decrease('quantity_<%= subject.id %>');">-</a>
+              <input name="quantity" type="text" class="skkk" id="quantity_<%= subject.id %>" value="1" />
+              <a  href="javascript:increase('quantity_<%= subject.id %>');">+</a>
+              <%= image_submit_tag "small-choose.jpg", :style => "height: 15px;" %>
+              <% end %>
+            </dt>
+          </dl>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+ 
+  <div class="zxpl">
+    <div class="bold14">最新评论</div>
+    <%= render :partial => "/comments/comment", :collection => @business.newest_comments(8) %>
+    <p align="right"><%= link_to "查看更多评论>>", business_comments_path(@business) %></p>
+
+    <% if customer_login? %>
+      <table width="100%" height="212" border="0" cellpadding="0" cellspacing="0">
+        <%= form_for [@business, @comment] do |f| %>
+          <tr>
+            <td width="9%" height="174" valign="top">发表评论：<a name="comment"></a></td>
+            <td width="91%" valign="top">
+              推荐星级：<% 5.downto(1) do |n| %>
+                <%= f.radio_button :level, n, :checked => (n == 5 ? true : false) %>
+                <% n.downto(1) do |s| %>
+                  <%= image_tag "ico-lo_13.gif", :width=>"15", :height=>"15" %>
+                <% end %>&nbsp;
+              <% end %><br/>
+              <textarea name="comment[source_content]" rows="5" class="bighf"></textarea>
+            </td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>
+              <%= image_submit_tag "pic_19.gif", :class=>"pic" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    <% else %>
+      <div style="height: 150px; width: 700px; border: 1px solid #ccc; text-align: center;">
+        你没有登录，不能评论<%=link_to "登录", new_customer_session_path %>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="buss_r2">
+  <div class=" buss_r2_bd"><img src="/images/map_03.gif" width="218" height="207" /></div>
+  <div class="index_bd">
+    <div class="title">商家介绍</div>
+    <ul class="list2">
+      <li>
+        <%= image_tag (@business.image ? @business.image.data.url(:small) : "blank-small.gif")%>
+        <span class="bold"><%= @business.name %></span><br />
+        <%= raw  @business.introduction %>
+        <div class="clear"></div>
+      </li>
+    </ul>
+  </div>
+</div>
+<script type="text/javascript">
+  function increase(id){
+    var inp = $("#"+id);
+    var quan = parseInt(inp.val());
+    inp.val(quan + 1);
+  }
+
+  function decrease(id){
+    var inp = $("#"+id);
+    var quan = parseInt(inp.val());
+    if(quan > 1){
+      inp.val(quan - 1);
+    }else{
+      inp.val(1);
+    }
+  }
+
+  function add_shopping_cart_tip(){
+   load_shopping_cart();
+   alert("添加成功");
+  }
+</script>

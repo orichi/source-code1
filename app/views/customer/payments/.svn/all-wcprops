@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/jikeel/!svn/ver/39/app/views/customer/payments
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/jikeel/!svn/ver/39/app/views/customer/payments/index.html.erb
+END
+pay.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/jikeel/!svn/ver/39/app/views/customer/payments/pay.html.erb
+END
+confirm.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/jikeel/!svn/ver/39/app/views/customer/payments/confirm.html.erb
+END

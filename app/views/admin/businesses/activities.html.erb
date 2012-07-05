@@ -1,0 +1,36 @@
+<%= render :partial =>'/admin/share/menu', :locals => {:active => :businesses} %>
+<div class="content">
+  <h1>商家: <%= @business.name %></h1>
+  <ul class="ulli">
+    <li style="float:left"><%=link_to "商家信息",admin_business_path(@business) %></li>
+    <li style="float:left"><%=link_to "产品管理",products_admin_business_path(@business) %></li>
+    <li style="float:left"><%=link_to "活动管理",activities_admin_business_path(@business),:style=>"color:green" %></li></ul>
+
+  <div class="clear"></div>
+  <table class="list">
+    <tr class="head"><td>名称</td><td>商户</td><td>活动时间</td><td>简介</td><td></td>
+     </tr>
+     <% @business.activities.order("id desc").each do |activity| %>
+     <tr>
+       <td>
+         <%= activity.name %>
+       </td>
+       <td>
+         <%= activity.business.name %>
+       </td>
+       <td>
+         <%= activity.begin_at %>
+         <br/>
+         <%= activity.end_at %>
+       </td>
+       <td>
+         <%= activity.introduction %>
+       </td>
+       <td>
+         <%= link_to "删除",remove_activity_admin_business_url(@business,:activity_id=>activity.id),:method=>:delete,:confirm=>"确认删除？" %>
+       </td>
+     </tr>
+     <% end %>
+  </table>
+</div>
+<div class="clear"></div>

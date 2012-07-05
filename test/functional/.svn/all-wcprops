@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/jikeel/!svn/ver/5/test/functional
+END
+collections_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/jikeel/!svn/ver/1/test/functional/collections_controller_test.rb
+END
+discount_rules_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/jikeel/!svn/ver/1/test/functional/discount_rules_controller_test.rb
+END
+categories_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/jikeel/!svn/ver/1/test/functional/categories_controller_test.rb
+END
+sitemaps_controller_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/jikeel/!svn/ver/1/test/functional/sitemaps_controller_test.rb
+END

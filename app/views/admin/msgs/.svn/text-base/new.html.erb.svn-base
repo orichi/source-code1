@@ -1,0 +1,5 @@
+<%= render :partial =>'/admin/share/menu', :locals => {:active => :msgs} %>
+<div class="content">
+  <h1>添加公告</h1>
+  <%= render 'form' %>
+</div>

@@ -1,0 +1,26 @@
+<%= form_for([:admin,@msg]) do |f| %>
+  <% if @msg.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@msg.errors.count, "error") %> prohibited this msg from being saved:</h2>
+
+      <ul>
+      <% @msg.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= required %><%= f.label :title , "标题"%><br />
+    <%= f.text_field :title, :style=>"width: 400px; padding:5px;" %>
+  </div>
+  <div class="field">
+    <%= required %><%= f.label :content, "内容" %><br />
+    <%= f.cktext_area :content, :toolbar=>'Easy', :style=>" padding:5px;",:height=>"300",:width=>"750",:language => "zh-cn" %>
+  </div>
+  <div class="action-bar">
+    <%= f.submit("保存") %>
+    <%=raw back_button %>
+  </div>
+<% end %>

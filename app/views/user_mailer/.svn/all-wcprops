@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/jikeel/!svn/ver/47/app/views/user_mailer
+END
+send_email.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/jikeel/!svn/ver/47/app/views/user_mailer/send_email.html.erb
+END
+welcome_email.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/jikeel/!svn/ver/48/app/views/user_mailer/welcome_email.html.erb
+END

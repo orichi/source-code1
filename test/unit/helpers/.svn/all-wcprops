@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/jikeel/!svn/ver/5/test/unit/helpers
+END
+discount_rules_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/jikeel/!svn/ver/1/test/unit/helpers/discount_rules_helper_test.rb
+END
+categories_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/jikeel/!svn/ver/1/test/unit/helpers/categories_helper_test.rb
+END
+sitemaps_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/jikeel/!svn/ver/1/test/unit/helpers/sitemaps_helper_test.rb
+END
+collections_helper_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/jikeel/!svn/ver/1/test/unit/helpers/collections_helper_test.rb
+END

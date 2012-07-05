@@ -1,0 +1,64 @@
+<% content_for :head do  %>
+  <script type="text/javascript">
+    $(function(){
+     $("#order_select").change(function(){
+        window.location = '<%=businesses_path()%>' + "?order=" + $(this).val();
+      }).val('<%= params[:order] %>');
+    });
+  </script>
+<% end %>
+
+<div class="content-left-narrow">
+  <div class="area">
+    <div class="area-title">
+      <div class="left">全部学校</div>
+      <div class="clear"></div>
+    </div>
+    <ul class="content vertical-point-list">
+      <% Group[:university_around].collections.each do |col|  %>
+        <li><%= link_to col.name, collection_path(col) %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="area">
+    <div class="area-title">
+      <div class="left">全部地区</div>
+      <div class="clear"></div>
+    </div>
+    <ul class="content vertical-point-list">
+      <% Group[:biz_area].collections.each do |col|  %>
+        <li><%= link_to col.name, collection_path(col) %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="area">
+    <div class="area-title">
+      <div class="left">关键字</div>
+      <div class="clear"></div>
+    </div>
+    <ul class="content vertical-point-list">
+      <% Group[:keywords].collections.each do |col|  %>
+        <li><%= link_to col.name, collection_path(col) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<div class="content-right-wide area">
+  <div class="area-title bizs-title">
+    <span class="left">全部商家</span>
+    <span class="right order">
+    排序：<select id="order_select" name="order_select">
+      <option value="default">默认</option>
+      <option value="hot">星级</option>
+      <option value="popular">人气</option>
+      <option value="comment">点评数</option>
+    </select>
+    </span>
+    <div class="clear"></div>
+  </div>
+  <div class="bizs">
+    <%= render :partial => "share/business", :collection => @buses %>
+  </div>
+  <div class="clear"></div>
+  <%= will_paginate @buses%>
+</div>

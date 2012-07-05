@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/jikeel/!svn/ver/1/app/models/ckeditor
+END
+asset.rb
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/jikeel/!svn/ver/1/app/models/ckeditor/asset.rb
+END
+attachment_file.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/jikeel/!svn/ver/1/app/models/ckeditor/attachment_file.rb
+END
+picture.rb
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/jikeel/!svn/ver/1/app/models/ckeditor/picture.rb
+END

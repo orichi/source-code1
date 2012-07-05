@@ -1,0 +1,117 @@
+<% content_for :head do  %>
+  <%= stylesheet_link_tag "biz_show.css" %>
+  <script type="text/javascript">
+    $(function(){
+      
+    });
+  </script>
+<% end %>
+
+<div class="left" style="width: 700px;">
+  <div class="area biz-info">
+    <h1><%= @business.name %> &nbsp; &nbsp;<%= image_tag ("stars#{@business.level}.gif") if @business.level != 0%></h1>
+    <span class="label">粉丝数：</span><%= @business.customers.size %> 人
+    <span id="attention-it-<%= @business.id %>">
+      <% if current_customer && current_customer.attented?(@business) %>
+        已关注
+      <% else %>
+        <%= link_to "加关注", customer_attentions_path(:business_id => @business), :method => :post, :remote => true%>
+      <% end %>
+    </span><br/>
+    <span class="label">评论留言：</span><%= @business.comments_count %> 封 <%= link_to "发表评论", "#comment" %><br/>
+    <span class="label">地址：</span><%= @business.address %><br/>
+    <span class="label">电话：</span><%= @business.phone %><br/>
+    <span class="label">关键字：</span>
+    <% @business.in_collections(:keywords).each do |coll|%>
+      <%= link_to coll.name, collection_path(coll) %>
+    <% end %><br/>
+    <span class="label">营业时间：</span> <%= @business.open_at %> - <%= @business.close_at %>
+  </div>
+  <div class="area promise">
+    <span class="label">商家承诺：</span><%= @business.promise %>
+  </div>
+  <% if @business.doing_activity? %>
+  <div class="area activity">
+    <h3 class="area-title">正在进行的团购</h3>
+    <div style="border-right: 1px dashed #CCCCCC;width: 200px; text-align: center">
+      <%= image_tag(@business.doing_activity.image ? @business.doing_activity.image.data.url(:thumb) : "blank-small.jpg") %><br/>
+      <h4><%= @business.doing_activity.name %></h4>
+      <span>当前价格：</span>
+      <span style="font-size: 17px; font-weight: bold; font-style: italic; color: red"><%= number_to_currency @business.doing_activity.current_price %></span><br/>
+      <a class="" href="#">加入</a>
+    </div>
+    <div style="text-indent: 2em; line-height: 25px; width: 250px;border-right: 1px dashed #CCCCCC">
+      <%= raw @business.doing_activity.introduction %>
+    </div>
+    <div style="width: 210px; text-align: center">
+      <p style="border-bottom: 2px solid #E97C03; margin: 10px; height: 130px; width: 180px; text-align: center">
+        
+      </p>
+    </div>
+    <p class="clear"></p>
+  </div>
+  <% end %>
+  <div class="area">
+    <div class="area-title"><%= @business.name %> 服务项目</div>
+    <div class="subjects">
+      <% @business.subjects.each do |subject|%>
+        <div>
+          <%= image_tag(subject.image ? subject.image.data.url(:thumb) : "blank-small.jpg") %><br/>
+          <%= subject.name %><br/>
+          价格：<%=number_to_currency subject.price %><br/>
+          <%=link_to "选择", carts_path(:subject_id => subject.id), :remote => true, :method => :post%>
+        </div>
+      <% end %>
+      <p class="clear"></p>
+    </div>
+  </div>
+  <h4>相关评论</h4>
+  <div id="biz_comments">
+    <%= render :partial => "/comments/comment", :collection => @business.newest_comments(8) %>
+  </div>
+  <%= link_to "查看更多评论>>", business_comments_path(@business) %>
+  <h4>发表评论：</h4><a name="comment"></a>
+  <div>
+    <% if customer_login? %>
+      <%= form_for [@business, @comment] do |f| %>
+        <div>推荐星级：
+          <%= f.radio_button :level,"5", :checked => true %>
+          <%=  image_tag ("stars5.gif")%>
+          <%= f.radio_button :level,"4" %>
+          <%=  image_tag ("stars4.gif")%>
+          <%= f.radio_button :level,"3" %>
+          <%=  image_tag ("stars3.gif")%>
+          <%= f.radio_button :level,"2" %>
+          <%=  image_tag ("stars2.gif")%>
+          <%= f.radio_button :level,"1" %>
+          <%=  image_tag ("stars1.gif")%>
+        </div>
+        <textarea name="comment[source_content]" rows="5" cols="40"></textarea><br/>
+        <%= f.submit "提交" %>
+      <% end %>
+    <% else %>
+      <div style="height: 100px; width: 200px; border: 1px solid #ccc">
+        你没有登录，不能评论<%=link_to "登录", new_customer_session_path %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
+<div class="right" style="width: 270px">
+  <div class="area">
+    <img src="/images/ditu.jpg"/>
+  </div>
+  <div class="area biz-intro">
+    <div class="area-title">
+      商家介绍
+    </div>
+    <div>
+      <%= image_tag (@business.image ? @business.image.data.url(:thumb) : "blank-small.jpg"), :style =>"float:left; margin: 5px;" %>
+      <h4><%= @business.name %></h4>
+      <p>
+        <%= raw  @business.introduction %>
+      </p>
+    </div>
+  </div>
+</div>
+

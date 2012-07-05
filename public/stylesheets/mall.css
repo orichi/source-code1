@@ -1,0 +1,85 @@
+@charset "utf-8";
+/* CSS Document */
+
+.mall_nav{ width:912px; height:34px; margin:0 auto 8px auto; background:url(../images/menu_bg_03.gif) no-repeat; line-height:34px; color:#FFFFFF; padding-left:50px; }
+.mall_nav li{  display:inline; font-weight:bold; font-size:14px; }
+.mall_nav a{ color:#FFFFFF; }
+.mall_nav a:visited{ color:#FFFFFF;}
+.mall_nav a:hover{ color:#FFFFFF;}
+
+.mall_banner{ width:951px; height:60px; margin:0 auto 10px auto;}
+
+.news_mall{ width:951px; height:288px; margin:0 auto 0 auto;}
+
+.news_mall_l{ width:187px; height:286px; border:#ffb583 solid 1px; float:left; margin-right:13px; }
+.new_title{ width:187px; height:30px; text-align:center; line-height:26px; background: url(../images/bg_11.gif) no-repeat center; font-size:13px;}
+
+.new_banner{ width:500px; height:288px; float:left;}
+
+.news_mall_r{ width:235px; height:288px; float:right;}
+.news_mall_r_pic{ width:235px; height:137px;}
+
+.mall_banner2{ width:952px; height:70px; margin:10px auto 10px auto; padding-left:2px; }
+.mall_banner2 li{ width:237px; height:70px; float:left; margin-right:1px; }
+.mall_classification{ width:951px; height:285px; margin:0 auto 10px auto;}
+
+.classification_l{ width:700px; height:283px; border:#b4b4b4 solid 1px; float:left;}
+.classof_title{ width:auto; height:33px; background-color:#ececec; color:#652800; font-size:14px; font-weight:bold; line-height:33px; padding-left:15px;}
+.classification_l span{ height:23px; width:40px; display:block; background-color:#ebebeb; font-size:14px; font-weight:bold; text-align:center; line-height:23px;}
+.lia{ border-bottom:#b4b4b4 dashed 1px;}
+
+.classification_r{ width:235px; height:285px; float:right;}
+.classification_r_pic{ width:115px; height:285px; float:left; }
+
+.commodity{ width:951px; height:478px; margin:0 auto 10px auto;}
+
+.commodity_title{ width:951px; height:35px; overflow:hidden;}
+.commodity_title ul{ float:right; text-align:right; padding-top:12px; }
+.commodity_title li{width:auto; float:left;}
+
+.commodity_con{ width:945px; height:437px; border-bottom:#b4b4b4 solid 1px; border-right:#b4b4b4 solid 1px; border-left:#b4b4b4 solid 1px; background:url(../images/title_41.gif) no-repeat top; clear:both; padding:3px 2px 2px 2px; }
+
+.commodity_con_l{ width:319px; height:437px; float:left;}
+
+.commodity_con_r{ width:615px; height:437px; float:right;}
+.commodity_con_r dl{ width:113px; height:210px; float: left; padding-right:10px; padding-top:6px;}
+.commodity_con_r dd{ width:113px; height:147px; }
+.commodity_con_r dd img{ width:113px; height:147px; display:block; }
+.commodity_con_r dt{ width:113px; height:63px; line-height:20px; text-align:center; }
+.xie{text-decoration: line-through;}
+
+.mall_banner3{ width:951px; height:184px; margin:0 auto 10px auto;}
+.mall_banner3_l{ width:711px; height:184px; float:left;}
+.mall_banner3_r{ width:230px; height:184px; float:right;} 
+.mall_banner3_r_pic{ width:230px; height:85px; }
+
+
+.dq{ width:951px; height:auto; line-height:20px; margin:0 auto 0 auto;}
+
+.lie{ width:949px; height: auto; border:#ccc solid 1px;  background-color:#f4f4f4; margin: 0 auto 10px auto; padding-top:3px; overflow:hidden; padding-bottom:3px;}
+
+.arrangement{ width:951px; height:25px; line-height:20px; margin:0 auto 10px auto; background:url(../images/li_bg_03.gif) repeat-x; padding-top:3px; border:#ccc solid 1px;}
+
+.mall_pro{ width:951px; height: auto; border:#bdbdbd solid 1px; margin:0 auto 10px auto; overflow:hidden; padding-bottom:15px;} 
+
+.mall_pro dl{ width:178px; height:290px; float:left; padding:10px 0 0 10px;}
+.mall_pro dd{ width:174px; height:241px; padding:1px; border:#cecece solid 1px; }
+.mall_pro dd img{ width:174px; height:241px; display:block;}
+.mall_pro dt{ width:178px; height:45px; line-height:22px; text-align:center; overflow:hidden;}
+
+
+.shopping{ width:951px; height:auto; margin:0 auto 10px auto; padding-top:10px; line-height:20px; padding-bottom:15px;}
+
+.bott{ border-bottom:#a7ccff solid 3px; margin-bottom:8px;}
+.border_x{ border:#e2f2ff solid 1px; height:80px; margin-bottom:5px;}
+
+.shop{ width:363px; height:76px;}
+.shop dl{ width:363px; height:76px;}
+.shop dd{ width:50px; height:50px; float:left; background-color:#FFFFFF;}
+.shop dd img{ width:50px; height:50px; display:block;}
+.shop dt{ width:300px; padding-left:7px; line-height:20px;}
+.lix{ border-right:#fff solid 1px;}
+
+.input5{ width:28px; height:18px; border:#ccc solid 1px; }
+
+.shop_text{ text-align:right; padding-right:10px; line-height:23px;}

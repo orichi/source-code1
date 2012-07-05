@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>欢迎注册集客网：您的注册邮箱<%= @user.email %></h1>
+    <p>
+      请点击下链接激活您的帐号
+      <a href="http://www.jikeel.com<%= active_customers_path %>?id=<%= @user.id %>&randkey=<%= @user.randkey %>">
+        http://www.jikeel.com<%= active_customers_path %>?id=<%= @user.id %>&randkey=<%= @user.randkey %>
+      </a>
+    </p>
+    <p>
+      以下是登录链接<%= link_to @url,@url %>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/jikeel/!svn/ver/40/config/initializers
+END
+inflections.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/jikeel/!svn/ver/48/config/initializers/inflections.rb
+END
+paperclip.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/jikeel/!svn/ver/40/config/initializers/paperclip.rb
+END
+session_store.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/jikeel/!svn/ver/1/config/initializers/session_store.rb
+END
+will_paginate.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/jikeel/!svn/ver/1/config/initializers/will_paginate.rb
+END
+secret_token.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/jikeel/!svn/ver/1/config/initializers/secret_token.rb
+END
+backtrace_silencers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/jikeel/!svn/ver/1/config/initializers/backtrace_silencers.rb
+END
+mime_types.rb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/jikeel/!svn/ver/1/config/initializers/mime_types.rb
+END

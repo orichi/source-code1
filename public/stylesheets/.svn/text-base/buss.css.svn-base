@@ -1,0 +1,65 @@
+@charset "utf-8";
+/* CSS Document */
+
+.buss_l{ width:705px; height:auto; float: left;margin-top:10px;}
+
+.Businessman_introduced{ width:683px; height:auto; padding:10px; border:#fcc29a solid 1px; overflow:hidden; margin-bottom:10px; } 
+.Businessman_introduced_t{ width:490px; float:left; line-height:28px; font-size:13px;}
+.Businessman_introduced_p{ width:183px; height:146px; border:#ccc solid 1px; float:right; }
+.font18{ font-size:18px; font-weight:700; color:#333;}
+
+.commitment{ width: auto; height:28px; background:url(/images/bu_ng_07.gif) repeat-x; line-height:28px; border:#ccc solid 1px; padding-left:20px; color:#333333; margin-bottom:8px;}
+.big_k{border:#ccc solid 1px; border-collapse:collapse;}
+.big_k td{height:20px;}
+.small_k{border-bottom:#ccc solid 1px; border-right:#ccc solid 1px; padding:3px;}
+
+.ssjl{ width:auto; height:auto; margin:10px 0; line-height:25px;  }
+.bold14{ font-size:14px; font-weight:bold; color:#333;}
+.srk{ width:35px; height:17px; border:#ccc solid 1px; vertical-align:middle; margin:0 5px; }
+
+.zxpl{ width:auto; height:auto; line-height:20px;}
+
+.buss_r{ width:218px; height:auto; border:#fcc49e solid 1px; background-color:#fffcfa; float:right; margin-top:10px; padding:4px  0;}
+.buss_r_bd{ width:auto; height: auto; border-bottom:#fcc8a4 solid 1px; padding:5px 9px 9px 9px;}
+.buss_r_bd2{ width:auto; height: auto;  padding:5px 9px 9px 9px;}
+.text13{ width:auto; height:auto; line-height:23px; font-size:13px; color:#333;}
+.head_img{ width:200px;text-align: center; }
+.head_img dl{ width:200px;text-align: center; }
+.head_img dd{ background-color:#FFFFFF; text-align: center;}
+.head_img dt{ width:200px; height:25px; line-height:25px; text-align:center; font-weight:bold; color:#333; }
+
+.sssk{ width:132px; height:18px; border:#77a3bc solid 1px; vertical-align:middle;}
+.sssk2{ width:44px; height:18px; border:#77a3bc solid 1px; vertical-align:middle; margin-right:3px;}
+
+.buss_title{ width:auto; height: 28px; line-height:25px; border-bottom:#f6dece solid 1px; font-size:14px; font-weight:bold; color:#333; margin-bottom:5px;}
+
+.buss_r2{ width:220px; height:auto;  float:right; }
+.buss_r2_bd img{ width: 218px; height:207px;margin-top:10px; border:#ccc solid 1px; display:block;}
+
+.recipes{ width:705px; height:auto; margin:10px 0;}
+.recipes_title{ width:690px; height:27px; line-height:27px; background: url(../images/r_bg_15.gif) no-repeat left; padding-left:10px; padding-right:5px;}
+.recipes_pr{ width:703px; height:auto; border:#ccc solid 1px; overflow:hidden; padding-bottom:5px; margin-bottom: 5px}
+.recipes_pr dl{ width:157px; height:230px; float:left; padding:13px 0 0 15px;}
+.recipes_pr dd{ width:153px; height:154px; border:#ccc solid 1px; padding:1px;}
+.recipes_pr dd img{ width:153px; height:154px; display:block;}
+.recipes_pr dt{ width:157px; height:65px; line-height:20px; text-align:center; padding-top:5px; overflow: hidden;}
+.skkk{ width:27px; height:16px; border:#ccc solid 1px; background-color:#f4f4f4; color:#666666; font-size:11px; vertical-align:middle;}
+.hot_b{ color:#cc0000; font-weight:700;}
+.lian{ border-bottom:#c1c1c1 dashed 1px; margin-bottom:10px; padding-bottom:5px;}
+.bighf{ width:620px; height:165px; border:#ccc solid 1px;}
+
+.tjsh{ width:610px; height:auto; margin:0 auto 0 auto; margin-top:13px; line-height: 24px; font-size:14px; padding-bottom:10px;}
+
+.title_line{ width:auto; height:25px; line-height:25px; border-bottom:#c5c5c5 solid 2px; font-size:14px; font-weight:bold; color:#4f4f4f;}
+
+.input1{ width:270px; padding: 5px; font-size:12px; vertical-align:middle;}
+.input2{ width:430px; padding: 3px; font-size:12px;}
+.input3{ width:430px; height:100px;}
+
+.login_top{ width:850px; height:63px; margin:0 auto 0 auto;}
+
+.logo_main{ width:610px; height:auto; padding:40px 120px 20px 120px; margin:0 auto 5px auto; border:#d4d4d4 solid 1px; font-size:14px;  }
+.title_line2{ width:auto; height:25px; line-height:25px; border-bottom:#c5c5c5 solid 2px; font-size:14px; font-weight:bold; color:#00679c; margin-bottom:25px;}
+.list-subjects div{float: left; margin: 5px;}
+.list-subjects dl{width: 100px}
+.list-subjects dl dt{height: 100px; width: 100px; text-align: center}

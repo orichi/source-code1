@@ -1,0 +1,31 @@
+<%= render :partial =>'/admin/share/menu', :locals => {:active => :scores} %>
+<div class="content">
+  <span style="float: right"><%= link_to "退出超级管理员",logout_admin_score_user_index_path %></span><h1>用户积分管理</h1><span><%= link_to "切换到商家积分管理",admin_score_busscores_path %></span>
+
+  <%= form_for(@cusscore,:url=>admin_score_cusscore_path(@cusscore)) do |f| %>
+  <% if @cusscore.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cusscore.errors.count, "error") %> prohibited this msg from being saved:</h2>
+
+      <ul>
+      <% @cusscore.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <h1>用户ID<%= @cusscore.id %></h1>
+  </div>
+  <div class="field">
+    <%= required %><%= f.label :score, "积分" %><br />
+    <%= f.text_field :score %>
+  </div>
+  <div class="action-bar">
+    <%= f.submit("保存") %>
+    <%=raw back_button %>
+  </div>
+<% end %>
+
+</div>

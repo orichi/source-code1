@@ -1,0 +1,142 @@
+<% content_for :head do  %>
+  <%= stylesheet_link_tag "group_purchase.css" %>
+  <%= javascript_include_tag "png.js"%>
+<% end %>
+<div class="group_main">
+  <div class="group_main_l">
+    <div class="deal-share-links">
+      <ul>
+        <li>分享到：</li>
+        <li><img src="/images/ico-lo_11.gif" align="absmiddle" class="pic" />MSN/QQ</li>
+        <li><img src="/images/ico-lo_13.gif" align="absmiddle" class="pic" />开心</li>
+        <li><img src="/images/ico-lo_15.gif" align="absmiddle" class="pic" />人人</li>
+        <li><img src="/images/ico-lo_19.gif" align="absbottom" class="pic" />新浪微博</li>
+        <li><img src="/images/ico-lo_17.gif" align="absmiddle" class="pic" />豆瓣</li>
+        <li><img src="/images/ico-lo_22.gif" align="absmiddle" class="pic" />邮件</li>
+      </ul>
+    </div>
+    <div class="deal-share">
+      <h1>
+        <%= raw @activity.introduction %>
+      </h1>
+      <div class=" deal-share_l">
+        <div class=deal-buy>
+          <div class=deal-price-tag></div>
+          <p class=deal-price>
+            <strong>￥<%=@activity.current_price %></strong>
+            <span class=deal-price-expire><a href="<%= add_customer_partakes_path(:activity_id=>@activity.id) %>"><img src="/images/tg_03.gif" width="134" height="52" /></a></span>
+          </p>
+        </div>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0" class="bk_gour">
+          <tr>
+            <td align="center">原价</td>
+            <td align="center">下阶段</td>
+            <td align="center">终极价</td>
+            <td align="center">现节省</td>
+          </tr>
+          <tr>
+            <td align="center"><%=@activity.price %></td>
+            <td align="center"><%=@activity.next_price %></td>
+            <td align="center"><%=@activity.final_price %></td>
+            <td align="center"><%= @activity.price - @activity.current_price %></td>
+          </tr>
+        </table>
+
+        <div class="gour_bd"><img src="/images/hourglass002.gif" width="29" height="50" align="right" />剩余时间：<br />
+          <%= distance_between(@activity.end_at, Time.now)%> </div>
+        <div class="gour_bd"><p><%= @activity.customers.size %>人已购买</p>
+          <p><img src="/images/t_07.gif" width="28" height="28" align="absmiddle" />团购已成功，可继续购买…</p>
+          <p class="font_12">0点15分达到最低团购人数：10 人</p>
+        </div>
+
+      </div>
+      <div class="deal-share_r">
+        <div class=" group_main_r_img"><img src="/images/p_03.gif" width="375" height="257" /></Div>
+        <div class="text375"><span class="bold">如果我想团购，怎样才能更快的召集人群购买？
+          </span><br />
+          您可以点击活动页面的邀请好友参加，直接将优惠信息发给QQ好友。</div>
+      </div>
+
+
+      <div class="a_about">
+        <dl>
+          <dd>
+            <%= image_tag(@activity.image ? @activity.image.data.url : "blank-middle.jpg") %>
+          </dd>
+          <dt><span class="bold">红袍赤肚海虾拌面</span><br />
+            新鲜的海虾沐浴在肉末的红袍上，相伴着嫩滑的稻亭面，这不是幻觉，是阿一海鲜人气十足的菜品。（红袍赤肚）是实而不华的酱料，是用独特的香草、花生、鲜茄、辣椒肉末等熬制，与鲜甜的海虾融z汇一起后，鲜甜适中，不一样的香与辣，胃口顿时大开。锦上添花的是吸收了酱料的稻亭面，软化、香浓，更是不能放过。</dt>
+        </dl>
+      </div>
+
+
+      <div class="title_g">详细产品</div>
+
+      <div class="a_about2">
+        <% @activity.subjects.each do |subject| %>
+          <dl>
+            <dd><%= image_tag(subject.image ? subject.image.data.url(:medium) : "blank-middle.jpg") %></dd>
+            <dt><span class="bold"><%= subject.name %></span>
+            </dt>
+          </dl>
+        <% end %>
+      </div>
+      <div class="clear"></div>
+      <!--
+      <div class="title_g">老板说</div>
+      <ul class="list_g">
+        <li>纳博科夫这样写道：“她是我的生命之光，欲望之火，同时也是我的罪恶，我的灵魂。洛丽塔，舌尖得由上颚向下移动三次，到第三次再轻轻贴在牙齿上，洛丽塔。”
+        </li>
+        <li>一本《洛丽塔》，是多少少女发育在含苞待放时就蠢蠢欲动的蛊惑者。她们总是盼望着能引起成人社会的注意，有年长如父亲的男士爱上自己。
+        </li>
+        <li>消瘦的身体，轮廓分明的下巴，洪亮的嗓音，令人着迷的褐色香味。在那样的年纪，欲望，如同稚嫩幼体上的黑色蕾丝，只是装饰。</li>
+      </ul>
+
+
+      <div class="title_g">客户说</div>
+
+      <ul class="list_g">
+        <li>唯一星工场在集客网上被评为四颗星半★★★★☆
+          不写点什么实在对不起为我辛苦忙碌的两位首席摄影师、化妆师，非常厉害，不愧是总监，脑子里的创意很丰富，即使是同一套造型，两个人化妆出来都能有不同的效果。化妆水平也一流，又快又好！指导完全没有经验的我摆出各种造型，抓拍瞬间的动作，而且效果都很赞！
+          <span class="right_r2">——烦心点点（集客网）</span></li>
+        <li>工场很酷，环境很棒，化妆师很nice，摄影师很敬业。和唯一视觉是一个老板，所以第一印象也加三分。本来就是想在唯一视觉拍婚纱照的呢，好姐妹正巧发现星工场的活动，于是来试试，拍了5套造型，最喜欢芭蕾了，很有感觉。
+          <span class="right_r2">——烦心点点（集客网）</span></li>
+
+      </ul>
+      -->
+    </div>
+  </div>
+  <div class="group_main_r">
+    <div class=" group_main_r_bd">
+      <div class="title_r">什么是新团购</div>
+      <div class=" title_r_text">
+        　　团购是一种电子商务模式. 即为一个团队向商家采购。<br />
+　　所谓网络团购，就是认识的或者不认识的消费者联合起来，来加大<a href="#"><span class="red">了解更多&gt;&gt;        </span></a></div>
+    </div>
+    <div class=" group_main_r_bd">
+      <div class="title_r">提示</div>
+      <div class=" title_r_text">
+        开始时间：<%=l @activity.begin_at %><br />
+        结束时间：<%=l @activity.end_at %><br />
+      </div>
+      <div class=" group_main_r_bd">
+        <div class="title_r">商家承诺</div>
+        <div class=" title_r_text">
+          <%= @activity.business.promise %>
+        </div>
+      </div>
+      <div class=" group_main_r_bd">
+        <div class="title_r">商家地址</div>
+        <div class=" title_r_text">
+          电话：<%= @activity.business.phone %><br />
+          地址：<%= @activity.business.address %><br />
+          交通：<%= @activity.business.traffic %><br />
+          靠近：<%= @activity.business.traffic %>
+        </div>
+      </div>
+      <div class=" group_main_r_bd">
+        <div class=" map"><img src="/images/map_03.gif" width="218" height="207" /></div>
+        <div class="map_title"><a href="#"><img src="/images/fangd_05.gif" align="absmiddle" class="pic" />查看完整地图</a></div>
+      </div>
+    </div>
+  </div>
+</div>

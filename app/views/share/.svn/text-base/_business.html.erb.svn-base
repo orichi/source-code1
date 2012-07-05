@@ -1,0 +1,29 @@
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="mar_x">
+  <tr>
+    <td>
+      <dl class="food_img">
+        <dd><%= image_tag (business.image ? business.image.data.url(:thumb) : "thumb-small.gif")%></dd>
+        <dt><span class="red"><%=link_to business.name, business_path(business) %></span><br />
+          商家承诺：<%= business.promise %><br />
+          关键字： 
+          <span class="buled2">
+            <% business.in_collections(:keywords).each do |coll|%>
+              <%= link_to coll.name, collection_path(coll) %>
+            <% end %>
+          </span><br />
+          地址：<%= business.address %> </dt>
+      </dl>    </td>
+    <td width="20%" valign="top"><%= business.avg_consume %></td>
+    <td width="20%" align="center" style="line-height:22px;">
+      <% if business.level == 0 %>
+        尚未有人评论
+      <% else %>
+        <% business.level.downto(1) do %>
+          <%= image_tag "ico-lo_13.gif", :width=>"15", :height=>"15" %>
+        <% end %>
+      <% end %>
+      <br />
+      <%=link_to "#{business.comments_count} 封点评", business_comments_path(business) %>
+    </td>
+  </tr>
+</table>

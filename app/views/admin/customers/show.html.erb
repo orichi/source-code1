@@ -1,0 +1,43 @@
+<%= render :partial =>'/admin/share/menu', :locals => {:active => :customer} %>
+<div class="content">
+  <h1>消费者: <%= @customer.email %></h1>
+  <table class="show-info">
+    <tr>
+      <td class="field-name">姓名：</td>
+      <td class="field-value"><%= @customer.name %></td>
+      <td class="field-name">积分：</td>
+      <td class="field-value" style = "color:red; font-size:20px; font-weight: bold"><%= @customer.score%></td>
+    </tr>
+    <tr>
+      <td class="field-name">昵称：</td>
+      <td class="field-value"><%= @customer.nickname%></td>
+      <td class="field-name">推荐人：</td>
+      <td class="field-value" colspan="3"><%= @customer.referralno%></td>
+    </tr>
+    <tr>
+      <td class="field-name">Email：</td>
+      <td class="field-value"><%= @customer.email%></td>
+      <td class="field-name">电话：</td>
+      <td class="field-value"><%= @customer.phone%></td>
+    </tr>
+    <tr>
+      <td class="field-name">性别：</td>
+      <td class="field-value"><%= @customer.gender.name%></td>
+      <td class="field-name">公司：</td>
+      <td class="field-value"><%= @customer.company%></td>
+    </tr>
+    <tr>
+      <td class="field-name">行业：</td>
+      <td class="field-value"><%= @customer.industry%></td>
+      <td class="field-name">公司：</td>
+      <td class="field-value"><%= @customer.worktitle%></td>
+    </tr>
+    <tr>
+      <td class="field-name">地址：</td>
+      <td class="field-value" colspan="3"><%= @customer.address%></td>
+    </tr>
+  </table>
+  <div class="action-bar">
+    <%= back_button %>
+  </div>
+</div>

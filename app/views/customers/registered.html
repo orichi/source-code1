@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.4.3.min.js"></script>
+<script src="js/megapanel.js"></script>
+<SCRIPT type=text/javascript>
+    $(function(){
+      $("ul#categories li").hover(function(){
+        $(this).addClass("active").removeClass("unactive");
+      },function(){
+        $(this).addClass("unactive").removeClass("active");
+      });
+      $("ul#categories li").each(
+        function(){
+          $(this).megapanel(".panel-handle", ".panel", {placement: "right-top"})
+        }
+      );
+    });
+  </SCRIPT>
+
+<link href="css/master.css" rel="stylesheet" type="text/css" />
+<link href="css/buss.css" rel="stylesheet" type="text/css" />
+<link href="css/personal.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+
+
+
+<script type="text/javascript">
+function setTab3(name,cursel,n){  
+ for(i=1;i<=n;i++){  
+  var menu=document.getElementById(name+i);  
+  var con3=document.getElementById("con3_"+name+"_"+i);  
+  menu.className=i==cursel?"click":"";  
+  con3.style.display=i==cursel?"block":"none";  
+ }  
+}
+</script>
+</body>
+</html>

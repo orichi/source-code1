@@ -1,0 +1,29 @@
+<table width="100%" border="0" cellpadding="2" cellspacing="0">
+  <tr>
+    <td width="8%" rowspan="3" valign="top">
+<%#= image_tag (comment.created_by.image ? comment.created_by.image.data.url(:small) : (comment.created_by.image_path || "")), :height => 50%>
+    </td>
+    <td width="92%" bgcolor="#f4f4f4">评论者: <%#= comment.created_by.show_name %>  评论时间：<%= l comment.created_at %> </td>
+  </tr>
+  <tr>
+    <td>评论星级:
+        <% comment.level.downto(1) do %>
+          <%= image_tag "ico-lo_13.gif", :width=>"15", :height=>"15" %>
+        <%end%>
+    </td>
+  </tr>
+  <tr>
+    <td valign="top">
+      <p>
+        <%= raw comment.content %>
+      </p>
+    </td>
+  </tr>
+</table>
+<% comment.children.each do |child| %>
+<div style="padding: 5px;">
+  <h3 style="font-weight: bold;"><%= child.created_by.name %> 于 <%=l child.created_at %> 的回复：</h3>
+  <%= raw child.content %>
+</div>
+<% end %>
+<div style="border-bottom:#c1c1c1 dashed 1px;margin: 2px"></div>

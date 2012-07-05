@@ -1,0 +1,16 @@
+zh:
+  helpers:
+    action: 动作
+    back: 返回
+    edit: 编辑
+    destory: 删除
+    submit:
+      create: 创建
+      update: 更新
+  activerecord:
+    models:
+      msg: 新闻
+    attributes:
+      msg:
+        title: 新闻标题
+        content: 新闻内容

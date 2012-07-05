@@ -1,0 +1,32 @@
+<div class="food_l">
+  <div class=" index_bd">
+    <div class="title"><span class="right_r"><%= link_to "更多>>", sitemap_path + "#university_around" %></span>全部学校</div>
+    <ul class="list3">
+      <% Group[:university_around].collections.each do |col|  %>
+        <li><%= link_to col.name, collection_path(col) %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class=" index_bd">
+    <div class="title"><span class="right_r"><%= link_to "更多>>", sitemap_path + "#biz_area" %></span>全部地区</div>
+    <ul class="list3">
+      <% Group[:biz_area].collections.each do |col|  %>
+        <li><%= link_to col.name, collection_path(col) %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class=" index_bd">
+    <div class="title"><span class="right_r"><%= link_to "更多>>", sitemap_path + "#keywords" %></span>关键字</div>
+    <ul class="list3">
+      <% Group[:keywords].collections.each do |col|  %>
+        <li><%= link_to col.name, collection_path(col) %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+<div class="food_r">
+  <div class=" post_f">当前位置:<%= link_to "首页", root_path %> >> 新团购</div>
+  <div class="list_tg">
+    <%= render :partial => "activity", :collection => @activities %>
+  </div>
+</div>

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/jikeel/!svn/ver/5/app/views/business/varieties
+END
+edit.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/jikeel/!svn/ver/1/app/views/business/varieties/edit.rjs
+END
+_list.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/jikeel/!svn/ver/1/app/views/business/varieties/_list.html.erb
+END
+new.rjs
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/jikeel/!svn/ver/1/app/views/business/varieties/new.rjs
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/jikeel/!svn/ver/5/app/views/business/varieties/_form.html.erb
+END

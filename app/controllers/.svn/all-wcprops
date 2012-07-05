@@ -1,0 +1,113 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/jikeel/!svn/ver/47/app/controllers
+END
+carts_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/jikeel/!svn/ver/39/app/controllers/carts_controller.rb
+END
+collections_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/jikeel/!svn/ver/38/app/controllers/collections_controller.rb
+END
+business_sessions_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/jikeel/!svn/ver/1/app/controllers/business_sessions_controller.rb
+END
+businesses_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/jikeel/!svn/ver/39/app/controllers/businesses_controller.rb
+END
+main_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/jikeel/!svn/ver/12/app/controllers/main_controller.rb
+END
+customers_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/jikeel/!svn/ver/48/app/controllers/customers_controller.rb
+END
+sitemaps_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/jikeel/!svn/ver/1/app/controllers/sitemaps_controller.rb
+END
+categories_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/jikeel/!svn/ver/1/app/controllers/categories_controller.rb
+END
+comments_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/jikeel/!svn/ver/38/app/controllers/comments_controller.rb
+END
+customer_sessions_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/jikeel/!svn/ver/48/app/controllers/customer_sessions_controller.rb
+END
+admin_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/jikeel/!svn/ver/1/app/controllers/admin_controller.rb
+END
+business_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/jikeel/!svn/ver/1/app/controllers/business_controller.rb
+END
+customer_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/jikeel/!svn/ver/38/app/controllers/customer_controller.rb
+END
+application_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/jikeel/!svn/ver/38/app/controllers/application_controller.rb
+END
+activities_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/jikeel/!svn/ver/1/app/controllers/activities_controller.rb
+END
+sessions_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/jikeel/!svn/ver/1/app/controllers/sessions_controller.rb
+END
+msgs_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/jikeel/!svn/ver/1/app/controllers/msgs_controller.rb
+END
+notifications_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/jikeel/!svn/ver/1/app/controllers/notifications_controller.rb
+END

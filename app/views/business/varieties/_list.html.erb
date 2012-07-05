@@ -1,0 +1,5 @@
+<ul>
+  <% Variety.all.each do |var| %>
+    <li><%= link_to var.name, business_subjects_path(:var_id => var.id), :class => ("dad" if @current_variety.id == var.id) %></li>
+  <% end %>
+</ul>

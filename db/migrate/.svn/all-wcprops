@@ -1,0 +1,209 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/svn/jikeel/!svn/ver/47/db/migrate
+END
+20110218032342_add_column_to_orderform.rb
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/jikeel/!svn/ver/39/db/migrate/20110218032342_add_column_to_orderform.rb
+END
+20101030034012_create_groups.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/jikeel/!svn/ver/1/db/migrate/20101030034012_create_groups.rb
+END
+20101031115823_create_activities.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/jikeel/!svn/ver/1/db/migrate/20101031115823_create_activities.rb
+END
+20110113045410_add_mapcode_to_business.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/jikeel/!svn/ver/5/db/migrate/20110113045410_add_mapcode_to_business.rb
+END
+20101104063643_create_discount_rules.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/jikeel/!svn/ver/1/db/migrate/20101104063643_create_discount_rules.rb
+END
+20100928183720_create_ckeditor_assets.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/jikeel/!svn/ver/1/db/migrate/20100928183720_create_ckeditor_assets.rb
+END
+20101102080334_create_notifications.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/jikeel/!svn/ver/35/db/migrate/20101102080334_create_notifications.rb
+END
+20110228061053_add_column_to_customer.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/jikeel/!svn/ver/48/db/migrate/20110228061053_add_column_to_customer.rb
+END
+20101030083643_create_images.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/jikeel/!svn/ver/1/db/migrate/20101030083643_create_images.rb
+END
+20101104091822_create_orderlines.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/jikeel/!svn/ver/1/db/migrate/20101104091822_create_orderlines.rb
+END
+20101030030513_create_customers.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/jikeel/!svn/ver/1/db/migrate/20101030030513_create_customers.rb
+END
+20101103014540_create_orderforms.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/jikeel/!svn/ver/1/db/migrate/20101103014540_create_orderforms.rb
+END
+20110222015816_create_activity_orders.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/jikeel/!svn/ver/41/db/migrate/20110222015816_create_activity_orders.rb
+END
+20110107020936_add_publish_to_activity.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/jikeel/!svn/ver/5/db/migrate/20110107020936_add_publish_to_activity.rb
+END
+20101031120435_activities_subjects.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/jikeel/!svn/ver/1/db/migrate/20101031120435_activities_subjects.rb
+END
+20101031074204_create_comments.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/jikeel/!svn/ver/38/db/migrate/20101031074204_create_comments.rb
+END
+20101103021441_create_options.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/jikeel/!svn/ver/1/db/migrate/20101103021441_create_options.rb
+END
+20101020084714_create_businesses.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/jikeel/!svn/ver/1/db/migrate/20101020084714_create_businesses.rb
+END
+20110119022404_add_focus_country.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/jikeel/!svn/ver/35/db/migrate/20110119022404_add_focus_country.rb
+END
+20110223085201_add_column_to_businesses.rb
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/jikeel/!svn/ver/42/db/migrate/20110223085201_add_column_to_businesses.rb
+END
+20110223084451_create_opeartions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/jikeel/!svn/ver/43/db/migrate/20110223084451_create_opeartions.rb
+END
+20101122044634_create_varieties.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/jikeel/!svn/ver/1/db/migrate/20101122044634_create_varieties.rb
+END
+20101021051958_businesses_collections.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/jikeel/!svn/ver/1/db/migrate/20101021051958_businesses_collections.rb
+END
+20101031125741_create_partakes.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/jikeel/!svn/ver/1/db/migrate/20101031125741_create_partakes.rb
+END
+20101021051436_create_collections.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/jikeel/!svn/ver/1/db/migrate/20101021051436_create_collections.rb
+END
+20101103021304_create_enums.rb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/jikeel/!svn/ver/1/db/migrate/20101103021304_create_enums.rb
+END
+20100727082156_create_users.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/jikeel/!svn/ver/46/db/migrate/20100727082156_create_users.rb
+END
+20110117060346_add_seq_to_category.rb
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/jikeel/!svn/ver/35/db/migrate/20110117060346_add_seq_to_category.rb
+END
+20100727115640_create_msgs.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/jikeel/!svn/ver/1/db/migrate/20100727115640_create_msgs.rb
+END
+20110228091856_add_column_to_subject.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/jikeel/!svn/ver/47/db/migrate/20110228091856_add_column_to_subject.rb
+END
+20101030025655_create_subjects.rb
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/jikeel/!svn/ver/1/db/migrate/20101030025655_create_subjects.rb
+END
+20101031053129_create_attentions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/jikeel/!svn/ver/1/db/migrate/20101031053129_create_attentions.rb
+END
+20101019073350_create_categories.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/jikeel/!svn/ver/1/db/migrate/20101019073350_create_categories.rb
+END
+20110301015841_create_takemoney.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/jikeel/!svn/ver/48/db/migrate/20110301015841_create_takemoney.rb
+END

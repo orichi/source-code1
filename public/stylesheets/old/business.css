@@ -1,0 +1,64 @@
+.menu{
+    width:980px;
+    height:35px;
+    margin-top:10px;
+    background:#f47018;
+    float:left;
+}
+.menu a{
+    color:#FFFFFF;
+    font-size:14px;
+    float:left;
+    line-height:35px;
+    margin:0px 10px;
+}
+.menu a:hover{
+    color:#eee;
+}
+.menu .line{
+    width:2px;
+    height:17px;
+    float:left;
+    margin: 9px 0px;
+    background:url(/images/line.jpg) no-repeat center;
+}
+.biz-title{
+    font-size: 17px;
+    margin: 0px;
+    padding: 10px;
+}
+table.pink-table{
+    width: 100%;
+    border-collapse:collapse;
+}
+table.pink-table .head{
+    background: #FFE1CD;
+    line-height: 25px;
+}
+table.pink-table .head th{
+    border-bottom: 1px solid #E97C03;
+    text-align:left;
+    padding-left: 5px;
+}
+
+table.pink-table td{
+    line-height: 25px;
+    border-bottom: 1px solid #eee;
+    padding-left: 5px;
+}
+table.pink-table .head th.action{
+    width: 100px;
+    text-align: center;
+}
+.manage h1{
+    font-size: 19px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 5px;
+}
+.manage .subjects-area{
+    padding: 0px 10px
+}
+.manage h3{
+    font-size: 15px;
+    border-bottom: 1px dotted #ccc;
+}

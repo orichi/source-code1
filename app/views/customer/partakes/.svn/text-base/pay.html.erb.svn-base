@@ -1,0 +1,61 @@
+<% content_for :head do%>
+  <%= stylesheet_link_tag  "font.css" %>
+<% end %>
+<div class="per_main">
+  <div class=" per_main_l">
+    <%= render "/customer/share/portrait" %>
+    <div class="per_bd">
+      <div class="title_per">推荐商家</div>
+      <ul class="list4">
+        <%Business.recommends.limit(8).each do |biz|  %>
+          <li><%= link_to "·#{biz.name}", business_path(biz) %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="per_bd">
+      <div class="title_per">最新商家</div>
+      <div class="friends">
+        <%= render :partial => "/businesses/small_image_biz", :collection => Business.lasts(6), :as => :biz %>
+      </div>
+    </div>
+  </div>
+  <div class="orders_r">
+    <div class="post_pre">我的订单</div>
+    <table cellspacing="0" cellpadding="0" border="0" width="100%" height="125" class="big_k">
+      <tbody><tr>
+          <td bgcolor="#f4f4f4" align="center" width="25%" class="small_k">团购店铺</td>
+          <td bgcolor="#f4f4f4" align="center" width="25%" class="small_k">活动名称</td>
+          <td bgcolor="#f4f4f4" align="center" width="25%" class="small_k">活动商品</td>
+          <td bgcolor="#f4f4f4" align="center" width="10%" class="small_k">商品价格</td>
+          <td bgcolor="#f4f4f4" align="center" width="20%" class="small_k"></td>
+
+        </tr>
+        <% @order.activity.subjects.each do |subject| %>
+          <tr>
+            <td align="center" class="small_k"><%= subject.name %></td>
+            <td align="center" class="small_k"><%= subject.business.name %></td>
+            <td align="center" class="small_k"><%#= subject.quantity %></td>
+            <td align="center" class="small_k"><%= subject.price %></td>
+            <td align="center" class="small_k">&nbsp;</td>
+          </tr>
+        <% end %>
+        <tr>
+          <td></td><td></td><td align="right">
+            总金额：
+          </td><td align="right">
+            <%= @order.totalmoney %>
+          </td>
+          <td></td>
+        </tr>
+        <tr><td></td><td></td><td></td><td></td><td></td></tr>
+      </tbody></table>
+    选择支付方式
+    <% form_tag(pay_customer_partake_path(@order)) do |f|%>
+      <input type="hidden" name="id" value="<%= @order.id %>"/>
+      <input type="radio" name="type" value="1">积分支付</input><br/>
+      <input type="radio" name="type" value="2" checked="1">支付宝/网银支付</input>
+      <input type="submit" value="支付"/>
+    <% end %>
+  </div>
+</div>

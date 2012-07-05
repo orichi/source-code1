@@ -1,0 +1,24 @@
+<%= form_for(@variety,:url=> @variety.new_record? ? admin_business_varieties_path : admin_business_variety_path(@business,@variety),:html=>{:multipart=>true}) do |f| %>
+  <% if @variety.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@variety.errors.count, "") %>个错误，保存失败</h2>
+
+      <ul>
+        <% @variety.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name,"名称" %><br />
+    <%= f.text_field :name, :style=>"padding:2px" %>
+  </div>
+<input type="hidden" name="variety[business_id]" value="<%= @business.id %>"/>
+
+  <div class="action-bar">
+    <%= f.submit @variety.new_record? ? "新建" : "确认" %>
+    <%=raw back_button %>
+  </div>
+<% end %>

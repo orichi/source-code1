@@ -1,0 +1,34 @@
+<div style="border:#fcc29a solid 1px; margin: 10px 0px; padding: 10px;">
+  <div class="Businessman_introduced_t">
+    <span class="font18"><%= current_business.name %></span>
+    <% current_business.level.downto(1) do %>
+      <%= image_tag "ico-lo_13.gif", :width=>"15", :height=>"15" %>
+    <% end %>
+    <br />
+    地址：<%= current_business.address %><br />
+    电话：<%= current_business.phone %><br />
+    营业时间：<%= current_business.open_at %> - <%= current_business.close_at %> <br />
+    公交信息：<%= current_business.traffic %><br />
+    [人均消费]：120-180 <br />
+    [停 车]：<%= current_business.park_info %><br />
+    关键字：
+    <% current_business.in_collections(:keywords).each do |coll|%>
+      <%= link_to coll.name, collection_path(coll) %>
+    <% end %>
+  </div>
+  <div style="text-align:right"></div>
+  <div class="clear"></div>
+</div>
+
+<div class="commitment"><span class="bold">商家承诺：</span><%= current_business.promise %></div>
+<div><span class="bold" style="padding-left: 20px;">商家介绍：</span></div>
+<div class="big_k">
+  <%=raw current_business.introduction %>
+</div>
+<div><span class="bold" style="padding-left: 20px;">外送介绍：</span></div>
+<div class="big_k">
+  <%= current_business.delivery %>
+</div>
+<div style="margin: 10px; text-align: center">
+  <%=link_to image_tag("edit.jpg"), edit_business_profile_path%>
+</div>

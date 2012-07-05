@@ -1,0 +1,90 @@
+<%= render :partial =>'/admin/share/menu', :locals => {:active => :businesses} %>
+<div class="content">
+  <h1>商家: <%= @business.name %></h1>
+  <ul class="ulli">
+    <li style="float:left"><%=link_to "商家信息",admin_business_path(@business),:style=>"color:green" %></li>
+    <li style="float:left"><%=link_to "产品分类",admin_business_varieties_path(:business_id=>@business) %></li>
+    <li style="float:left"><%=link_to "产品管理",admin_business_subjects_path(:business_id=>@business) %></li>
+    <li style="float:left"><%=link_to "团购管理",admin_business_activities_path(:business_id=>@business) %></li></ul>
+  <div class="clear"></div><table class="show-info">
+    <tr>
+      <td colspan="4" align="center"><%= image_tag(@business.image ? @business.image.data.url(:small) : "blank-small.gif") %></td>
+    </tr>
+    <tr>
+      <td class="field-name">VIP?：</td>
+      <td class="field-value" style = "color:green; font-size:20px; font-weight: bold"><%= @business.vip? %></td>
+      <td class="field-name">推荐商家?:</td>
+      <td class="field-value" style = "color:green; font-size:20px; font-weight: bold"><%= @business.recommend? %></td>
+    </tr>
+    <tr>
+      <td class="field-name">激活?：</td>
+      <td class="field-value" style = "color:green; font-size:20px; font-weight: bold"><%= @business.active? %></td>
+      <td class="field-name"></td>
+      <td class="field-value" style = "color:green; font-size:20px; font-weight: bold"></td>
+    </tr>
+    <tr>
+      <td class="field-name">积分：</td>
+      <td class="field-value" style = "color:red; font-size:20px; font-weight: bold"><%= @business.score %></td>
+      <td class="field-name">余额：</td>
+      <td class="field-value" style = "color:red; font-size:20px; font-weight: bold"><%= number_to_currency(@business.balance)%></td>
+    </tr>
+    <tr>
+      <td class="field-name">类别：</td>
+      <td class="field-value"><%= @business.category_txt%></td>
+      <td class="field-name">所在聚集：</td>
+      <td class="field-value"><%=@business.collections_txt %></td>
+    </tr>
+    <tr>
+      <td class="field-name">所属区县：</td>
+      <td class="field-value"><%= @business.county.name%></td>
+      <td class="field-name">营业时间：</td>
+      <td class="field-value">从<%=@business.open_at %> 到<%=@business.close_at %></td>
+    </tr>
+    <tr>
+      <td class="field-name">负责人：</td>
+      <td class="field-value"><%= @business.manager %></td>
+      <td class="field-name">电话：</td>
+      <td class="field-value"><%=@business.phone %></td>
+    </tr>
+    <tr>
+      <td class="field-name">手机：</td>
+      <td class="field-value"><%=@business.manager_phone %></td>
+      <td class="field-name">Email：</td>
+      <td class="field-value"><%=@business.email %></td>
+    </tr>
+    <tr>
+      <td class="field-name">靠近：</td>
+      <td class="field-value"><%=@business.near_to %></td>
+      <td class="field-name">人均消费：</td>
+      <td class="field-value"><%=@business.avg_consume %></td>
+    </tr>
+    <tr>
+      <td class="field-name">地址：</td>
+      <td class="field-value" colspan="3"><%= @business.address %></td>
+    </tr>
+    <tr>
+      <td class="field-name">商家承诺：</td>
+      <td class="field-value" colspan="3"><%= @business.promise %></td>
+    </tr>
+    <tr>
+      <td class="field-name">公交信息：</td>
+      <td class="field-value" colspan="3"><%= @business.traffic %></td>
+    </tr>
+    <tr>
+      <td class="field-name">停车信息：</td>
+      <td class="field-value" colspan="3"><%= @business.park_info %></td>
+    </tr>
+    <tr>
+      <td class="field-name">外送信息：</td>
+      <td class="field-value" colspan="3"><%= @business.delivery %></td>
+    </tr>
+    <tr>
+      <td class="field-name">商家介绍：</td>
+      <td class="field-value" colspan="3"><%=raw @business.introduction %></td>
+    </tr>
+  </table>
+  <div class="action-bar">
+    <%= link_button("编辑", edit_admin_business_path(@business)) %>
+    <%= back_button %>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+<dl>
+  <dd><%=link_to image_tag(biz.image ? biz.image.data.url(:small) : "blank-small.gif"), business_path(biz) %></dd>
+  <dt><%= link_to biz.name, business_path(biz) %></dt>
+</dl>

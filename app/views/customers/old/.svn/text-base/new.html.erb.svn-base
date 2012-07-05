@@ -1,0 +1,41 @@
+<% content_for :head do  %>
+  <%= stylesheet_link_tag "customer.css" %>
+  <script type="text/javascript">
+   
+  </script>
+<% end %>
+<div class="register">
+  <h1>
+    豆豆聚会网欢迎你
+  </h1>
+  <div align="center">
+    <div class="input-area" align="center">
+      <h2 style="text-align:center">注&nbsp;册</h2>
+      <%= form_for(@customer, :html => {:multipart => true}) do |f| %>
+        <table>
+          <tr>
+            <td align="right"><%= required %><%= f.label :email , "Email"%></td>
+            <td><%= f.text_field :email %></td>
+          </tr>
+          <tr>
+            <td align="right"><%= required %><%= f.label :password , "密码"%></td>
+            <td><%= f.password_field :password %></td>
+          </tr>
+          <tr>
+            <td align="right"><%= required %><%= f.label :password , "重复密码"%></td>
+            <td><%= f.password_field :password %></td>
+          </tr>
+          <tr>
+            <td align="right"><%= f.label :image_id , "头像"%></td>
+            <td><input type="file" name="customer[image_file]"/></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">
+              <%= image_submit_tag "signin.png", :class=>"action" %>
+            </td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>

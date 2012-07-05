@@ -1,0 +1,54 @@
+.biz-info{
+    padding: 10px;
+    line-height: 25px;
+}
+.biz-info .label{
+    font-weight: bold;
+}
+.biz-info h1{
+    margin: 0px;
+    margin-bottom: 10px;
+    font-size: 17px;
+}
+.promise{
+    background: #F9EFEA;
+    padding: 10px;
+}
+.promise .label{
+    font-size: 14px;
+    font-weight: bold;
+}
+.activity h3{
+    padding:0px;
+    margin: 0px;
+}
+
+.activity div{
+    float: left;
+    height: 170px;
+    display: inline;
+    padding: 5px;
+}
+.activity h4{
+    padding:0px;
+    margin: 5px;
+    font-size: 15px;
+    color: #666;
+}
+.subjects div{
+     float: left;
+     height: 140px;
+     margin: 10px;
+}
+.biz-intro h4{
+    padding: 10px 10px 0px 10px;
+    margin: 0px;
+    color: red;
+}
+.biz-intro p{
+    margin: 5px;
+    padding: 0px;
+    font-size: 13px;
+    text-indent: 2em;
+    line-height: 25px;
+}

@@ -1,0 +1,1 @@
+<%= collection_select(:select_cate, :id, @cate_children || [], :id, :name, { :include_blank => "--请选择--"}, :name => "business[category_id]") %>

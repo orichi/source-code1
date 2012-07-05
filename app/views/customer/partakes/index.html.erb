@@ -1,0 +1,125 @@
+<div class="per_main">
+  <div class=" per_main_l">
+    <%= render "/customer/share/portrait" %>
+    <div class="per_bd">
+      <div class="title_per">推荐商家</div>
+      <ul class="list4">
+        <%Business.recommends.limit(8).each do |biz|  %>
+          <li><%= link_to "·#{biz.name}", business_path(biz) %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="per_bd">
+      <div class="title_per">最新商家</div>
+      <div class="friends">
+        <%= render :partial => "/businesses/small_image_biz", :collection => Business.lasts(6), :as => :biz %>
+      </div>
+    </div>
+  </div>
+
+  <div class="manage">
+<%#*<h1>我加入的团购</h1>%>
+<%# @activities.each do |act| %>
+<%#=link_to act.name, activity_path(act) %>
+<%# end %>
+<%#= will_paginate @activities%>
+<%#*</div>%>
+    <% content_for :head do%>
+      <%= stylesheet_link_tag  "font.css","food.css","buss.css" %>
+    <% end %>
+    <% content_for :head do %>
+      <script type="text/javascript">
+        $(function(){
+          $("ul#categories li").hover(function(){
+            $(this).addClass("active").removeClass("unactive");
+          },function(){
+            $(this).addClass("unactive").removeClass("active");
+          });
+          $("ul#categories li").each(
+          function(){
+            $(this).megapanel(".panel-handle", ".panel", {placement: "right-top"})
+          }
+        );
+        });
+      </script>
+    <% end %>
+    <div class="orders_r">
+      <div class="post_pre2">
+        <ul>
+          <li >最新团购信息 </li>
+          <li >往期团购</li>
+          <li ><%= link_to "团购订单",bill_customer_partakes_path %></li>
+        </ul>
+      </div>
+      <div style="display: none;" class="list_tg" id="con3_three_1">
+        <% Activity.all.each do |activity| %>
+          <table class="mar_x2" width="100%" border="0" cellpadding="0" cellspacing="0">
+            <tbody><tr>
+                <td width="81%">
+                  <dl class="tg_img">
+                    <dd></dd>
+                    <dt>
+                      <%=link_to content_tag(:span,activity.business.name,:class=>"red"),root_url %>
+                      <br/>
+                      商家承诺：做最好的推广 <br/>
+                      产品介绍：盛大的<br/>
+
+                      团购价格： 现价：20元 原价：<span class="xiehua">100</span>元  下阶段：11元 <br>
+                    </dt>
+                  </dl>
+                  <p>剩余时间：0小时0分0秒</p>    </td>
+                <td width="19%" align="center"><img src="/images/pic_03.gif" height="15" width="15"><img src="/images/pic_03.gif" height="15" width="15"><img src="images/pic_03.gif" height="15" width="15"><img src="images/pic_03.gif" height="15" width="15"><img src="images/pic_03.gif" height="15" width="15"><br>
+                  49封点评<br>
+
+
+                  <input name="button3" id="button3" value="提交" src="/images/tuangou_03.gif" type="image">  <p>&nbsp;</p></td>
+              </tr>
+            </tbody></table>
+        <% end %>
+
+        <div class="yellow"><span class="disabled"> &lt; </span><span class="current">1</span><a href="#?page=2">2</a><a href="#?page=3">3</a><a href="#?page=4">4</a><a href="#?page=5">5</a><a href="#?page=6">6</a><a href="#?page=7">7</a>...<a href="#?page=199">199</a><a href="#?page=200">200</a><a href="#?page=2"> &gt; </a></div>
+
+
+
+      </div>
+
+
+
+      <%#*<div class="list_tg" id="con3_three_2" style="display: block;">%>
+        <%#*<table class="mar_x2" width="100%" border="0" cellpadding="0" cellspacing="0">%>
+          <%#*<tbody><tr>%>
+              <%#*<td width="81%">%>
+                <%#*<dl class="tg_img">%>
+                  <%#*<dd></dd>%>
+                  <%#*<dt><a href="#"><span class="red">开成公司</span></a><br>%>
+                    <%#*商家承诺：做最好的推广 <br>%>
+
+                    <%#*产品介绍：盛大的<br>%>
+                    <%#*团购价格： 现价：20元 原价：<span class="xiehua">100</span>元  下阶段：11元 <br>%>
+                  <%#*</dt>%>
+                <%#*</dl>%>
+                <%#*<p>剩余时间：0小时0分0秒</p>    </td>%>
+              <%#*<td width="19%" align="center"><img src="images/pic_03.gif" height="15" width="15"><img src="images/pic_03.gif" height="15" width="15"><img src="images/pic_03.gif" height="15" width="15"><img src="images/pic_03.gif" height="15" width="15"><img src="images/pic_03.gif" height="15" width="15"><br>%>
+
+                <%#*49封点评<br>%>
+
+
+                <%#*<input name="button3" id="button3" value="提交" src="images/tuangou_03.gif" type="image">  <p>&nbsp;</p></td>%>
+            <%#*</tr>%>
+          <%#*</tbody></table>%>
+
+
+        <%#*<div class="yellow"><span class="disabled"> &lt; </span><span class="current">1</span><a href="#?page=2">2</a><a href="#?page=3">3</a><a href="#?page=4">4</a><a href="#?page=5">5</a><a href="#?page=6">6</a><a href="#?page=7">7</a>...<a href="#?page=199">199</a><a href="#?page=200">200</a><a href="#?page=2"> &gt; </a></div>%>
+
+
+
+      </div>
+
+
+
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,14 @@
+<% @subjects.each do |subject|  %>
+  <div>
+    <dl>
+      <dt>
+        <%= image_tag(subject.image ? subject.image.data.url(:thumb) : "blank-thumb.jpg") %>
+      </dt>
+      <dd>
+        价格：<%=number_to_currency subject.price %><br/>
+        <%=subject.name%><br/>
+        <%= link_to "移除", remove_subject_business_activity_path(@activity, :subject_id => subject.id), :remote => true, :method => :delete%>
+      </dd>
+    </dl>
+  </div>
+<% end %>

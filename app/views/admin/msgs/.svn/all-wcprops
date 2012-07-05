@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/jikeel/!svn/ver/1/app/views/admin/msgs
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/jikeel/!svn/ver/1/app/views/admin/msgs/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/jikeel/!svn/ver/1/app/views/admin/msgs/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/jikeel/!svn/ver/1/app/views/admin/msgs/new.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/jikeel/!svn/ver/1/app/views/admin/msgs/_form.html.erb
+END

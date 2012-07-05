@@ -1,0 +1,111 @@
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function(){
+      $("#business_parent_category_id").change();
+    })
+  </script>
+<% end %>
+<%= form_for(@business, :url => business_profile_path, :html => {:multipart => true}) do |f| %>
+  <% if @business.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@business.errors.count, "error") %> 填写信息有误:</h2>
+      <ul>
+        <% @business.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <table border="0" cellpadding="0" cellspacing="3">
+    <tr>
+      <td align="right"><span class="red">*</span>商户名称：</td>
+      <td colspan="3">
+        <%= f.text_field :name, :class => "input1" %>
+      </td>
+    </tr>
+    <tr>
+      <td align="right"><span class="red">*</span>Logo：</td>
+      <td colspan="3">
+        <%= f.file_field :image_file %>
+      </td>
+    </tr>
+    <tr>
+      <td align="right"><span class="red">*</span>所在区县：</td>
+      <td>
+        <%= f.collection_select :county_id, Enum[:shanghai_counties].options,  :id, :name, :include_blank => '--请选择--' %>
+      </td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td align="right"><span class="red">*</span>大分类：</td>
+      <td colspan="3"><%= f.collection_select :parent_category_id, Category.roots, :id, :name, {:include_blank => '--请选择--'},
+          {:onchange => remote_function(:update => "business_category_area",
+            :url => children_select_categories_path, :with => "'id='+value+'&select_id=#{@business.category_id}'" )}%>
+        <span class="red">*</span>小分类：
+        <span id="business_category_area"><%= render "/categories/children_select" %></span>
+      </td>
+    </tr>
+    <tr>
+      <td align="right">商家承诺：</td>
+      <td colspan="3"><%=  f.text_field :promise, :class => "input2" %></td>
+    </tr>
+    <tr>
+      <td align="right"><span class="red">*</span>地址：</td>
+      <td colspan="3"><%=  f.text_field :address, :class => "input2" %></td>
+    </tr>
+    <tr>
+      <td align="right">靠近：</td>
+      <td colspan="3"><%=  f.text_field :near_to, :class => "input2" %></td>
+    </tr>
+    <tr>
+      <td align="right"><span class="red">*</span>电话：</td>
+      <td colspan="3"><%=  f.text_field :phone, :class => "input2" %></td>
+    </tr>
+    <tr>
+      <td align="right"><span class="red">*</span>人均消费：</td>
+      <td colspan="3"><%= f.text_field :avg_consume, :style => "width: 100px"%></td>
+    </tr>
+    <tr>
+      <td align="right">营业时间：</td>
+      <td colspan="3">
+        <%= f.text_field :open_at, :style => "width: 100px"%>
+        到
+        <%= f.text_field :close_at, :style => "width: 100px"%>
+      </td>
+    </tr>
+    <tr>
+      <td align="right">简介：</td>
+      <td colspan="3"><%= f.cktext_area :introduction, :height=>"200",:width=>"500",:language => "zh-cn" %></td>
+    </tr>
+    <% Group.all.each do |group| %>
+      <tr>
+        <td align="right"><%= group.name %>：</td>
+        <td colspan="3">
+          <% group.collections.each do |coll| %>
+            <%= check_box_tag "business[collection_ids][]", coll.id, @business.collections.include?(coll) %><%= coll.name %>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+    <tr>
+      <td align="right">外送情况：</td>
+      <td colspan="3"><%=  f.text_area :delivery, :class => "input3", :style=>"height:50px" %></td>
+    </tr>
+    <tr>
+      <td align="right">公交信息：</td>
+      <td colspan="3"><%=  f.text_field :traffic, :class => "input2" %></td>
+    </tr>
+    <tr>
+      <td align="right">停车情况：</td>
+      <td colspan="3"><%=  f.text_field :park_info, :class => "input2" %></td>
+    </tr>
+
+    <tr>
+      <td align="right">&nbsp;</td>
+      <td colspan="3">
+        <input name="button3" type="image" id="button3" value="提交" src="/images/save.jpg" />
+      </td>
+    </tr>
+  </table>
+<% end %>

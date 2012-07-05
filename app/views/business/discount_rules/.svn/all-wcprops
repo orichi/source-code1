@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/jikeel/!svn/ver/5/app/views/business/discount_rules
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/jikeel/!svn/ver/1/app/views/business/discount_rules/edit.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/jikeel/!svn/ver/5/app/views/business/discount_rules/index.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/jikeel/!svn/ver/1/app/views/business/discount_rules/new.html.erb
+END
+_form.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/jikeel/!svn/ver/5/app/views/business/discount_rules/_form.html.erb
+END

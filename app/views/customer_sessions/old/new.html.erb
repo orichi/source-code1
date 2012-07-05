@@ -1,0 +1,28 @@
+<div class="register">
+  <h1>
+    豆豆聚会网欢迎你
+  </h1>
+  <div align="center">
+    <div class="input-area" align="center">
+      <h2 style="text-align:center">登&nbsp;录</h2>
+      <%= form_for(:sessions, :url => customer_sessions_path)  do |f|%>
+      <span style="color: red"><%= flash[:notice] %></span>
+        <table>
+          <tr>
+            <td align="right"><%= required %><%= f.label :email , "Email"%></td>
+            <td><%= text_field_tag :customer_email %></td>
+          </tr>
+          <tr>
+            <td align="right"><%= required %><%= f.label :password , "密码"%></td>
+            <td><%= password_field_tag :password %></td>
+          </tr>
+          <tr>
+            <td colspan="2" align="center">
+              <%= image_submit_tag "login.png", :class=>"action"%>
+            </td>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>

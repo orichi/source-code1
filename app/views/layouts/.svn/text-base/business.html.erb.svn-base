@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" ></meta>
+    <%= stylesheet_link_tag "master.css", "buss.css", "personal.css" %>
+    <%= javascript_include_tag "jquery-1.4.3.min.js", "rails","megapanel","application"%>
+    <%= javascript_include_tag :ckeditor %>
+    <%= csrf_meta_tag %>
+    <%= yield :head %>
+    <title>集客网</title>
+  </head>
+
+  <body>
+    <%= render "/share/header"%>
+    <div class="menu">
+      <%= render "/share/categories"%>
+      <%= render "/business/share/menu"%>
+    </div>
+    <div class="main">
+      <div class="buss_l">
+        <%= yield %>
+      </div>
+      <div class="buss_r">
+        <div class="buss_r_bd">
+          <dl class="head_img">
+            <dd><%=link_to image_tag(current_business.image ? current_business.image.data.url(:medium) : "blank-medium.gif"), business_profile_path%></dd>
+            <dt><%= current_business.name %></dt>
+          </dl>
+          <span class="text13">
+            人气：<%= current_business.focus_count %>人<br />
+            粉丝：<%= current_business.customers.size %>人<br />
+            评论：<%= current_business.comments_count %>条
+          </span><br />
+          <div align="center"><%= link_to image_tag("add-activity.jpg"), new_business_activity_path %></div>
+        </div>
+        <div class="buss_r_bd">
+            <ul class="list4">
+              <li class="bold">账户余额：<%= number_to_currency current_business.balance %></li>
+              <li class="bold">账户积分：<%= current_business.score %></li>
+              <li><input type="text" class="sssk" />
+                <input name="button5" type="image" class="pic" id="button5" value="提交" src="/images/cz_07.gif" />
+              </li>
+              <li>金额转换积分(0.11元=1积分)</li>
+              <li>
+                <%= form_tag exchange_business_profile_path, :remote => true do %>
+                  <input type="text" class="sssk2" name="money" id="money" /><img src="/images/jt_14.gif" align="absmiddle" />
+                  <input type="text" class="sssk2" name="score" id="score" /><input type="image" class="pic" src="/images/cz_11.gif" />
+                <% end %>
+                  <span id="exchange_tip" class="red"></span>
+              </li>
+            </ul>
+        </div>
+        <div class="buss_r_bd">
+          <div class="buss_title">进行中的团购</div>
+          <% if current_business.doing_activity?  %>
+            <div>
+              <%= image_tag (current_business.doing_activity.image ? current_business.doing_activity.image.data.url(:thumb) : "blank-thumb.jpg"), :style => "vertical-align: top" %>
+              <%=link_to current_business.doing_activity.name, activity_path(current_business.doing_activity), :style => "font-weight: bold" %><br/>
+              已参加人数：<%= current_business.doing_activity.customers.size %> 人<br/>
+              当前价格：<%= current_business.doing_activity.price %>
+            </div>
+          <% else %>
+            <div>没有进行中的团购</div>
+          <% end %>
+        </div>
+
+        <div class="buss_r_bd2">
+          <div class="buss_title">往期发布的团购</div>
+          <ul class="list4">
+            <% current_business.activities.limit(5).each do |act| %>
+              <li><%= link_to act.name, business_activity_path(act) %><span style="color:#666">&nbsp;(<%= "#{act.customers.size}人参与" %>)</span></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <%= render "/share/foot" %>
+  </body>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      panel_nav("#panel_nav");
+      $("#money").keyup(function(){
+        var money_txt = $(this).val();
+        var money = parseFloat(money_txt) || 0
+        $("#score").val(Math.floor(money * 100 / 11));
+      });
+      $("#score").keyup(function(){
+        var score_txt = $(this).val();
+        var score = parseInt(score_txt) || 0
+        $("#money").val(score * 11 / 100);
+      })
+    });
+
+    function done_exchange(sueecss){
+      if(sueecss){
+        window.location.reload();
+      }else{
+        $("#exchange_tip").html("余额不足或输入数据有误");
+      }
+    }
+  </script>
+</html>

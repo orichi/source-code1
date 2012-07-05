@@ -1,0 +1,270 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.4.3.min.js"></script>
+<script src="js/megapanel.js"></script>
+<script src="js/png.js"></script>
+<SCRIPT type=text/javascript>
+    $(function(){
+      $("ul#categories li").hover(function(){
+        $(this).addClass("active").removeClass("unactive");
+      },function(){
+        $(this).addClass("unactive").removeClass("active");
+      });
+      $("ul#categories li").each(
+        function(){
+          $(this).megapanel(".panel-handle", ".panel", {placement: "right-top"})
+        }
+      );
+    });
+  </SCRIPT>
+
+<link href="css/master.css" rel="stylesheet" type="text/css" />
+<link href="css/group_purchase.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="group">
+
+<div class="top">
+   <div class="top_c">
+       <ul>
+         <li>添加收藏</li>
+         <li>|</li>
+         <li>联系我们</li>
+         <li>|</li>
+         <li>关于我们</li>
+         <li>|</li>
+         <li>网站地图</li>
+        </ul>
+     <div class="top_text">欢迎来到xxxxxx</div>
+    </div>
+</div>
+
+
+<div class="logo_line">
+   <div class="logo"><img src="images/logo_06.gif" width="275" height="61" /></div>
+   
+   
+   <div class="login"> <form id="form1" name="form1" method="post" action="">用户名：
+    
+     
+       <input name="textfield" type="text" class="login_k" id="textfield" />
+      
+                          
+   密码：
+   <input name="textfield2" type="password" class="login_k" id="textfield2" />
+  
+   <input name="button" type="image" class="pic" id="button" value="提交" src="images/login_09.gif" />
+  
+   <input name="button2" type="image" class="pic" id="button2" value="提交" src="images/login_11.gif" />
+  
+   </form>   </div>
+
+</div>
+
+<div class="group_nav">
+    <div class="menu1">生活指南</div>
+    <div class="menu2">
+     <ul>
+         <li><a href="#">首页</a></li>
+         <li><img src="images/ico_l_06.gif" width="2" height="15" class="pic" /></li>
+       <li><a href="#">新团购</a></li>
+       <li><input type="text" class="sea" />
+         搜索
+        </li>
+         <li><a href="#">美食</a></li>
+          <li><img src="images/ico_l_06.gif" width="2" height="15" class="pic" /></li>
+         <li><a href="#">酒店</a></li>
+          <li><img src="images/ico_l_06.gif" width="2" height="15" class="pic" /></li>
+         <li><a href="#">商城</a></li>
+      </ul>
+     </div>
+     
+    <div class="buy">购物车</div>
+      
+</div>
+
+<div class="group_main">
+  <div class="group_main_l">
+   <div class="deal-share-links">
+     <ul>
+       <li>分享到：</li>
+       <li><img src="images/ico-lo_11.gif" align="absmiddle" class="pic" />MSN/QQ</li>
+       <li><img src="images/ico-lo_13.gif" align="absmiddle" class="pic" />开心</li>
+       <li><img src="images/ico-lo_15.gif" align="absmiddle" class="pic" />人人</li>
+       <li><img src="images/ico-lo_19.gif" align="absbottom" class="pic" />新浪微博</li>
+       <li><img src="images/ico-lo_17.gif" align="absmiddle" class="pic" />豆瓣</li>
+       <li><img src="images/ico-lo_22.gif" align="absmiddle" class="pic" />邮件</li>
+     </ul>
+   </div>
+  
+  <div class="deal-share">
+  <h1><a href="#">xxxx团购：填满内心的碧绿盎然！16元/套（2盆）乐享原价60元迷你果蔬小盆栽：6个品种任选（草莓、碧玉黄瓜、迷你番茄、樱桃萝卜、五彩辣椒、宝葫芦）。限上海地区，免费包邮（崇明3岛除外）邀好友获返利，多团多趣味！等待开花结果，实现魔法心愿！
+ </a></h1>
+ 
+ <div class=" deal-share_l">
+ <DIV class=deal-buy>
+<DIV class=deal-price-tag></DIV>
+<P class=deal-price><STRONG>¥38</STRONG> <SPAN 
+class=deal-price-expire><a href="#"><img src="images/tg_03.gif" width="134" height="52" /></a></SPAN></P>
+ </DIV>
+ 
+ 
+ 
+ 
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="bk_gour">
+  <tr>
+    <td align="center">原价</td>
+    <td align="center">下阶段</td>
+    <td align="center">终极价</td>
+    <td align="center">现节省</td>
+  </tr>
+  <tr>
+    <td align="center">666</td>
+    <td align="center">333</td>
+    <td align="center">222</td>
+    <td align="center">444</td>
+  </tr>
+</table>
+
+ <div class="gour_bd"><img src="images/hourglass002.gif" width="29" height="50" align="right" />剩余时间：<br />
+   6小时6分55秒 </div>
+   
+   
+   <div class="gour_bd"><p>3171 人已购买</p>
+        <p><img src="images/t_07.gif" width="28" height="28" align="absmiddle" />团购已成功，可继续购买…</p>
+       <p class="font_12">0点15分达到最低团购人数：10 人</p>
+      </div>
+ 
+ </div>
+ <div class="deal-share_r">
+      <Div class=" group_main_r_img"><img src="images/p_03.gif" width="375" height="257" /></Div>
+       <div class="text375"><span class="bold">如果我想团购，怎样才能更快的召集人群购买？
+         </span><br />
+         您可以点击活动页面的邀请好友参加，直接将优惠信息发给QQ好友。</div>
+</div>
+
+
+  <div class="a_about">
+    <dl>
+     <dd></dd>
+     <dt><span class="bold">红袍赤肚海虾拌面</span><br />
+       新鲜的海虾沐浴在肉末的红袍上，相伴着嫩滑的稻亭面，这不是幻觉，是阿一海鲜人气十足的菜品。（红袍赤肚）是实而不华的酱料，是用独特的香草、花生、鲜茄、辣椒肉末等熬制，与鲜甜的海虾融z汇一起后，鲜甜适中，不一样的香与辣，胃口顿时大开。锦上添花的是吸收了酱料的稻亭面，软化、香浓，更是不能放过。</dt>
+    </dl>
+  </div>
+
+
+<div class="title_g">详细介绍</div>
+
+<div class="a_about2">
+   <dl>
+     <dd></dd>
+     <dt><span class="bold">【飘香鸡】</span><br />
+       鸡肉肉质滑嫩，香味扑鼻，让人食指大动！加上鲜汤及辣椒油，香油，芝麻酱等配料调味后，色泽金红，回味无穷。</dt>
+    </dl>
+     
+     <dl>
+     <dd></dd>
+     <dt><span class="bold">【飘香鸡】</span><br />
+       鸡肉肉质滑嫩，香味扑鼻，让人食指大动！加上鲜汤及辣椒油，香油，芝麻酱等配料调味后，色泽金红，回味无穷。</dt>
+    </dl>
+</div>
+
+<div class="title_g">老板说</div>
+  <ul class="list_g">
+    <li>纳博科夫这样写道：“她是我的生命之光，欲望之火，同时也是我的罪恶，我的灵魂。洛丽塔，舌尖得由上颚向下移动三次，到第三次再轻轻贴在牙齿上，洛丽塔。”
+</li>
+    <li>一本《洛丽塔》，是多少少女发育在含苞待放时就蠢蠢欲动的蛊惑者。她们总是盼望着能引起成人社会的注意，有年长如父亲的男士爱上自己。
+</li>
+    <li>消瘦的身体，轮廓分明的下巴，洪亮的嗓音，令人着迷的褐色香味。在那样的年纪，欲望，如同稚嫩幼体上的黑色蕾丝，只是装饰。</li>
+  </ul>
+
+
+<div class="title_g">客户说</div>
+
+ <ul class="list_g">
+    <li>唯一星工场在集客网上被评为四颗星半★★★★☆
+不写点什么实在对不起为我辛苦忙碌的两位首席摄影师、化妆师，非常厉害，不愧是总监，脑子里的创意很丰富，即使是同一套造型，两个人化妆出来都能有不同的效果。化妆水平也一流，又快又好！指导完全没有经验的我摆出各种造型，抓拍瞬间的动作，而且效果都很赞！
+      <span class="right_r2">——烦心点点（集客网）</span></li>
+    <li>工场很酷，环境很棒，化妆师很nice，摄影师很敬业。和唯一视觉是一个老板，所以第一印象也加三分。本来就是想在唯一视觉拍婚纱照的呢，好姐妹正巧发现星工场的活动，于是来试试，拍了5套造型，最喜欢芭蕾了，很有感觉。
+<span class="right_r2">——烦心点点（集客网）</span></li>
+    
+  </ul>
+ 
+  
+  </div>
+  
+  </div>
+  
+  
+  
+  
+  
+<div class="group_main_r">
+     <div class=" group_main_r_bd">
+       <div class="title_r">什么是新团购</div>
+        <div class=" title_r_text">
+        　　团购是一种电子商务模式. 即为一个团队向商家采购。<br />
+　　所谓网络团购，就是认识的或者不认识的消费者联合起来，来加大<a href="#"><span class="red">了解更多&gt;&gt;        </span></a></div>
+     </div>
+  
+    <div class=" group_main_r_bd">
+       <div class="title_r">提示</div>
+        <div class=" title_r_text">有效期2个月，截止至2011年2月10日<br />
+营业时间：11:00-22:00 <br />
+订餐请拨打各分店电话 <br />
+圣诞12.24-25不可使用美团券 </div>
+     </div>
+     
+     <div class=" group_main_r_bd">
+       <div class="title_r">亮点</div>
+        <div class=" title_r_text">全球连锁，美国比萨外卖第一品牌 <br />
+丰盛套餐，14种口味随心选择 <br />
+30分钟保证送达，坐享美食 <br />
+6店通用，居家出行均可使用 <br />
+        </div>
+     </div>
+     
+     <div class=" group_main_r_bd">
+       <div class="title_r">联系方式</div>
+        <div class=" title_r_text">预约电话：<br />
+          外送电话：<br />
+          订餐电话：<br />
+          地址：<br />
+          交通：18、21、55、61、100、123、147、<br />
+        167、848、854、863、939</div>
+     </div>
+  
+  <div class=" group_main_r_bd">
+    <div class=" map"><img src="images/map_03.gif" width="218" height="207" /></div>
+  
+    <div class="map_title"><a href="#"><img src="images/fangd_05.gif" align="absmiddle" class="pic" />查看完整地图</a></div>
+  </div>
+  
+  </div>
+  
+</div>
+
+
+
+
+
+
+</div>
+<script type="text/javascript">
+function setTab3(name,cursel,n){  
+ for(i=1;i<=n;i++){  
+  var menu=document.getElementById(name+i);  
+  var con3=document.getElementById("con3_"+name+"_"+i);  
+  menu.className=i==cursel?"click":"";  
+  con3.style.display=i==cursel?"block":"none";  
+ }  
+}
+</script>
+
+
+
+</body>
+</html>

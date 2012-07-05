@@ -1,0 +1,88 @@
+10
+
+dir
+47
+http://173.230.148.179:8080/svn/jikeel/app/views
+http://173.230.148.179:8080/svn/jikeel
+
+
+
+2011-02-28T09:22:32.374790Z
+47
+sqwang
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+b9c99c3f-92c5-4650-a54a-16881a4aa528
+
+business_sessions
+dir
+
+businesses
+dir
+
+main
+dir
+
+customers
+dir
+
+comments
+dir
+
+categories
+dir
+
+sitemaps
+dir
+
+notification
+dir
+
+customer_sessions
+dir
+
+admin
+dir
+
+business
+dir
+
+layouts
+dir
+
+customer
+dir
+
+share
+dir
+
+activities
+dir
+
+sessions
+dir
+
+user_mailer
+dir
+
+msgs
+dir
+
+carts
+dir
+
+collections
+dir
+

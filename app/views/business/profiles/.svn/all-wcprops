@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/jikeel/!svn/ver/5/app/views/business/profiles
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/jikeel/!svn/ver/5/app/views/business/profiles/edit.html.erb
+END
+businessman.html
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/jikeel/!svn/ver/1/app/views/business/profiles/businessman.html
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/jikeel/!svn/ver/5/app/views/business/profiles/show.html.erb
+END

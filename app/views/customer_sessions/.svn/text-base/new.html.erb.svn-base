@@ -1,0 +1,58 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "buss.css", "personal.css" %>
+<% end %>
+<div class="login_top">
+  <div class="logo">
+    <%=link_to image_tag("logo_06.gif"), root_path %>
+  </div>
+  <div class="login">
+    <ul>
+      <li>还没有集客帐号，</li>
+      <li class="buled2">
+        <%= link_to "请注册", new_customer_path %>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="logo_main">
+  <div class=" title_line2">登录</div>
+  <%= form_for(:sessions, :url => customer_sessions_path)  do |f|%>
+    <div class="red" align="center"> <%= flash[:notice] %></div>
+    <table width="600" height="203" border="0" cellpadding="0" cellspacing="3">
+      <tr>
+        <td width="146" align="right"><%= required %>昵称/Email：</td>
+        <td>
+          <%= text_field_tag :customer_email, nil, :class=>"input1" %>
+        </td>
+      </tr>
+      <tr>
+        <td align="right"><%= required %>密码：</td>
+        <td><%= password_field_tag :password, nil, :class=>"input1"  %></td>
+      </tr>
+
+      <!-- tr>
+        <td align="right"><%= required %>验证码：</td>
+        <td><input name="textfield10" type="text" id="textfield10" size="5" />
+          <span class="font_12">看不清楚换一张？</span></td>
+      </tr -->
+      <tr>
+        <td height="31" rowspan="3">&nbsp;</td>
+        <td><label>
+            <input type="checkbox" name="checkbox" id="checkbox" />
+            <span class="font_12">记住密码</span></label></td>
+      </tr>
+      <tr>
+        <td>
+          <%= image_submit_tag "login_03.gif"%>
+          <%= link_to image_tag("login_05.gif"), new_customer_path %>
+        </td>
+      </tr>
+      <tr>
+        <td class="font_12">忘记密码？</td>
+      </tr>
+    </table>
+  <% end %>
+</div>
+<div class="copyright">版权所有：琦辰文化传播有限公司 集客网址：www.jikeel.com</div>

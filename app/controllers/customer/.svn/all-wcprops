@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/jikeel/!svn/ver/47/app/controllers/customer
+END
+friends_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/jikeel/!svn/ver/39/app/controllers/customer/friends_controller.rb
+END
+partakes_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/jikeel/!svn/ver/47/app/controllers/customer/partakes_controller.rb
+END
+payments_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/jikeel/!svn/ver/39/app/controllers/customer/payments_controller.rb
+END
+profiles_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/jikeel/!svn/ver/1/app/controllers/customer/profiles_controller.rb
+END
+alipayments_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/jikeel/!svn/ver/39/app/controllers/customer/alipayments_controller.rb
+END
+dashboard_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/jikeel/!svn/ver/1/app/controllers/customer/dashboard_controller.rb
+END
+attentions_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/jikeel/!svn/ver/38/app/controllers/customer/attentions_controller.rb
+END

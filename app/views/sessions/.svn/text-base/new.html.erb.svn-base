@@ -1,0 +1,29 @@
+<%= form_for(:sessions, :url => sessions_path, :html => {:style=>"margin-top: 50px;"} )  do |f|%>
+  <div align="center">
+    <table style="border: 1px solid #ADDB00; width: 300px">
+      <tr>
+        <td colspan="2" align="center" style="background: #ADDB00; height: 30px;">
+          <span style="font-weight:bold; color: #777; font-size: 15px;">管理员登陆</span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <span style="color: red"><%= flash[:notice] %></span>
+        </td>
+      </tr>
+      <tr>
+        <td align="right" height="30px">用户名:</td>
+        <td align="left"><%= text_field_tag :user_name,{}, :style => "width: 150px" %></td>
+      </tr>
+      <tr>
+        <td align="right" height="30px">密码:</td>
+        <td align="left"><%= password_field_tag :password,{}, :style => "width: 150px"  %></td>
+      </tr>
+      <tr>
+        <td colspan="2" align="center">
+          <%= submit_tag "登陆", :style => "width: 100px;" %>
+        </td>
+      </tr>
+    </table>
+  </div>
+<% end %>

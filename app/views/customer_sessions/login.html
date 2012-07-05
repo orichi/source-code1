@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="js/jquery-1.4.3.min.js"></script>
+<script src="js/megapanel.js"></script>
+<SCRIPT type=text/javascript>
+    $(function(){
+      $("ul#categories li").hover(function(){
+        $(this).addClass("active").removeClass("unactive");
+      },function(){
+        $(this).addClass("unactive").removeClass("active");
+      });
+      $("ul#categories li").each(
+        function(){
+          $(this).megapanel(".panel-handle", ".panel", {placement: "right-top"})
+        }
+      );
+    });
+  </SCRIPT>
+
+<link href="css/master.css" rel="stylesheet" type="text/css" />
+<link href="css/buss.css" rel="stylesheet" type="text/css" />
+<link href="css/personal.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div class="login_top">
+   <div class="logo"><img src="images/logo_06.gif" width="275" height="61" /></div>
+   
+   
+   <div class="login"> 
+     <ul>
+       <li>还没有集客帐号，</li>
+       <li class="buled2"><a href="#">请注册</a></li>
+     </ul>
+  </div>
+
+</div>
+
+<div class="logo_main">
+  <div class=" title_line2">添加商户</div>
+  <table width="600" height="203" border="0" cellpadding="0" cellspacing="3"><form id="form2" name="form2" method="post" action="">
+    <tr>
+      <td width="146" align="right">账号：</td>
+      <td>
+        <label>
+          <input name="textfield3" type="text" class="input1" id="textfield3" />
+          </label>      </td>
+      </tr>
+
+
+    <tr>
+      <td align="right">密码：</td>
+      <td><input name="textfield7" type="text" class="input1" id="textfield7" /></td>
+      </tr>
+
+    <tr>
+      <td align="right">验证码：</td>
+      <td><input name="textfield10" type="text" id="textfield10" size="5" />
+        <span class="font_12">看不清楚换一张？</span></td>
+      </tr>
+    <tr>
+      <td height="31" rowspan="3">&nbsp;</td>
+      <td><label>
+        <input type="checkbox" name="checkbox" id="checkbox" />
+        <span class="font_12">记住密码</span></label></td>
+      </tr>
+    <tr>
+      <td><input name="button3" type="image" id="button3" value="提交" src="images/login_03.gif" />
+        <input name="button" type="image" id="button" value="提交" src="images/login_05.gif" /></td>
+    </tr>
+    <tr>
+      <td class="font_12">忘记密码？</td>
+    </tr>
+  </form>
+  </table>
+</div>
+
+
+
+<div class="copyright">版权所有：琦辰文化传播有限公司 集客网址：www.jikeel.com</div>
+
+
+
+<script type="text/javascript">
+function setTab3(name,cursel,n){  
+ for(i=1;i<=n;i++){  
+  var menu=document.getElementById(name+i);  
+  var con3=document.getElementById("con3_"+name+"_"+i);  
+  menu.className=i==cursel?"click":"";  
+  con3.style.display=i==cursel?"block":"none";  
+ }  
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/jikeel/!svn/ver/47/app/controllers/admin
+END
+emails_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/jikeel/!svn/ver/47/app/controllers/admin/emails_controller.rb
+END
+score_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/jikeel/!svn/ver/44/app/controllers/admin/score_controller.rb
+END
+varieties_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/jikeel/!svn/ver/43/app/controllers/admin/varieties_controller.rb
+END
+collections_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/jikeel/!svn/ver/1/app/controllers/admin/collections_controller.rb
+END
+console_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/jikeel/!svn/ver/1/app/controllers/admin/console_controller.rb
+END
+subjects_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/jikeel/!svn/ver/43/app/controllers/admin/subjects_controller.rb
+END
+businesses_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/jikeel/!svn/ver/42/app/controllers/admin/businesses_controller.rb
+END
+opeartions_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/jikeel/!svn/ver/43/app/controllers/admin/opeartions_controller.rb
+END
+activities_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/jikeel/!svn/ver/43/app/controllers/admin/activities_controller.rb
+END
+customers_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/jikeel/!svn/ver/1/app/controllers/admin/customers_controller.rb
+END
+takemoneies_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/jikeel/!svn/ver/48/app/controllers/admin/takemoneies_controller.rb
+END
+categories_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/jikeel/!svn/ver/1/app/controllers/admin/categories_controller.rb
+END
+comments_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/jikeel/!svn/ver/42/app/controllers/admin/comments_controller.rb
+END
+msgs_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/jikeel/!svn/ver/1/app/controllers/admin/msgs_controller.rb
+END

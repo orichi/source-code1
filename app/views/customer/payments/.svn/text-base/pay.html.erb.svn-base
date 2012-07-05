@@ -1,0 +1,28 @@
+<% content_for :head do%>
+  <%= stylesheet_link_tag  "font.css" %>
+<% end %>
+<div class="per_main">
+  <div class=" per_main_l">
+    <%= render "/customer/share/portrait" %>
+    <div class="per_bd">
+      <div class="title_per">推荐商家</div>
+      <ul class="list4">
+        <%Business.recommends.limit(8).each do |biz|  %>
+          <li><%= link_to "·#{biz.name}", business_path(biz) %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="per_bd">
+      <div class="title_per">最新商家</div>
+      <div class="friends">
+        <%= render :partial => "/businesses/small_image_biz", :collection => Business.lasts(6), :as => :biz %>
+      </div>
+    </div>
+  </div>
+
+  <div class="orders_r">
+    <div class="post_pre">支付订单</div>
+    <%= flash[:notice] %>
+  </div>
+</div>

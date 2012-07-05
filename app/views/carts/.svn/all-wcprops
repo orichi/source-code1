@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 39
+/svn/jikeel/!svn/ver/40/app/views/carts
+END
+overview.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/jikeel/!svn/ver/39/app/views/carts/overview.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/jikeel/!svn/ver/40/app/views/carts/index.html.erb
+END
+success_tip.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/jikeel/!svn/ver/1/app/views/carts/success_tip.html.erb
+END

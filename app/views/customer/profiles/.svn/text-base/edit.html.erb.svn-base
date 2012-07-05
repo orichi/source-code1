@@ -1,0 +1,106 @@
+<div class=" per_main_l">
+  <%= render "/customer/share/portrait" %>
+  <div class="per_bd">
+    <div class="title_per">我关注的商家</div>
+    <ul class="list4">
+      <%current_customer.businesses.each do |biz|  %>
+        <li><%= link_to "·#{biz.name}", business_path(biz) %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="per_bd">
+    <div class="title_per">最新商家</div>
+    <div class="friends">
+      <%= render :partial => "/businesses/small_image_biz", :collection => Business.lasts(6), :as => :biz %>
+    </div>
+  </div>
+</div>
+<div class="orders_r" style="width: 750px;">
+  <div style="color: green; padding: 3px;"><%= flash[:notice] %></div>
+  <div class="post_pre" >基本信息</div>
+  <div class="list_tg">
+    <%= form_for(@customer, :url => customer_profile_path, :html => {:multipart => true}) do |f| %>
+      <table width="600" border="0" cellpadding="0" cellspacing="5">
+        <tr>
+          <td width="144" align="right">姓名:</td>
+          <td width="456"><%= f.text_field :name %></td>
+        </tr>
+        <tr>
+          <td align="right">昵称:</td>
+          <td><%= f.text_field :nickname %></td>
+        </tr>
+        <tr>
+          <td align="right">性别:</td>
+          <td>
+            <% Enum[:gender].options.each do |gender| %>
+              <%= f.radio_button :gender_id, gender.id %><%= gender.name %>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">头像:</td>
+          <td><%= f.file_field "image_file"%>图片最大不超过1M</td>
+        </tr>
+        <tr>
+          <td align="right">关注区域:</td>
+          <td><%= f.collection_select :focus_country_id, Enum[:shanghai_counties].options,  :id, :name, :include_blank => '--请选择--' %></td>
+        </tr>
+        <tr>
+          <td align="right">&nbsp;</td>
+          <td>
+            <%= image_submit_tag "anniu_07.gif" %>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+
+  <div class="post_pre" >公司信息</div>
+  <div class=" list_tg">
+    <%= form_for(@customer, :url => customer_profile_path) do |f| %>
+      <table width="600" height="168" border="0" cellpadding="0" cellspacing="5">
+        <tr>
+          <td width="144" align="right">公司名称：</td>
+          <td width="456"><%= f.text_field :company %></td>
+        </tr>
+        <tr>
+          <td align="right">行业：</td>
+          <td><%= f.text_field :industry %></td>
+        </tr>
+        <tr>
+          <td align="right">职位：</td>
+          <td><%= f.text_field :worktitle %></td>
+        </tr>
+        <tr>
+          <td align="right">&nbsp;</td>
+          <td>
+            <%= image_submit_tag "anniu_07.gif" %>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+
+  <div class="post_pre" >联系方式</div>
+  <div class=" list_tg">
+    <%= form_for(@customer, :url => customer_profile_path) do |f| %>
+      <table width="600" height="120" border="0" cellpadding="0" cellspacing="5">
+        <tr>
+          <td width="144" align="right">联系电话：</td>
+          <td width="456"><%= f.text_field :phone %></td>
+        </tr>
+        <tr>
+          <td align="right">外送地址：</td>
+          <td><%= f.text_field :address, :style=>"width: 400px" %></td>
+        </tr>
+        <tr>
+          <td align="right">&nbsp;</td>
+          <td>
+            <%= image_submit_tag "anniu_07.gif" %>
+          </td>
+        </tr>
+      </table>
+    <% end %>
+  </div>
+</div>

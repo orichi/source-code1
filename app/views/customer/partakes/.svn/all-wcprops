@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/jikeel/!svn/ver/41/app/views/customer/partakes
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/jikeel/!svn/ver/41/app/views/customer/partakes/index.html.erb
+END
+pay.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/jikeel/!svn/ver/41/app/views/customer/partakes/pay.html.erb
+END
+bill.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/jikeel/!svn/ver/41/app/views/customer/partakes/bill.html.erb
+END

@@ -1,0 +1,29 @@
+<%= render :partial =>'/admin/share/menu', :locals => {:active => :emails} %>
+<div class="content">
+  <h1>邮件发送</h1>
+  <%= flash[:notice] %>
+  <% form_for(admin_emails_path) do |f| %>
+    收件人:<input type="text" name="email_user" size="40"/><a  id="select">选择收件人</a><br/>
+    标题:<input type="text" name="title" size="40"/><br/>
+    内容:
+    <%#= ckeditor_textarea(:content,{:width => '70', :height => '200px'}) %>
+    <%= ckeditor_textarea :content, :toolbar=>'Easy', :style=>" padding:5px;",:height=>"300",:width=>"750",:language => "zh-cn" %>
+    <%= submit_tag "发送"%>
+  <% end %>
+</div>
+<div id="jqmWindow" style="width: 200px;height: auto;display: none;
+     position: absolute;left:47%;top:100px;background: #fff;border: 1px solid #213031">
+  <ul style="list-style:none;"><% Customer.all.each do |cu| %>
+      <li><input type="checkbox" name="user_id[]"/>
+        <%= cu.email %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<script type="text/javascript">
+  $(function(){
+    $("#select").click(function(){
+      $("#jqmWindow").css("display", "block")
+    });
+  })
+</script>

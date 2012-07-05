@@ -1,0 +1,60 @@
+<%= render :partial =>'/admin/share/menu', :locals => {:active => :opeartions} %>
+<div class="content">
+  <span style="float:right">
+    客户id:<input type="text" name="customer_id" id="customer_choose"/>
+    商家id:<input type="text" name="business_id" id="business_choose"/>
+    <a href="#" id="select_button" style="color:mediumslateblue">查询</a>
+  </span>
+  <script type="text/javascript">
+    $("#select_button").click(function(){
+      var customer_id = $("#customer_choose").val();
+      var business_id = $("#business_choose").val();
+      if(customer_id==""){
+        if(business_id=="")
+          alert("客户id和商家id不能同时为空");
+        else
+          window.location="<%= admin_opeartions_path %>"+"?type=business_id&value="+business_id;
+      }
+      else{
+        window.location="<%= admin_opeartions_path %>"+"?type=customer_id&value="+customer_id;
+      }
+    })
+  </script>
+  <h1>积分/金钱流通记录</h1>
+
+  <table class="list">
+    <tr class="head">
+      <td>编号</td>
+      <td>类型</td>
+      <td>交易积分</td>
+      <td>交易金额</td>
+      <td>交易时间</td>
+      <td>动作</td>
+    </tr>
+    <% @opeartions.each do |opeartion| %>
+      <tr>
+        <td>
+          <%= opeartion.serial_no %>
+        </td>
+        <td>
+          <%= opeartion.record_type %>
+        </td>
+        <td>
+          <%= opeartion.score %>
+        </td>
+        <td>
+          <%= opeartion.money %>
+        </td>
+        <td>
+          <%=  opeartion.created_at %>
+        </td>
+        <td>
+          <%= link_to "查看明细",admin_opeartion_path(opeartion) %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+  <span style="text-align: right">
+    <%= will_paginate @opeartions %>
+  </span>
+</div>

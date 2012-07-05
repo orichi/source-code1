@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/svn/jikeel/!svn/ver/44/app/controllers/admin/score
+END
+user_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/jikeel/!svn/ver/44/app/controllers/admin/score/user_controller.rb
+END
+busscores_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/jikeel/!svn/ver/44/app/controllers/admin/score/busscores_controller.rb
+END
+cusscores_controller.rb
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/jikeel/!svn/ver/44/app/controllers/admin/score/cusscores_controller.rb
+END

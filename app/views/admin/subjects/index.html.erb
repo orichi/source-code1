@@ -1,0 +1,30 @@
+<%= render "admin/subjects/menu" %>
+<table class="list">
+  <tr class="head"><td>名称</td><td>分类</td><td>价格</td><td>介绍</td><td></td>
+  </tr>
+  <% @business.subjects.each do |subject| %>
+    <tr>
+      <td>
+        <%= subject.name %>
+      </td>
+      <td>
+        <%= subject.variety.name %>
+      </td>
+      <td>
+        <%= subject.price %>
+      </td>
+      <td>
+        <%= subject.content %>
+      </td>
+      <td>
+        <%= link_to "编辑",edit_admin_business_subject_url(:business_id=>@business.id,:id=>subject) %>
+        <%= link_to "删除",admin_business_subject_url(:business_id=>@business.id,:id=>subject.id),:confirm=>"确认删除？",:method=>:delete %>
+      </td>
+    </tr>
+  <% end %>
+
+</table>
+  <div class="action-bar">
+    <input type="button" value="添加产品" onclick="window.location='<%= new_admin_business_subject_path %>'"/>
+  </div>
+</div>

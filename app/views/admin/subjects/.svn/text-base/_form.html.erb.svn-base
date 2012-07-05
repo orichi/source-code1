@@ -1,0 +1,40 @@
+<%= form_for(@subject,:url=> @subject.new_record? ? admin_business_subjects_path : admin_business_subject_path(@business,@subject),:html=>{:multipart=>true}) do |f| %>
+  <% if @subject.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@subject.errors.count, "") %>个错误，保存失败</h2>
+
+      <ul>
+        <% @subject.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name,"名称" %><br />
+    <%= f.text_field :name, :style=>"padding:2px" %>
+  </div>
+  <div class="field">
+    <%= f.label :image_id,"标示图片" %><br />
+    <table><tr><td><%= image_tag(@subject.image ? @subject.image.data.url(:thumb) : "home.gif") %></td>
+        <td><input type="file" name="subject[image_file]"/></td></tr></table>
+  </div>
+  <div class="field">
+    <%= f.label :price,"价格"  %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :variety_id,"分类" %><br/>
+    <%= f.select :variety_id,options_for_select(@business.varieties.map{|c|[c.name,c.id]}),{},{:style=>"padding:2px;"} %>
+  </div>
+  <div class="field">
+    <%= f.label :content,"简介" %>
+    <br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="action-bar">
+    <%= f.submit @subject.new_record? ? "新建" : "确认" %>
+    <%=raw back_button %>
+  </div>
+<% end %>

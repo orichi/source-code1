@@ -1,0 +1,26 @@
+<%= form_for([:admin,@collection]) do |f| %>
+  <% if @collection.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@collection.errors.count, "error") %> prohibited this msg from being saved:</h2>
+
+      <ul>
+        <% @collection.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= required %><%= f.label :group_id , "所属集合组"%><br />
+    <%= f.collection_select(:group_id, Group.all, :id, :name, {}, {:style=>"width:400px"}) %>
+  </div>
+  <div class="field">
+    <%= required %><%= f.label :name , "名称"%><br />
+    <%= f.text_field :name, :style=>"width: 400px;" %>
+  </div>
+  <div class="action-bar">
+    <%= f.submit("保存") %>
+    <%=raw back_button %>
+  </div>
+<% end %>

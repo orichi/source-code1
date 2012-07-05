@@ -1,0 +1,33 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "buss.css", "personal.css" %>
+<% end %>
+<div class="login_top">
+  <div class="logo">
+    <%=link_to image_tag("logo_06.gif"), root_path %>
+  </div>
+</div>
+
+<div class="logo_main">
+  <div class=" title_line2">登录</div>
+  <%= form_for(:sessions, :url => business_sessions_path)  do |f|%>
+    <div class="red" align="center"> <%= flash[:notice] %></div>
+    <table width="600" height="203" border="0" cellpadding="0" cellspacing="3">
+      <tr>
+        <td width="146" align="right"><%= required %>名称：</td>
+        <td>
+          <%= text_field_tag :biz_name, nil, :class=>"input1"%>
+        </td>
+      </tr>
+      <tr>
+        <td align="right"><%= required %>密码：</td>
+        <td><%= password_field_tag :password, nil, :class=>"input1"  %></td>
+      </tr>
+      <tr>
+        <td align="center" colspan="2">
+          <%= image_submit_tag "login_03.gif"%>
+        </td>
+      </tr>
+    </table>
+  <% end %>
+</div>
+<div class="copyright">版权所有：琦辰文化传播有限公司 集客网址：www.jikeel.com</div>

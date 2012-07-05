@@ -1,0 +1,9 @@
+<%= form_for([:business,@activity, @rule], :remote => true) do |f| %>
+<table>
+  <tr>
+    <td>份数:<%= f.text_field :count, :style=>"width:50px" %></td>
+    <td>折扣:<%= f.text_field :percent, :style=>"width:50px" %></td>
+    <td><%= image_submit_tag "small-save.jpg" %></td>
+  </tr>
+</table>
+<% end %>

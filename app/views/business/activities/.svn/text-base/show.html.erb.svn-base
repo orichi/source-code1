@@ -1,0 +1,88 @@
+<% content_for :head do %>
+  <%= javascript_include_tag "jqModal.js"%>
+  <%= stylesheet_link_tag "jqModal.css" %>
+<% end %>
+<div style="text-align: center; font-size: 15px; font-weight: bold; color: green"><%= "该团购已发布" if @activity.publish?  %></div>
+<h1 class="post_pre">新团购: <%= @activity.name %></h1>
+<div align="center"><%= image_tag(@activity.image ? @activity.image.data.url(:thumb) : "blank-thumb.gif") %></div>
+<table>
+  <tr>
+    <td align="right">价格：</td>
+    <td style = "color:green; font-size:20px; font-weight: bold"><%= number_to_currency @activity.price %></td>
+    <td align="right">加入人数：</td>
+    <td style = "color:red; font-size:20px; font-weight: bold"><%= @activity.customers.size%></td>
+  </tr>
+  <tr>
+    <td align="right">开始时间：</td>
+    <td><%= l @activity.begin_at%></td>
+    <td align="right">结束时间：</td>
+    <td><%= l @activity.end_at %></td>
+  </tr>
+  <tr>
+    <td colspan="4"><%=raw @activity.introduction %></td>
+  </tr>
+</table>
+<div class="action-bar" align="center">
+  <%= link_to image_tag("small-edit.jpg"), edit_business_activity_path(@activity) %>
+  <%= link_to image_tag("small-back.jpg"), "javascript: window.history.back()"%>
+</div>
+<h2 class="post_pre">团购产品</h2>
+<div id="activity-subjects" class="list-subjects"></div>
+<div class="clear"></div>
+<div class="action-bar" style="text-align:center">
+  <%= image_tag "add-subject.jpg", :onclick => "$('#biz-subjects').jqmShow();", :style => "cursor: pointer" %>
+</div>
+<h2 class="post_pre">设置团购规则</h2>
+<div id="activity-rules"></div>
+<div id="role-editor"></div>
+<% unless @activity.publish? %>
+<div align="center">
+  <%= link_to image_tag("public-activity.gif"), publish_business_activity_path(@activity), :method => :put %>
+</div>
+<% end %>
+<script type="text/javascript">
+  jQuery(function ($) {
+    load_subjects();
+    load_rules();
+    load_new_rule();
+    $('#biz-subjects').jqm();
+  })
+
+  function load_subjects(){
+    $.get("<%= subjects_business_activity_path(@activity) %>",{}, function(html){
+      $("#activity-subjects").html(html)
+    })
+  }
+
+  function load_rules(){
+    $.get("<%= business_activity_discount_rules_path(@activity) %>",{}, function(html){
+      $("#activity-rules").html(html)
+    })
+  }
+  
+  function add_subjects_succ(){
+    load_subjects();
+    close_choose_subjects_dialog();
+  }
+
+  function close_choose_subjects_dialog(){
+    $('#biz-subjects').jqmHide();
+  }
+
+  function load_new_rule(){
+    $.get("<%= new_business_activity_discount_rule_path(@activity) %>",{}, function(html){
+      $("#role-editor").html(html)
+    })
+  }
+
+  function load_edit_rule(editor_url){
+    $.get(editor_url,{}, function(html){
+      $("#role-editor").html(html)
+    })
+  }
+ 
+
+</script>
+<div id="biz-subjects" class="jqmWindow">
+  <iframe src ="<%= choose_subjects_business_subjects_path(:activity_id => @activity.id) %>" width="600" height="360" frameborder="0"></iframe>
+</div>

@@ -1,0 +1,36 @@
+<div class="per_main">
+  <div class="product_l">
+    <div class=" title4">
+      <span style="float:left">产品分类</span><span class="right_r">
+        <%= link_to "添加", new_business_variety_path, :remote => true%>&nbsp;
+        <% unless @current_variety.blank?  %>
+          <%= link_to "编辑", edit_business_variety_path(@current_variety.id), :remote => true%>
+          <%= link_to "删除", business_variety_path(@current_variety.id), :method => :delete, :confirm => "确定删除?"%>
+        <% end %>
+      </span>
+    </div>
+    <div id="var_list">
+      <%= render "/business/varieties/list" %>
+    </div>
+    <div id="var_editor"></div>
+  </div>
+  <div class="product_r">
+    <div class="post_pre">
+      <span style="float:left">产品管理</span>
+      <% unless @current_variety.blank?  %>
+      <span class="right_r"><%= link_to "添加产品", new_business_subject_path(:var_id => @current_variety.id) %></span>
+      <% end %>
+    </div>
+    <div class=" product_list">
+      <% (@current_variety || current_business).subjects.each do |sub| %>
+        <dl>
+          <dd><%= image_tag (sub.image ? sub.image.data.url(:medium) : "blank-medium.gif")%></dd>
+          <dt><span><%= sub.name %></span><br/>
+            <%= link_to "编辑", edit_business_subject_path(sub) %>
+            <%= link_to "删除", business_subject_path(sub), :method => :delete, :confirm => "确定删除？" %>
+          </dt>
+        </dl>
+      <% end %>
+    </div>
+  </div>
+</div>

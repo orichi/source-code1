@@ -1,0 +1,78 @@
+<div id="head">
+  <%= link_to image_tag("logo.jpg"), root_path, :class=>"logo"%>
+  <ul class="subnav">
+    <li><a href="#">联系我们</a></li>
+    <li><a href="#">关于我们</a></li>
+    <li><a href="#">网站地图</a></li>
+  </ul>
+  <% if current_customer.blank? %>
+    <%= form_for(:sessions, :url => customer_sessions_path, :html => {:id=>"login"} )  do |f|%>
+      <div class="input-area">
+        用户名：<%= text_field_tag :customer_email%>
+        密码：<%= password_field_tag :password %>
+      </div>
+      <div id="login-bg"><a href="javascript: $('#login').submit()">登陆</a></div>
+      <div id="login-bg"><%= link_to "注册", new_customer_path %></div>
+    <% end %>
+  <% else %>
+    <div class="welcome">
+      欢迎你，<%= current_customer.show_name %>&nbsp;
+      [<%= link_to "我的账户", customer_dashboard_path %>]
+      [<%= link_to "退出", customer_session_path(current_customer), :method => :delete %>]
+    </div>
+  <% end %>
+  <div id="daohang-bg">
+    <div id="daohang">
+      <a class="handler">生活指南</a>
+      <div class="first">
+        <%=link_to "豆豆美食", category_path(Category[:food]), :class=>"first"%>
+        <div class="panel">
+          <% Category[:food].subcategories.each do |subcate| %>
+            <%=link_to subcate.name, category_path(subcate)%>
+          <% end %>
+        </div>
+        <%=link_to "豆豆娱乐", category_path(Category[:entertainment]), :class=>"first"%>
+        <div class="panel">
+           <% Category[:entertainment].subcategories.each do |subcate| %>
+              <%=link_to subcate.name, category_path(subcate)%>
+           <% end %>
+        </div>
+        <%=link_to "豆豆酒店", category_path(Category[:hostel]), :class=>"first"%>
+        <div class="panel">
+           <% Category[:hostel].subcategories.each do |subcate| %>
+              <%=link_to subcate.name, category_path(subcate)%>
+           <% end %>
+        </div>
+        <%=link_to "豆豆养生", category_path(Category[:health]), :class=>"first"%>
+        <div class="panel">
+           <% Category[:health].subcategories.each do |subcate| %>
+              <%=link_to subcate.name, category_path(subcate)%>
+           <% end %>
+        </div>
+        <%=link_to "豆豆商城", category_path(Category[:mall]), :class=>"first"%>
+        <div class="panel">
+           <% Category[:mall].subcategories.each do |subcate| %>
+              <%=link_to subcate.name, category_path(subcate)%>
+           <% end %>
+        </div>
+      </div>
+    </div>
+    <%= link_to "首页", root_path%>
+    <div class="line"></div>
+    <%= link_to "新团购", activities_path %>
+    <input class="keyword" name="" type="text" />
+    <img class="search-button" src="/images/search.jpg" alt="search"/>
+    <%= link_to "美食", category_path(Category[:food])%>
+    <div class="line"></div>
+    <%= link_to "酒店", category_path(Category[:hostel])%>
+    <div id="shoping-cart">
+      <a href="#">
+        我的购物车
+      </a>
+      <div>
+        这里是购物车
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>

@@ -1,0 +1,9 @@
+<% Group.all.each do |group| %>
+  <h1 class="sitemap-area-title"><%= group.name %><a name="<%= group.key %>"></a></h1>
+  <ul class="sitemap-links">
+    <% group.collections.each do |coll| %>
+      <li><%=link_to coll.name, collection_path(coll) %></li>
+    <% end %>
+  </ul>
+  <div class="clear"></div>
+<% end %>

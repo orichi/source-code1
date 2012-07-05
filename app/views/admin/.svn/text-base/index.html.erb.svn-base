@@ -1,0 +1,138 @@
+<%= content_for :head do %>
+  <title>博士茶 rooibos</title>
+  <meta name="keywords" description=""></meta>
+  <meta name="description" description=""></meta>
+  <%= javascript_include_tag "pd.js","AC_RunActiveContent.js" %>
+<% end %>
+<div class="top_logo">
+  <div class="logo"><a href="/"><img src="/images/logo_06.gif"/></a></div>
+  <div class="telephone"><img src="/images/pho_08.gif" width="245" height="48" /></div>
+  <div class="menu">
+    <%= render :partial=>"/share/menu",:locals=>{:active => :index} %>
+    <div class="clr"></div>
+  </div>
+</div>
+<div class="hot">
+  <%= render :partial=>"/share/tagbar" %>
+</div>
+<div class="banner">
+  <div class="banner_l"><img src="/images/banner_27.jpg" width="655" height="220" /></div>
+  <div class="banner_r">
+    <object width="290" height="220" name="player" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" id="player">
+      <param value="/flash/player.swf" name="movie"/>
+      <param value="true" name="allowfullscreen"/>
+      <param value="always" name="allowscriptaccess"/>
+      <param value="file=/flash/int.flv&type=http&autostart=true&repeat=always" name="flashvars"/>
+      <embed width="290" height="220" flashvars="file=/flash/int.flv&type=http&autostart=true&repeat=always" allowfullscreen="true" allowscriptaccess="always" src="/flash/player.swf" name="player2" id="player2" type="application/x-shockwave-flash"/>
+    </object>
+
+  </div>
+</div>
+<div class="main">
+  <div class="index_about">
+    <div class="title"><a href="/cultures"><img src="/images/more.gif" width="38" height="31" align="right" /></a>
+      <img src="/images/title_1.gif" width="232" height="31" /></div>
+    <div class="text2">
+      <img src="/images/about_40.gif" width="150"align="left" />
+          　　世界只有靠近开普敦北面一个叫Cedarberg（瑟德堡）的小山谷
+      里生产这种天然的Rooibos茶； 它
+      是目前最时尚的绿色有机草本植物
+      饮品，富含丰富的铜、铁、锌、氟
+      、钾、锰和镁等矿物质，其中的抗氧化成分有助于延缓衰老，增强系统免疫能力。 长期饮用有助于缓解和治疗失眠、烦躁、头...<a href="/cultures" style="color:#ce1f09">了解更多>></a>
+    </div>
+  </div>
+  <div class="index_pro">
+    <div class="title"><a href="/products"><img src="/images/more.gif" width="38" height="31" align="right" /></a>
+      <img src="/images/title_2.gif" width="146" height="31" /></div>
+    <dl>
+      <dd><img src="/images/product_43.gif" width="170" height="118" /></dd>
+      <dt>ELEVEN O'CLOCK</dt>
+    </dl>
+    <dl>
+      <dd><img src="/images/chanpin2.gif" width="170" height="118" /></dd>
+      <dt>LEVIN</dt>
+    </dl>
+    <dl>
+      <dd><img src="/images/chanpin3.gif" width="170" height="118" /></dd>
+      <dt>Rooibos Tea半成品</dt>
+    </dl>
+  </div>
+</div>
+<div style="width: 960px;height:395px;border: none;overflow: hidden; margin: 0 auto 0 auto;  ">
+  <div class="contact">
+    <div class="title"><a href="/join"><img src="/images/more.gif" width="38" height="31" align="right" /></a>
+      <img src="/images/title_5.gif" width="171" height="31" /></div>
+    <div align="center" style="margin-top:3px;"><img src="/images/pic_60.gif" /></div>
+    <div class="text3">
+      <table style="margin:0;padding: 0;width:235px;">
+        <tr><td colspan="2">公司名称:瑞世国际贸易(上海)有限公司</td></tr>
+        <tr><td>联系人:</td><td>黄涵聪</td></tr>
+        <tr><td>电话:</td><td>021-58611188</td></tr>
+        <tr><td>手机:</td><td>15817923722</td></tr>
+        <tr><td>地址:</td><td>上海市浦东新区浦东北路1545号</td></tr>
+        <tr><td colspan="2">北京分部:</td></tr>
+        <tr><td>联系人:</td><td>张伟宏</td></tr>
+        <tr><td>电话:</td><td>010-87557546</td></tr>
+        <tr><td>手机:</td><td>15699830597</td></tr>
+        <tr><td>邮编:</td><td>100078</td></tr>
+        <tr><td style="padding:0;margin: 0;" width="50" valign="top">地址:</td><td>北京市丰台区方庄桥紫芳园6区4号楼2单元303室</td></tr></table>
+    </div>
+  </div>
+  <div class="main1">
+    <div class="show">
+      <div class="title">
+        <img src="/images/title_3.gif" width="117" height="31" /></div>
+      <div class=" show_pic">
+        <object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="317" height="158">
+          <param name="movie" value="/flash/flash.swf" />
+          <param name="quality" value="high" />
+          <param name="wmode" value="opaque" />
+          <param name="swfversion" value="8.0.35.0" />
+          <!-- 此 param 标签提示使用 Flash Player 6.0 r65 和更高版本的用户下载最新版本的 Flash Player。如果您不想让用户看到该提示，请将其删除。 -->
+          <param name="expressinstall" value="Scripts/expressInstall.swf" />
+          <!-- 下一个对象标签用于非 IE 浏览器。所以使用 IECC 将其从 IE 隐藏。 -->
+          <!--[if !IE]>-->
+          <object type="application/x-shockwave-flash" data="/flash/flash.swf" width="317" height="158">
+            <!--<![endif]-->
+            <param name="quality" value="high" />
+            <param name="wmode" value="opaque" />
+            <param name="swfversion" value="8.0.35.0" />
+            <param name="expressinstall" value="Scripts/expressInstall.swf" />
+            <!-- 浏览器将以下替代内容显示给使用 Flash Player 6.0 和更低版本的用户。 -->
+            <div>
+              <h4>此页面上的内容需要较新版本的 Adobe Flash Player。</h4>
+              <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="获取 Adobe Flash Player" /></a></p>
+            </div>
+            <!--[if !IE]>-->
+          </object>
+          <!--<![endif]-->
+        </object>
+        <script type="text/javascript">
+          <!--
+          swfobject.registerObject("FlashID");
+          //-->
+        </script>
+      </div>
+    </div>
+    <div class="index_news">
+      <div class="title"><a href="/trades"><img src="/images/more.gif" width="38" height="31" align="right" /></a>
+        <img src="/images/title_4.gif" width="139" height="31" /></div>
+      <ul class="list2">
+        <%@trades.each do |trade|%>
+          <li><span class="right_r"><%= trade.created_at.strftime("%Y-%m-%d") %></span>·<%= link_to truncate(trade.title,:length=>14),trade_path(trade) %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="Certificate">
+      <div class="title"><a href="/certify"><img src="/images/more.gif" width="38" height="31" align="right" /></a>
+        <img src="/images/title_7.gif" width="204" height="31" /></div>
+      <div class="rollBox">
+        <%= image_tag "rooibos_cer.gif" %>
+      </div>
+    </div>
+  </div>
+  <div class="main2">
+  </div>
+</div>
+<div class="clear"></div>

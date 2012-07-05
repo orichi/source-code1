@@ -1,0 +1,37 @@
+<%= form_for(@activity,:url=> @activity.new_record? ? admin_business_activities_path : admin_business_activity_path(@business,@activity),:html=>{:multipart=>true}) do |f| %>
+  <% if @activity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@activity.errors.count, "") %>个错误，保存失败</h2>
+
+      <ul>
+        <% @activity.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name,"名称" %><br />
+    <%= f.text_field :name, :style=>"padding:2px" %>
+  </div>
+  <div class="field">
+    <%= f.label :image_id,"标示图片" %><br />
+    <table><tr><td><%= image_tag(@activity.image ? @activity.image.data.url(:thumb) : "home.gif") %></td>
+        <td><input type="file" name="activity[image_file]"/></td></tr></table>
+  </div>
+  <input type="hidden" name="activity[business_id]" value="<%= @business.id %>"/>
+  <div class="field">
+    <%= f.label :price,"价格"  %><br />
+    <%= f.text_field :price %>
+  </div>
+  <div class="field">
+    <%= f.label :introduction,"简介" %>
+    <br />
+    <%= f.text_area :introduction %>
+  </div>
+  <div class="action-bar">
+    <%= f.submit @activity.new_record? ? "新建" : "确认" %>
+    <%=raw back_button %>
+  </div>
+<% end %>

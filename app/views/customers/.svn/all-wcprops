@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/jikeel/!svn/ver/35/app/views/customers
+END
+edit.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/jikeel/!svn/ver/1/app/views/customers/edit.html.erb
+END
+registered.html
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/jikeel/!svn/ver/1/app/views/customers/registered.html
+END
+success.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/jikeel/!svn/ver/35/app/views/customers/success.html.erb
+END
+new.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/jikeel/!svn/ver/1/app/views/customers/new.html.erb
+END
+show.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/jikeel/!svn/ver/1/app/views/customers/show.html.erb
+END

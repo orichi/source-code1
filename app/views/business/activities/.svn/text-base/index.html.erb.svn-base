@@ -1,0 +1,31 @@
+<div class="post_pre">团购管理</div>
+<div class="list_tg" id="con3_three_1">
+  <% @activities.each do |act| %>
+    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="mar_x2" >
+      <tr>
+        <td width="65%">
+          <dl class="tg_img">
+            <dd><%= image_tag(act.image ? act.image.data.url(:thumb) : "blank-small.jpg") %></dd>
+            <dt>
+              <span class="red" style="font-weight: bold"><%= link_to act.name, business_activity_path(act) %></span><br />
+              时间：<%=l act.begin_at %> - <%=l act.end_at %><br />
+              参加客户数：<%= act.customers.size %> 人<br />
+              团购价格：原价：<span class="xiehua"><%= number_to_currency act.price %></span>元  现价：<%= number_to_currency act.price %>元 <br />
+            </dt>
+          </dl>
+        </td>
+        <td>
+          <% if act.publish? %>
+            <span style="color:green">已发布</span>
+          <% else %>
+            <span style="color:red">未发布</span>
+          <% end %>
+        </td>
+        <td width="15%" align="center">
+          <%=link_to "编辑", edit_business_activity_path(act) %>
+          <%=link_to "删除", business_activity_path(act), :method => :delete, :confirm => "确定删除？" %>
+        </td>
+      </tr>
+    </table>
+  <% end %>
+</div>

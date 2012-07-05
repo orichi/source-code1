@@ -1,0 +1,13 @@
+<div class="clear"></div>
+<div class="foot_nav">
+  <ul class="list1">
+    <li><%= link_to "首页", root_path %></li>
+    <li><%= link_to "新团购", activities_path %></li>
+    <li><%= link_to "美食", category_path(Category[:food])%></li>
+    <li><%= link_to "酒店", category_path(Category[:hostel])%></li>
+    <li><a href="">商城</a></li>
+    <li><a href="">联系我们</a></li>
+    <li><a href="">关于我们</a></li>
+  </ul>
+</div>
+<div class="copyright">上海琦辰文化传播有限公司 Copyright 2010 技术支持：<%= link_to "开成信息科技", "http://www.360sem.cn", :target => "_blank" %></div>

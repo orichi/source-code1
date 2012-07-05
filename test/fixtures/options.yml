@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  enum_id: 1
+  name: MyString
+  key: MyString
+
+two:
+  enum_id: 1
+  name: MyString
+  key: MyString

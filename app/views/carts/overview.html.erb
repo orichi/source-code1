@@ -1,0 +1,33 @@
+<p align="left"><%= link_to "查看详细信息",carts_path %></p>
+<% if @cart.blank? %>
+  您的购物车是空的！
+<% else %>
+  <%# form_for(:url=>customer_payments_url,:id=>"bill") do |f| %>
+  <%= form_tag(customer_payments_url,:id=>"bill") do %>
+    <% @cart.bizs.each do |biz| %>
+      <h2>商家：<%= biz.business.name %></h2>
+      <div class="items">
+        <% biz.items.each do |item|
+          subject = Subject.find(item[:subject_id])
+        %>
+          <span><%= "#{subject.name}-#{item[:quantity]}-#{number_to_currency(subject.price * Integer(item[:quantity]))}" %></span>
+        <%#= f.text_area :subject_id[],suject.id,di %>
+          <input type="hidden" name="subject_id[]" value="<%= subject.id %>" id="subject_id_" />
+          <input id="quantity_" name="quantity[]" type="hidden" value="<%=  item[:quantity] %>" />
+        <% end %>
+      </div>
+
+    <% end %>
+    <div style="font-size: 16px; font-weight: bold; color: #E97C03;text-align: right">
+      总金额：<%= number_to_currency @cart.total %>
+    </div>
+  <% end %>
+  <div class="checkout">
+    <a href="#" id="submitbill">去买单</a>
+    <script type="text/javascript">
+      $("#submitbill").click(function(){
+        $("#bill").submit();
+      })
+    </script>
+  </div>
+<% end %>

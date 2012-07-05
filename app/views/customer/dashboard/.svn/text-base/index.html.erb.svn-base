@@ -1,0 +1,81 @@
+<div class="per_main_l">
+  <%= render "/customer/share/portrait" %>
+  <div class="per_bd">
+    <div class="title_per">我关注的商家</div>
+    <ul class="list4">
+      <%current_customer.businesses.each do |biz|  %>
+        <li><%= link_to "·#{biz.name}", business_path(biz) %></li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="per_bd">
+    <div class="title_per">最新商家</div>
+    <div class="friends">
+      <%= render :partial => "/businesses/small_image_biz", :collection => Business.lasts(6), :as => :biz %>
+    </div>
+  </div>
+</div>
+
+<div class="per_main_cen">
+  <div class="post_pre">新鲜事</div>
+  <% current_customer.notifications.each do |noti|  %>
+  <% unless noti.resource.blank? %>
+    <dl class="pre">
+      <dd><%= image_tag (noti.resource.business.image ? noti.resource.business.image.data.url(:small) : "blank-small.jpg")%></dd>
+      <dt>
+        <% if noti.resource.kind_of? Activity %>
+          商家<%=link_to noti.resource.business.name, business_path(noti.resource.business), :class=>"buled"%>
+          发布了新团购
+          <%= link_to noti.resource.name, activity_path(noti.resource), :class=>"buled" %>, 自<%=l noti.resource.begin_at %>开始，到<%=l noti.resource.end_at %>结束，
+          <%= link_to "查看详情>>", activity_path(noti.resource), :class=>"buled" %>
+        <% elsif noti.resource.kind_of? Comment %>
+          网友对商家<span class="buled"><%=link_to noti.resource.business.name, business_path(noti.resource.business), :class=>"buled"%></span>
+          评论： <%= truncate  noti.resource.content, :length => 70 %>
+        <% elsif noti.resource.kind_of? Subject %>
+           商家<span class="buled"><%=link_to noti.resource.business.name, business_path(noti.resource.business), :class=>"buled"%></span>
+          发布了新产品：<%= noti.resource.name %><br/>
+          <%= link_to "赶快去看看>>", activity_path(noti.resource.business) , :class=>"buled"%>
+        <% end %>
+      </dt>
+    </dl>
+    <div class="clear" style="border:1px solid #eee;"></div>
+    <% end %>
+  <% end %>
+  <div class="clear"></div>
+  <div class="hot_pre">
+    <div class="bold14">热门商家</div>
+    <%= render :partial => "/businesses/small_image_biz", :collection => Business.order("focus_count desc").limit(8), :as => :biz %>
+  </div>
+</div>
+<div class="per_main_r">
+  <div class="per_bd">
+    <div class="title_per">我最近的订单</div>
+    <ul class="list4">
+      <li>·开成公司</li>
+      <li>·开成公司</li>
+      <li>·开成公司</li>
+      <li>·开成公司</li>
+      <li>·开成公司</li>
+      <li>·开成公司</li>
+    </ul>
+  </div>
+
+  <div class="per_bd">
+    <div class="title_per"><span class="right_r"><a href="#">刷新</a> <a href="#">更多</a></span>推荐商家</div>
+    <div  class="fre2">
+      <%= render :partial => "/businesses/small_image_biz", :collection => Business.recommends.limit(9), :as => :biz %>
+    </div>
+  </div>
+  <div class="per_bd">
+    <div class="title_per"><span class="right_r"><a href="#">刷新</a> <a href="#">更多</a></span>可能认识的人</div>
+    <div class="fre2">
+      <%current_customer.rand_friends(6).each do |fri| %>
+      <dl>
+        <dd><%= image_tag(fri.image ? fri.image.data.url(:small) : "blank-small.gif") %></dd>
+        <dt><%= fri.show_name %></dt>
+      </dl>
+      <% end %>
+    </div>
+  </div>
+</div>

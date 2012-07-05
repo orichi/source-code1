@@ -1,0 +1,16 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" ></meta>
+    <%= stylesheet_link_tag "master.css", "font.css", "buss.css" %>
+    <%= javascript_include_tag "jquery-1.4.3.min.js", "rails","megapanel","application"%>
+    <%= csrf_meta_tag %>
+    <%= yield :head %>
+    <title>集客网</title>
+  </head>
+
+  <body>
+      <%= yield %>
+  </body>
+
+</html>

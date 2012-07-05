@@ -1,0 +1,9 @@
+<%= form_for([:business,@variety]) do |f| %>
+<table>
+  <tr>
+    <td style="white-space:nowrap;"><%= f.label :name , "名称"%></td>
+    <td><%= f.text_field :name, :style=>"width: 80px" %></td>
+    <td><%=image_submit_tag "small-save.jpg" %></td>
+  </tr>
+</table>
+<% end %>

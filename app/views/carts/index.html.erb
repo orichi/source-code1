@@ -1,0 +1,84 @@
+<div style="border: 1px solid #eee">
+  <h3>购物车</h3>
+</div>
+<table>
+<%#*<tr>%>
+<%#*<th>产品</th>%>
+<%#*<th>商家</th>%>
+<%#*<th>数量</th>%>
+<%#*</tr>%>
+<%# @items.each do |item| subject = Subject.find(item.biz_id)%>
+  <tr>
+    <td><%#= subject.name %></td>
+    <td><%#= subject.business.name %></td>
+    <td><%#=  item.quantity %></td>
+  </tr>
+<%# end %>
+</table>
+
+
+<div class="shopping">
+  <table width="100%" border="0" cellpadding="3" cellspacing="0" class="border_x">
+    <tr>
+      <td width="8%">
+        <input type="checkbox" name="checkbox" id="checkbox" />
+        全选</td>
+      <td width="47%" align="center">店铺宝贝</td>
+      <td width="9%" align="center">获商城积分</td>
+      <td width="9%" align="center">单价（元）</td>
+      <td width="9%" align="center">数量</td>
+      <td width="9%" align="center">小计</td>
+      <td width="9%">&nbsp;</td>
+    </tr>
+  </table>
+  <% unless session[:cart].nil? %>
+    <% session[:cart].bizs.each do |bizs|%>
+      <% bizs.items.each do |item| subject = Subject.find(item[:subject_id])%>
+
+        <table width="100%" border="0" cellpadding="3" cellspacing="0" class="border_x">
+          <% form_tag(customer_payments_url,:id=>"form2") do |f|  %>
+            <tr>
+              <td width="8%" align="center" bgcolor="#e2f2ff" class="lix">
+                <input type="checkbox" name="checkbox2" id="checkbox2" />    </td>
+              <td width="47%" bgcolor="#e2f2ff" class="lix">
+                <dl class="shop">
+                  <dd><%= subject.name %></dd>
+                  <dt><%= subject.business.name %></dt>
+                  <input type="hidden" name="subject_id[]" value="<%= subject.id %>" id="subject_id_" />
+                  <input id="quantity_" name="quantity[]" type="hidden" value="<%=  item[:quantity] %>" />
+                </dl></td>
+              <td width="9%" align="center" bgcolor="#e2f2ff" class="lix">179</td>
+              <td width="9%" align="center" bgcolor="#e2f2ff" class="lix"><%= subject.price %></td>
+              <td width="9%" align="center" bgcolor="#e2f2ff" class="lix">-
+                <label>
+                  <input name="quantity[]" type="text" class="input5" id="textfield" size="3" />
+                  +</label></td>
+              <td width="10%" align="center" bgcolor="#e2f2ff" class="lix">355.00</td>
+              <td width="8%" align="center" bgcolor="#e2f2ff" class="buled2"><a href="#">删除</a></td>
+            </tr><% end %>
+        </table>
+      <% end %>
+    <% end %>
+
+    <div class=" shop_text">
+      <p>商品总价：5623元</p>
+      <p>可获积分：5623</p>
+      <p align="right">
+        <%= link_to image_tag("shop_03.gif"),root_url %>
+        <%= link_to image_tag("shop_05.gif"),"#",:id=>"submit" %></p>
+      <script type="text/javascript">
+        $("#submit").click(function(){
+          $("#form2").submit();
+        })
+      </script>
+  <%#= session[:cart].bizs.each do |bizs|%>
+  <%#= bizs.biz_id %>
+  <%# bizs.items.each do |item| subject = Subject.find(item[:subject_id])%>
+  <%#= subject.name%>
+  <%# end %>
+  <%# end %>
+  <%#*</div>%>
+    <% end %>
+  </div>
+
+</div>

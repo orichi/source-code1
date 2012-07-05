@@ -1,0 +1,32 @@
+<%= render :partial =>'/admin/share/menu', :locals => {:active => :scores} %>
+<div class="content">
+  <span style="float: right"><%= link_to "退出超级管理员",logout_admin_score_user_index_path %></span><h1>商家积分管理</h1><span><%= link_to "切换到用户积分管理",admin_score_cusscores_path %></span>
+  <table class="list">
+    <tr class="head">
+      <td>商家名称</td>
+      <td>商家ID</td>
+      <td>商家积分</td>
+      <td>商家金钱</td>
+      <td>动作</td>
+    </tr>
+    <% @busscores.each do |bus|   %>
+      <tr >
+        <td>
+          <%= bus.name %>
+        </td>
+        <td>
+          <%= bus.id %>
+        </td>
+        <td>
+          <%= bus.score %>
+        </td>
+        <td>
+          <%= bus.money %>
+        </td>
+        <td>
+          <%= link_to "修改", edit_admin_score_busscore_path(bus) %>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

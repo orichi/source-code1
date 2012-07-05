@@ -1,0 +1,7 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag "buss.css" %>
+<% end %>
+<h2 style="margin:10px;font-size: 16px; font-weight: bold">商家 <%=link_to @business.name, business_path(@business) %> 的评论</h2>
+<%= render :partial => "comment", :collection => @comments %>
+<%= will_paginate @comments%>
+

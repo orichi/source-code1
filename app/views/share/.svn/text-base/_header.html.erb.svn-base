@@ -1,0 +1,37 @@
+<div class="top">
+  <div class="top_c">
+    <ul>
+      <%  unless customer_login? %>
+      <li><%=link_to "注册", new_customer_path, :style => "border:1px solid #ccc; padding: 3px 7px;"%></li>
+      <li><%=link_to "登录", new_customer_session_path, :style => "border:1px solid #ccc; padding: 3px 7px;"%></li>
+      <% end %>
+      <li><a href="#" onClick="window.external.addFavorite('http://jikeel.com','集客网');">添加收藏</a></li>
+      <li>|</li>
+      <li>联系我们</li>
+      <li>|</li>
+      <li>关于我们</li>
+      <li>|</li>
+      <li><%= link_to "网站地图", sitemap_path %></li>
+    </ul>
+    <div class="top_text">欢迎来到集客网，让你的生活更加便捷</div>
+  </div>
+</div>
+<div class="logo_line">
+  <div class="logo"><%= link_to image_tag("logo_06.gif"), root_path %></div>
+  <div class="login">
+    <%  unless customer_login? %>
+      <%= form_for(:sessions, :url => customer_sessions_path, :html => {:id=>"login"} )  do |f|%>
+        <label>用户名：</label><%= text_field_tag :customer_email, nil, :class=>"login_k"%>
+        <label>密码：</label><%= password_field_tag :password, nil, :class=>"login_k" %>
+        <%= image_submit_tag "login_09.gif", :class => "pic" %>
+        <input name="button2" type="image" class="pic" value="注册" src="/images/login_11.gif" onclick="window.location = '<%=new_customer_path %>'; return false;" />
+      <% end %>
+    <% else %>
+      <div class="welcome">
+        欢迎你，<%= current_customer.show_name %>&nbsp;
+        [<%= link_to "我的主页", customer_dashboard_path %>]
+        [<%= link_to "退出", customer_session_path(current_customer), :method => :delete %>]
+      </div>
+    <% end %>
+  </div>
+</div>

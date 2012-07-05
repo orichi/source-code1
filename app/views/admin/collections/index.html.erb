@@ -1,0 +1,21 @@
+<%= render :partial =>'/admin/share/menu', :locals => {:active => :collections} %>
+<div class="content">
+  <h1>集合管理</h1>
+  <% Group.all.each do |group| %>
+    <h2><%= group.name %></h2>
+    <div class="collection-area">
+      <% group.collections.each do |collection| %>
+        <div>
+          <%= collection.name %>
+          <%= link_to '编辑', edit_admin_collection_path(collection) %>
+          <%= link_to '删除',admin_collection_path( collection), :confirm => '确定删除吗?', :method => :delete %>
+        </div>
+      <% end %>
+      
+    </div>
+    <div class="clear"></div>
+  <% end %>
+  <div class="action-bar">
+    <%= link_button("添加集合", new_admin_collection_path) %>
+  </div>
+</div>

@@ -1,0 +1,2 @@
+module Customer::PaymentsHelper
+end

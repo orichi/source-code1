@@ -1,0 +1,19 @@
+<div class="menu1">
+  <ul id="panel_nav">
+    <li>
+      <%= link_to "生活指南", root_path, :class => "handler" %>
+      <ul class="inlist">
+        <% Category.roots.each do |cate| %>
+          <li><%=link_to cate.name, category_path(cate)%>
+            <ul class="inpanel">
+              <% cate.children.each do |child| %>
+                <li><%=link_to child.name, category_path(child) %></li>
+              <% end %>
+            </ul>
+          </li>
+        <% end %>
+        <li><%= link_to "集客商城", "#" %></li>
+      </ul>
+    </li>
+  </ul>
+</div>

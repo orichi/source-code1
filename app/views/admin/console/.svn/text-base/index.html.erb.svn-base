@@ -1,0 +1,6 @@
+<%= render :partial =>'/admin/share/menu', :locals => {:active => :home} %>
+<div style="margin: 30px;">
+  <h1>
+  系统后台，在这里你可以管理你网站的数据
+</h1>
+</div>

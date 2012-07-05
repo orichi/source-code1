@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 32
+/svn/jikeel/!svn/ver/5/test/unit
+END
+discount_rule_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/jikeel/!svn/ver/1/test/unit/discount_rule_test.rb
+END
+orderform_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/jikeel/!svn/ver/1/test/unit/orderform_test.rb
+END
+orderline_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/jikeel/!svn/ver/1/test/unit/orderline_test.rb
+END
+variety_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/jikeel/!svn/ver/1/test/unit/variety_test.rb
+END
+enum_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/jikeel/!svn/ver/1/test/unit/enum_test.rb
+END
+option_test.rb
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/svn/jikeel/!svn/ver/1/test/unit/option_test.rb
+END
